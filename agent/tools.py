@@ -39,9 +39,9 @@ from seed.eligibility import effective_return_window_days, is_refund_eligible
 MAX_SEARCH_LIMIT = 25
 DEFAULT_ORDER_LIMIT = 20
 
-# SQLite reads a negative LIMIT as "no limit", so the supplied list helpers in
-# agent/db.py can return a full result set without a second query or a new
-# helper. Used to count orders in scope before truncating to the limit above.
+# SQLite reads a negative LIMIT as "no limit", so list_orders_for_user and
+# list_orders_for_store can return a full result set without a second query.
+# Used by list_my_orders to count orders in scope before truncating.
 NO_LIMIT = -1
 
 # find_order tuning. WRatio scores a natural-language query against a product
@@ -299,12 +299,17 @@ def cancel_order(ctx: AuthContext, order_id: int, reason: str) -> dict[str, Any]
 
 
 def _orders_in_scope(conn: sqlite3.Connection, ctx: AuthContext) -> list[db.Order]:
-    """Every order the caller may search, newest first."""
+    """Every order the caller may search, newest first.
+
+    The scope comes from ctx, never from the query, and the supplied helper
+    takes exactly one scope so an unsupported role cannot fall through to a
+    wider one.
+    """
     if ctx.role == "shopper":
-        return db.list_orders_for_user(conn, ctx.user_id, limit=NO_LIMIT)
+        return db.list_order_search_candidates(conn, user_id=ctx.user_id)
     if ctx.role == "merchant":
-        return db.list_orders_for_store(conn, ctx.store_id, limit=NO_LIMIT)
-    return db.list_all_orders(conn, limit=NO_LIMIT)  # support: any order
+        return db.list_order_search_candidates(conn, store_id=ctx.store_id)
+    return db.list_order_search_candidates(conn, all_orders=True)  # support
 
 
 def find_order(ctx: AuthContext, query: str) -> dict[str, Any]:
@@ -313,21 +318,28 @@ def find_order(ctx: AuthContext, query: str) -> dict[str, Any]:
     Takes a natural-language query (e.g., "earmuffs I bought last week")
     and searches the authenticated user's orders for products whose name
     matches. Use fuzzy string matching (e.g., thefuzz.fuzz.partial_ratio
-    or SQLite LIKE) to find orders whose product name is close to the
+    or case-insensitive substring matching) to find orders whose product name is close to the
     query.
 
     Access rules: a shopper searches only the shopper's own orders, a
     merchant searches orders from the merchant's store, and support staff
-    can search any orders. Use agent.db.list_orders_for_user for shoppers
-    and agent.db.list_orders_for_store for merchants. For support staff,
-    use agent.db.list_all_orders: list_orders_for_user requires a user id
-    and so cannot express an unfiltered search.
+    can search any orders. Use agent.db.list_order_search_candidates with
+    user_id=ctx.user_id for shoppers, store_id=ctx.store_id for merchants,
+    or all_orders=True only for support. Derive the scope from ctx, never
+    from the query; reject unsupported roles or missing required identity.
+    Use agent.db.list_products to map product IDs to product titles.
+
+    The helper returns the complete authorised scope, newest first with
+    order ID descending as the tie-breaker. Match product names first,
+    preserve that order, then return at most five matches. Do not search
+    only the 20 most recent orders. Convert matches with to_public_dict().
 
     Matching scores the query against the ordered product's title with
     rapidfuzz.fuzz.WRatio and keeps scores at or above MATCH_THRESHOLD.
     A cutoff is required: without one, the highest-scoring five orders
     always come back, and a query matching nothing would still return
-    results.
+    results. Matches keep the helper's newest-first order rather than being
+    re-sorted by score, as the paragraph above requires.
 
     Args:
         ctx: The caller's auth context.
@@ -347,11 +359,10 @@ def find_order(ctx: AuthContext, query: str) -> dict[str, Any]:
             (fuzz.WRatio(needle, titles.get(order.product_id, "").lower()), order)
             for order in _orders_in_scope(conn, ctx)
         ]
-    matches = [(score, order) for score, order in scored if score >= MATCH_THRESHOLD]
-    matches.sort(key=lambda pair: -pair[0])  # stable: ties stay newest-first
+    matches = [order for score, order in scored if score >= MATCH_THRESHOLD]
     return {
         "ok": True,
-        "orders": [order.to_public_dict() for _, order in matches[:MAX_FIND_RESULTS]],
+        "orders": [order.to_public_dict() for order in matches[:MAX_FIND_RESULTS]],
     }
 
 
