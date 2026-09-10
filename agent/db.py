@@ -177,11 +177,30 @@ def list_orders_for_store(
     return [_order_from_row(row) for row in rows]
 
 
-def list_all_orders(conn: sqlite3.Connection, limit: int = 20) -> list[Order]:
-    """Every order, newest first. Support staff search across all orders."""
+def list_order_search_candidates(
+    conn: sqlite3.Connection,
+    *,
+    user_id: int | None = None,
+    store_id: int | None = None,
+    all_orders: bool = False,
+) -> list[Order]:
+    """Return the complete search scope, newest first (order ID breaks ties).
+
+    Select exactly one scope. The tool must derive user/store IDs from its
+    authenticated context and allow all_orders=True only for support staff.
+    There is deliberately no limit: product matching must precede truncation.
+    Use list_products to map product IDs to titles for student-owned matching.
+    """
+    if sum((user_id is not None, store_id is not None, all_orders)) != 1:
+        raise ValueError("select exactly one order search scope")
+    if user_id is not None:
+        where, params = " WHERE user_id = ?", (user_id,)
+    elif store_id is not None:
+        where, params = " WHERE store_id = ?", (store_id,)
+    else:
+        where, params = "", ()
     rows = conn.execute(
-        "SELECT * FROM orders ORDER BY ordered_at DESC, id DESC LIMIT ?",
-        (limit,),
+        "SELECT * FROM orders" + where + " ORDER BY ordered_at DESC, id DESC", params
     ).fetchall()
     return [_order_from_row(row) for row in rows]
 
