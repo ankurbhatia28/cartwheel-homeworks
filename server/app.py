@@ -30,15 +30,16 @@ import os
 import time
 import uuid
 from contextlib import asynccontextmanager
-from typing import Any, AsyncIterator
+from typing import Any, AsyncIterator, NoReturn
 
 from agents import Runner, SQLiteSession
 from fastapi import FastAPI, Header, HTTPException
 from opentelemetry import trace
+from opentelemetry.instrumentation.openai_agents.utils import should_send_prompts
 from pydantic import BaseModel
 
 from agent import db
-from agent.agent import build_agent, prompt_version
+from agent.agent import DEFAULT_MODEL, build_agent, prompt_version
 from agent.auth import ROLES, AuthContext
 from agent.config import REPO_ROOT, db_path
 from observability.instrument import load_env, setup_tracing
@@ -123,8 +124,78 @@ def create_session(body: SessionCreate) -> dict[str, Any]:
     session id and a signed token. The token payload must contain session_id,
     user_id, role, store_id, and issued_at.
     """
-    ### YOUR CODE HERE (HW2)
-    raise NotImplementedError("HW2: implement POST /sessions")
+    # The claimed role is decidable from the request alone, so reject it before
+    # touching the database: an unknown role is a client error, not a lookup
+    # failure, and the 400 stays deterministic whatever the database holds.
+    if body.role not in ROLES:
+        _reject_session(
+            status_code=400,
+            reason="unknown_role",
+            detail=f"unknown role: {body.role!r}",
+            user_id=body.user_id,
+            role=body.role,
+        )
+    with db.connection() as conn:
+        user = db.get_user(conn, body.user_id)
+    if user is None:
+        _reject_session(
+            status_code=404,
+            reason="unknown_user",
+            detail=f"no user {body.user_id}",
+            user_id=body.user_id,
+            role=body.role,
+        )
+    if user.role != body.role:
+        _reject_session(
+            status_code=403,
+            reason="role_mismatch",
+            detail=f"user {user.id} is not a {body.role}",
+            user_id=body.user_id,
+            role=body.role,
+        )
+
+    # Identity comes from the database row, never from the request body and
+    # never from a later chat message. The request only selects which user to
+    # bind; note that SessionCreate has no store_id field at all, so a caller
+    # cannot claim a store even in principle.
+    ctx = AuthContext(user_id=user.id, role=user.role, store_id=user.store_id)
+    session_id = uuid.uuid4().hex
+    _SESSIONS[session_id] = (ctx, SQLiteSession(session_id, str(SESSIONS_DB)))
+    token = create_token(
+        {
+            "session_id": session_id,
+            "user_id": ctx.user_id,
+            "role": ctx.role,
+            "store_id": ctx.store_id,
+            "issued_at": int(time.time()),
+        }
+    )
+    return {"session_id": session_id, "token": token}
+
+
+def _reject_session(
+    *, status_code: int, reason: str, detail: str, user_id: int, role: str
+) -> NoReturn:
+    """Record a refused session attempt on its own span, then raise.
+
+    A refused session never reaches a tool, so the cartwheel.permission_denied
+    attribute that Homework 2 Part A puts on tool spans cannot see it. Without
+    this span, probing POST /sessions to enumerate user identifiers and roles
+    (404 for an absent user, 403 for a real user with another role) leaves no
+    evidence anywhere.
+
+    The claimed identity is recorded under `requested_*` names on purpose. It
+    is caller-supplied and unverified, so it must never be written to
+    cartwheel.user_id or cartwheel.user_role, which downstream analysis reads
+    as the authenticated caller.
+    """
+    with _tracer.start_as_current_span("cartwheel.session_rejected") as span:
+        if span.is_recording():
+            span.set_attribute("cartwheel.session_rejected", True)
+            span.set_attribute("cartwheel.session_rejected.reason", reason)
+            span.set_attribute("cartwheel.requested_user_id", str(user_id))
+            span.set_attribute("cartwheel.requested_role", role)
+    raise HTTPException(status_code=status_code, detail=detail)
 
 
 def _authorize(session_id: str, authorization: str | None) -> AuthContext:
@@ -158,8 +229,64 @@ async def post_message(
     gen_ai.output.messages on the root span as JSON arrays of OTel GenAI
     messages with role and parts fields.
     """
-    ### YOUR CODE HERE (HW2)
-    raise NotImplementedError("HW2: implement the traced message endpoint")
+    # Authorize before any other work: an unauthorized request must not build
+    # an agent, call a model, or leave a span behind. _authorize returns the
+    # AuthContext the server bound at session creation; nothing about identity
+    # comes from this request or from the conversation.
+    ctx = _authorize(session_id, authorization)
+    _bound_ctx, session = _SESSIONS[session_id]
+    agent = build_agent(ctx, model=body.model)
+    version = prompt_version()
+    # The course-level model name, resolved the way agent.resolve_model
+    # resolves it. The provider's own identifier lands on the automatic model
+    # span as gen_ai.request.model / gen_ai.response.model; this is the name
+    # the caller asked for, which is what Part F holds constant.
+    model_name = body.model or os.environ.get("CARTWHEEL_MODEL") or DEFAULT_MODEL
+
+    with _tracer.start_as_current_span("cartwheel.session_message") as span:
+        recording = span.is_recording()
+        if recording:
+            span.set_attribute("cartwheel.user_role", ctx.role)
+            span.set_attribute("cartwheel.user_id", str(ctx.user_id))
+            span.set_attribute("cartwheel.prompt_version", version)
+            span.set_attribute("cartwheel.model", model_name)
+            if body.scenario_id:
+                span.set_attribute("cartwheel.scenario_id", body.scenario_id)
+            # should_send_prompts() is the instrumentation's own predicate, so
+            # the root span and the automatic model spans can never disagree
+            # about whether content was captured. Set the input before the run
+            # so a failed request still records what was asked.
+            if should_send_prompts():
+                span.set_attribute(
+                    "gen_ai.input.messages", _genai_messages("user", body.message)
+                )
+        try:
+            result = await Runner.run(
+                agent,
+                body.message,
+                session=session,
+                context=ctx,
+                max_turns=MAX_TURNS,
+            )
+        except Exception as exc:
+            # The span context manager already records the exception and sets
+            # ERROR status. The class name is what makes the failure mode
+            # queryable: a looping agent (MaxTurnsExceeded) and a provider
+            # outage are the same 500 to the caller.
+            if recording:
+                span.set_attribute("cartwheel.run_error", type(exc).__name__)
+            raise
+        reply = str(result.final_output)
+        if recording and should_send_prompts():
+            span.set_attribute(
+                "gen_ai.output.messages", _genai_messages("assistant", reply)
+            )
+    return {"session_id": session_id, "reply": reply, "prompt_version": version}
+
+
+def _genai_messages(role: str, content: str) -> str:
+    """One OTel GenAI message, serialized for a span attribute."""
+    return json.dumps([{"role": role, "parts": [{"type": "text", "content": content}]}])
 
 
 @app.get("/health")
