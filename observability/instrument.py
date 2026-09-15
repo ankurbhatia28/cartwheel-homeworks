@@ -122,10 +122,22 @@ def record_tool_result(ctx: "AuthContext", result: dict[str, Any]) -> None:
     span = trace.get_current_span()
     if not span.is_recording():
         return
-    ### YOUR CODE HERE (HW2)
-    raise NotImplementedError(
-        "HW2: add authenticated caller and permission attributes to the tool span"
-    )
+    span.set_attribute("cartwheel.user_role", ctx.role)
+    span.set_attribute("cartwheel.user_id", str(ctx.user_id))
+    if ctx.store_id is not None:
+        span.set_attribute("cartwheel.store_id", str(ctx.store_id))
+    # Every failure's error code, not just the permission denials below, so
+    # Module 2 can group by failure mode instead of only counting denials.
+    # Beyond the handout's list; additive, so the smoke report and the
+    # analysis normalizer are unaffected.
+    if isinstance(result, dict) and result.get("ok") is False:
+        span.set_attribute("cartwheel.tool_error", result.get("error") or "unknown")
+    # Deliberately no span.set_status(StatusCode.ERROR) on a failed result. A
+    # permission denial, an ineligible refund, and a paused write tool are all
+    # the system working correctly; recording them as span errors would make
+    # every guardrail look like an outage in error-rate dashboards. The
+    # cartwheel.* attributes carry the decision instead.
+    _set_permission_denied_attributes(span, result)
 
 
 def _set_permission_denied_attributes(
@@ -149,5 +161,13 @@ def _set_permission_denied_attributes(
     the smoke report counts them and Module 3 asserts on them. This is the one place in the
     course where you touch instrumentation by hand.
     """
-    ### YOUR CODE HERE (HW2)
-    raise NotImplementedError("HW2: set the cartwheel.permission_denied span attribute")
+    # A real bool, never str(): reports/smoke.sql counts denials with
+    # JSONExtractString(...) = 'true', which a Python bool serializes to and
+    # "True" does not. isinstance keeps a non-dict result from raising here,
+    # because this runs after the tool has already committed its writes.
+    denied = isinstance(result, dict) and result.get("error") == "permission_denied"
+    span.set_attribute("cartwheel.permission_denied", denied)
+    if denied:
+        span.set_attribute(
+            "cartwheel.permission_denied.reason", result.get("reason") or ""
+        )
