@@ -100,8 +100,11 @@ def test_merchant_denial_records_store_and_reason(record_on_span: Recorder) -> N
 
     assert span.attributes["cartwheel.user_role"] == "merchant"
     assert span.attributes["cartwheel.user_id"] == "9002"
-    assert span.attributes["cartwheel.store_id"] == 2  # int, not "2"
-    assert isinstance(span.attributes["cartwheel.store_id"], int)
+    # A string, per the HW2 contract. OTLP encodes int64 as a quoted string,
+    # so an int attribute reached Langfuse as "2" anyway; sending a string
+    # makes the stored value match what was sent.
+    assert span.attributes["cartwheel.store_id"] == "2"
+    assert isinstance(span.attributes["cartwheel.store_id"], str)
     assert span.attributes["cartwheel.permission_denied"] is True
     assert span.attributes["cartwheel.permission_denied.reason"] == result["reason"]
     assert span.attributes["cartwheel.tool_error"] == "permission_denied"
@@ -385,6 +388,7 @@ def test_root_span_records_the_authenticated_identity(server_app, traced_server)
 
     _response, span = post(session)
 
+    assert span.attributes["cartwheel.session_id"] == session["session_id"]
     assert span.attributes["cartwheel.user_role"] == "merchant"
     assert span.attributes["cartwheel.user_id"] == "9002"
     assert span.attributes["cartwheel.prompt_version"] == prompt_version()
