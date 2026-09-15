@@ -219,6 +219,37 @@ review rather than in tuples, and they're `human_judgment` criteria:
 
 ---
 
+## Style anchors (written by Ankur, 2026-09-15)
+
+Human-written examples of how users actually type. Every generation call reads these, as
+`SKILL.md` Step 5 and the lecture recommend, because generated users otherwise come out too
+polite and grammatical.
+
+| `user_style` | Example |
+|---|---|
+| `terse_fragmentary` | "I don't want my vase" |
+| `repetitive_pressuring` | "I've tried to return these headphones 5 times already and keep getting the run around -- can you just give me my money back?" |
+| `frustrated_impatient` | "I don't want to talk to an agent, I just want to return the jacket I bought" |
+| `typo_heavy` | "can i get refund on the blu speakr i got" |
+
+**Rules for using them:**
+
+- **Copy the voice, not the content.** Anchors set tone, spelling, and length. They don't set
+  what information is present: that comes from the tuple's `difficulty`. A `well_specified`
+  scenario names the item even when it's typed badly. Only `ambiguous` and
+  `missing_information` scenarios leave details out on purpose.
+- **Don't reuse an anchor's wording or products.** The critic pass rejects conversations that
+  share a template opening, and an anchor copied 30 times is a template.
+- **No hidden facts.** No order numbers a shopper wouldn't type, exact dates, dollar amounts,
+  return windows, or policy names.
+- **Styles without an anchor** use the skill's examples (`neutral_conversational`) or are
+  extrapolated from the anchors above (`confused_rambling`, `operational_shorthand`,
+  `requests_short_plain_answer`). Prioritize extrapolated styles in the conversation review.
+  `operational_shorthand` is a merchant or support voice and should read like staff jargon, not
+  a shopper.
+
+---
+
 ## Decisions (2026-09-15)
 
 1. **Accepted** every added value.
