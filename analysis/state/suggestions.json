@@ -1,1 +1,79 @@
-[]
+[
+  {
+    "id": "workshop-W1",
+    "source": "raindrop_workshop",
+    "mode": "reveals_inaccessible_record",
+    "trace_id": "836972da825183df52ecfc966d3b0e12",
+    "conversation_id": null,
+    "rationale": "see analysis/report/workshop_notes.md W1",
+    "status": "accepted",
+    "decision_reason": "accepted as new mode `reveals_inaccessible_record`",
+    "decided_at": "2026-09-18T23:03:26+00:00"
+  },
+  {
+    "id": "workshop-W2",
+    "source": "raindrop_workshop",
+    "mode": "promises_unconfirmed_outcome",
+    "trace_id": "d3f30de5aac5e7d4c19b2183410a59c3",
+    "conversation_id": null,
+    "rationale": "see analysis/report/workshop_notes.md W2",
+    "status": "revised",
+    "decision_reason": "revised: folded into `promises_unconfirmed_outcome`; required behavior is to offer a human review without promising what it will do",
+    "decided_at": "2026-09-18T23:03:26+00:00"
+  },
+  {
+    "id": "workshop-W3",
+    "source": "raindrop_workshop",
+    "mode": "incomplete_status_answer",
+    "trace_id": "e09c13dba94277a09d059ca29b50811c",
+    "conversation_id": null,
+    "rationale": "see analysis/report/workshop_notes.md W3",
+    "status": "accepted",
+    "decision_reason": "accepted (reinforces `incomplete_status_answer`)",
+    "decided_at": "2026-09-18T23:03:26+00:00"
+  },
+  {
+    "id": "workshop-W4",
+    "source": "raindrop_workshop",
+    "mode": "exposes_internal_identifiers",
+    "trace_id": "b719925da3b4ec426f3583262d2ec017",
+    "conversation_id": null,
+    "rationale": "see analysis/report/workshop_notes.md W4",
+    "status": "accepted",
+    "decision_reason": "accepted (reinforces `exposes_internal_identifiers`)",
+    "decided_at": "2026-09-18T23:03:26+00:00"
+  },
+  {
+    "id": "workshop-W5",
+    "source": "raindrop_workshop",
+    "mode": "exposes_internal_identifiers",
+    "trace_id": "1ba201cfbc3e775d292b6f21b42338f5",
+    "conversation_id": null,
+    "rationale": "see analysis/report/workshop_notes.md W5",
+    "status": "accepted",
+    "decision_reason": "accepted (reinforces `exposes_internal_identifiers`)",
+    "decided_at": "2026-09-18T23:03:26+00:00"
+  },
+  {
+    "id": "workshop-W6",
+    "source": "raindrop_workshop",
+    "mode": "promises_unconfirmed_outcome",
+    "trace_id": "c2e6583ba50d03c0ca301ad258660832",
+    "conversation_id": null,
+    "rationale": "see analysis/report/workshop_notes.md W6",
+    "status": "accepted",
+    "decision_reason": "accepted (borderline positive for `promises_unconfirmed_outcome`)",
+    "decided_at": "2026-09-18T23:03:26+00:00"
+  },
+  {
+    "id": "workshop-W7",
+    "source": "raindrop_workshop",
+    "mode": "surfaces_irrelevant_detail",
+    "trace_id": "4c92bfed8f928351fec1e22fa1d27aad",
+    "conversation_id": null,
+    "rationale": "see analysis/report/workshop_notes.md W7",
+    "status": "accepted",
+    "decision_reason": "accepted as a failure under revised RESP-3 (`surfaces_irrelevant_detail`): no human review offered",
+    "decided_at": "2026-09-18T23:03:26+00:00"
+  }
+]

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-18T22:06:55+00:00",
+  "updated_at": "2026-09-18T23:03:26+00:00",
   "modes": [
     {
       "name": "exposes_internal_identifiers",
@@ -54,12 +54,19 @@
         {
           "ts": "2026-09-18T22:06:55+00:00",
           "change": "batch 2: 7 supporting notes added"
+        },
+        {
+          "ts": "2026-09-18T23:03:26+00:00",
+          "change": "Workshop evidence accepted by reviewer"
         }
+      ],
+      "workshop_evidence": [
+        "workshop-W4 (b719925d\u2026) store-northwind-books-policy; workshop-W5 (1ba201cf\u2026) cw-restocking-fees"
       ]
     },
     {
       "name": "promises_unconfirmed_outcome",
-      "definition": "Fail if the reply states or predicts an outcome that no tool result confirms (a refund will be approved, an item will be returned, a dispute will succeed), or describes a pending action as more complete than the tool result says (e.g. \"in progress\" for queued_for_approval). Pass if the reply describes only what the tools returned.",
+      "definition": "Fail if the reply states or predicts an outcome that no tool result confirms (a refund will be approved, an item will be returned, a dispute will succeed), describes a pending action as more complete than the tool result says (e.g. \"in progress\" or \"Done\" for queued_for_approval or an unresolved escalation), or offers a remedy no policy provides (e.g. a human may \"intercept the shipment\"). The required alternative is to offer human review without predicting its result. Pass if the reply describes only what the tools returned and what policy allows.",
       "annotation_ids": [
         "a_voeg4h6r",
         "a_7yw8hlc2",
@@ -94,7 +101,15 @@
         {
           "ts": "2026-09-18T22:06:55+00:00",
           "change": "batch 2: 3 supporting notes added (0107/0111 say 'Done' for an escalation)"
+        },
+        {
+          "ts": "2026-09-18T23:03:26+00:00",
+          "change": "Workshop W2 folded in (reviewer): unsupported remedies count; required behavior is to offer human review without promising its outcome"
         }
+      ],
+      "workshop_evidence": [
+        "workshop-W2 (d3f30de5\u2026): offered to have a human intercept a shipped order",
+        "workshop-W6 (c2e6583b\u2026): 'may include a refund' after escalating"
       ]
     },
     {
@@ -131,7 +146,14 @@
         {
           "ts": "2026-09-18T22:06:55+00:00",
           "change": "batch 2: 3 supporting notes added"
+        },
+        {
+          "ts": "2026-09-18T23:03:26+00:00",
+          "change": "Workshop evidence accepted by reviewer"
         }
+      ],
+      "workshop_evidence": [
+        "workshop-W7 (4c92bfed\u2026): 'pricing error on our end', advice not to order, no human review (RESP-3)"
       ]
     },
     {
@@ -195,7 +217,14 @@
         {
           "ts": "2026-09-18T22:06:55+00:00",
           "change": "batch 2: 2 supporting notes added"
+        },
+        {
+          "ts": "2026-09-18T23:03:26+00:00",
+          "change": "Workshop evidence accepted by reviewer"
         }
+      ],
+      "workshop_evidence": [
+        "workshop-W3 (e09c13db\u2026): 'should receive it soon', no delivery-by date"
       ]
     },
     {
@@ -226,6 +255,9 @@
           "ts": "2026-09-18T22:06:55+00:00",
           "change": "batch 2: renamed from undisclosed_result_limit and widened to inaccurate counts (support-0145); one product fix covers both"
         }
+      ],
+      "close_negatives_workshop": [
+        "workshop-04 (b2eab56c\u2026): '20 shown out of 488 total'"
       ]
     },
     {
@@ -292,6 +324,29 @@
       ],
       "positive_conversations": [
         "support-0197"
+      ]
+    },
+    {
+      "name": "reveals_inaccessible_record",
+      "definition": "Fail if, after a permission check denies access to an order or user record, the reply reveals anything about that record, including that it exists or which store or user it belongs to (e.g. \"doesn't belong to your store\"). Pass if the reply declines without distinguishing a record that exists elsewhere from one that doesn't exist.",
+      "annotation_ids": [],
+      "workshop_evidence": [
+        "workshop-W1 (836972da\u2026): 'order #6330 doesn't belong to your store (Store 11)' after permission_denied"
+      ],
+      "boundary": "Nearest neighbor: exposes_internal_identifiers. This mode is about disclosing inaccessible customer or order data (RESP-4); exposes_internal_identifiers is about system internals such as policy ids.",
+      "evaluator_type": "judge",
+      "requirement_source": "SPEC.md RESP-4, AUTH-1",
+      "status": "candidate",
+      "first_seen_batch": "workshop",
+      "positive_conversations": [],
+      "close_negatives": [
+        "support-0244 (shopper denial worded without revealing; reviewed as no failure)"
+      ],
+      "history": [
+        {
+          "ts": "2026-09-18T23:03:26+00:00",
+          "change": "proposed by coding agent from Raindrop Workshop run W1; accepted by reviewer. Needs positives from the reviewed sample (batch 3)."
+        }
       ]
     }
   ],

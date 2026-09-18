@@ -110,6 +110,42 @@ def setup_tracing() -> bool:
     return True
 
 
+_raindrop = None
+
+
+def setup_raindrop() -> bool:
+    """Mirror agent runs to a local Raindrop Workshop (HW4 Part C). Opt-in.
+
+    Runs only when RAINDROP_LOCAL_DEBUGGER is set (e.g. http://localhost:5899/v1/)
+    and only after instrument_genai(): OpenLLMetry replaces the SDK's trace
+    processors, so a Raindrop processor added before it would be dropped. The
+    server calls this after setup_tracing(); the CLI and tests never do.
+    Adds Raindrop's processor to the Agents SDK trace-processor list next to
+    OpenLLMetry's; Langfuse export is untouched. tracing_enabled=False keeps
+    Raindrop from calling Traceloop.init, which would set up a second OTel
+    pipeline. Without a Raindrop cloud key, this version records each run's
+    input, final output, and model, but not tool spans.
+    """
+    global _raindrop
+    if _raindrop is not None:
+        return True
+    if not os.environ.get("RAINDROP_LOCAL_DEBUGGER", "").strip():
+        return False
+    if not _genai_instrumented:
+        log.warning("Raindrop mirror skipped: Langfuse tracing is not set up")
+        return False
+    import warnings
+
+    from raindrop_openai_agents import RaindropOpenAIAgents
+
+    with warnings.catch_warnings():
+        # Expected in local-only mode: no cloud write key, so cloud shipping is off.
+        warnings.filterwarnings("ignore", message=r".*api_key not provided.*")
+        _raindrop = RaindropOpenAIAgents(user_id="cartwheel-dev", tracing_enabled=False)
+    log.info("Raindrop Workshop mirror enabled at %s", os.environ["RAINDROP_LOCAL_DEBUGGER"])
+    return True
+
+
 def record_tool_result(ctx: "AuthContext", result: dict[str, Any]) -> None:
     """Add authenticated identity and permission attributes to the active tool span.
 
