@@ -46,6 +46,14 @@ from observability.instrument import load_env, setup_tracing
 
 MAX_TURNS = 12  # cap runaway loops; keeps conversations bounded
 SESSIONS_DB = REPO_ROOT / ".sessions.db"
+# Cap on live sessions. Each SQLiteSession holds its own connection to
+# SESSIONS_DB, so an uncapped dict leaks a file descriptor (several, once the
+# session is used from more than one worker thread) per conversation. A
+# 250-scenario evaluation run exhausted macOS's default 256-descriptor limit
+# after 47 conversations, and every later request failed with
+# "unable to open database file". Evicting the least recently used session
+# keeps the descriptor count flat for a run of any length.
+MAX_ACTIVE_SESSIONS = 50
 
 _tracer = trace.get_tracer("cartwheel.server")
 
@@ -60,8 +68,28 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
 app = FastAPI(title="Cartwheel support agent", lifespan=lifespan)
 
 # session_id -> (AuthContext, SQLiteSession). In-memory on purpose: the trace
-# store is the durable record, not this dict.
+# store is the durable record, not this dict. Ordered by least recently used:
+# insertion order is the eviction order, and _touch_session moves an active
+# session back to the end.
 _SESSIONS: dict[str, tuple[AuthContext, SQLiteSession]] = {}
+
+
+def _evict_sessions(limit: int = MAX_ACTIVE_SESSIONS) -> None:
+    """Close and drop the least recently used sessions above `limit`.
+
+    Closing releases the session's SQLite connections; the conversation itself
+    survives in the trace store. An evicted session id then fails _authorize
+    the same way an unknown one does.
+    """
+    while len(_SESSIONS) > limit:
+        _session_id, (_ctx, session) = next(iter(_SESSIONS.items()))
+        del _SESSIONS[_session_id]
+        session.close()
+
+
+def _touch_session(session_id: str) -> None:
+    """Mark a session as most recently used, so traffic keeps it alive."""
+    _SESSIONS[session_id] = _SESSIONS.pop(session_id)
 
 
 # ---------------------------------------------------------------------------
@@ -161,6 +189,7 @@ def create_session(body: SessionCreate) -> dict[str, Any]:
     ctx = AuthContext(user_id=user.id, role=user.role, store_id=user.store_id)
     session_id = uuid.uuid4().hex
     _SESSIONS[session_id] = (ctx, SQLiteSession(session_id, str(SESSIONS_DB)))
+    _evict_sessions()
     token = create_token(
         {
             "session_id": session_id,
@@ -207,7 +236,11 @@ def _authorize(session_id: str, authorization: str | None) -> AuthContext:
     if payload.get("session_id") != session_id:
         raise HTTPException(status_code=403, detail="token is for another session")
     if session_id not in _SESSIONS:
-        raise HTTPException(status_code=404, detail="unknown session (server restarted?)")
+        raise HTTPException(
+            status_code=404,
+            detail="unknown session (server restarted, or the session was evicted?)",
+        )
+    _touch_session(session_id)
     return _SESSIONS[session_id][0]
 
 

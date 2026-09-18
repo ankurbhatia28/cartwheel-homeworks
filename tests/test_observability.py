@@ -533,3 +533,51 @@ def test_unauthorized_request_creates_no_span(server_app, traced_server) -> None
 
     assert [s for s in exporter.get_finished_spans()
             if s.name == "cartwheel.session_message"] == []
+
+
+# ---------------------------------------------------------------------------
+# Session lifetime. Found by running 250 scenarios: every session kept its own
+# SQLiteSession open, so the server ran out of file descriptors after 47
+# conversations. These stay offline; no server, no model, no Langfuse.
+# ---------------------------------------------------------------------------
+
+
+def test_sessions_are_capped_and_evicted_sessions_are_closed(server_app) -> None:
+    """Above the cap, the least recently used session is closed and dropped."""
+    limit = server_app.MAX_ACTIVE_SESSIONS
+    first = _open_session(server_app, 1, "shopper")
+    _ctx, first_session = server_app._SESSIONS[first["session_id"]]
+
+    for _ in range(limit):
+        _open_session(server_app, 1, "shopper")
+
+    assert len(server_app._SESSIONS) == limit
+    assert first["session_id"] not in server_app._SESSIONS
+    # The evicted session released its SQLite connections; the conversation
+    # itself lives in the trace store, not here.
+    assert first_session._closed is True
+
+
+def test_an_evicted_session_is_rejected_like_an_unknown_one(server_app) -> None:
+    evicted = _open_session(server_app, 1, "shopper")
+    for _ in range(server_app.MAX_ACTIVE_SESSIONS):
+        _open_session(server_app, 1, "shopper")
+
+    with pytest.raises(HTTPException) as exc:
+        server_app._authorize(evicted["session_id"], f"Bearer {evicted['token']}")
+    assert exc.value.status_code == 404
+
+
+def test_recent_traffic_keeps_a_session_alive(server_app) -> None:
+    """Eviction is least-recently-used, so an active session is not dropped."""
+    keep = _open_session(server_app, 1, "shopper")
+    for _ in range(server_app.MAX_ACTIVE_SESSIONS - 1):
+        _open_session(server_app, 1, "shopper")
+
+    # Using the oldest session moves it to the newest end of the queue.
+    server_app._authorize(keep["session_id"], f"Bearer {keep['token']}")
+    newer = _open_session(server_app, 9002, "merchant")
+
+    assert keep["session_id"] in server_app._SESSIONS
+    assert newer["session_id"] in server_app._SESSIONS
+    assert len(server_app._SESSIONS) == server_app.MAX_ACTIVE_SESSIONS
