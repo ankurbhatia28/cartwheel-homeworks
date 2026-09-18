@@ -1,0 +1,353 @@
+{
+  "unit": "conversation (cartwheel.session_id)",
+  "population": {
+    "conversations": 250,
+    "traces": 276,
+    "source": "HW3 final run, Langfuse 2026-09-16 00:40-01:45 UTC"
+  },
+  "batches": [
+    {
+      "id": "batch1",
+      "method": "15 uniform random + 15 cluster representatives",
+      "seed": 20260918,
+      "created_at": "2026-09-18T19:25:48+00:00",
+      "size": 30,
+      "cluster_config": "analysis/state/graph.json (KMeans k=8, seed 7, on role, intent, tools, flags, turns, latency)"
+    }
+  ],
+  "conversations": [
+    {
+      "id": "7648ecfc7cd1499fa12140791df2acee",
+      "scenario_id": "support-0077",
+      "trace_ids": [
+        "9c875f868d68edc3efa79b96edb7da29"
+      ],
+      "batch": "batch1",
+      "method": "cluster_representative",
+      "reason": "cluster c6, #2 closest to centroid",
+      "added_at": "2026-09-18T19:25:48+00:00"
+    },
+    {
+      "id": "ac3bb0a34d524d2ead9f10481936b6c0",
+      "scenario_id": "support-0005",
+      "trace_ids": [
+        "4f801001f3802ea4f1c08398b05bfc69"
+      ],
+      "batch": "batch1",
+      "method": "uniform",
+      "reason": "uniform random draw, seed 20260918",
+      "added_at": "2026-09-18T19:25:48+00:00"
+    },
+    {
+      "id": "6da1c27928324d38b5c166bdb07ede85",
+      "scenario_id": "support-0024",
+      "trace_ids": [
+        "ca4c2b74e49543098c4e5da57c758b54"
+      ],
+      "batch": "batch1",
+      "method": "cluster_representative",
+      "reason": "cluster c7, #1 closest to centroid",
+      "added_at": "2026-09-18T19:25:48+00:00"
+    },
+    {
+      "id": "bb794f532ade46cc928b0fe626062912",
+      "scenario_id": "support-0092",
+      "trace_ids": [
+        "a2c38b7ab65cad6c93626842be0401a5"
+      ],
+      "batch": "batch1",
+      "method": "cluster_representative",
+      "reason": "cluster c3, #1 closest to centroid",
+      "added_at": "2026-09-18T19:25:48+00:00"
+    },
+    {
+      "id": "bdff31db5443484cb31a92a3ff53ea70",
+      "scenario_id": "support-0183",
+      "trace_ids": [
+        "c382b33c582c02b6a50d1e7f53344d1c"
+      ],
+      "batch": "batch1",
+      "method": "cluster_representative",
+      "reason": "cluster c2, #2 closest to centroid",
+      "added_at": "2026-09-18T19:25:48+00:00"
+    },
+    {
+      "id": "0a60a3dfbbf544418298aa44d685b2db",
+      "scenario_id": "support-0115",
+      "trace_ids": [
+        "f61b6b6d049752a8bc32f254f3cdf0d0"
+      ],
+      "batch": "batch1",
+      "method": "cluster_representative",
+      "reason": "cluster c4, #1 closest to centroid",
+      "added_at": "2026-09-18T19:25:48+00:00"
+    },
+    {
+      "id": "edf4a43cb63b43f7b55807b92243695d",
+      "scenario_id": "support-0201",
+      "trace_ids": [
+        "3e3f10d4b3405d32976c6706a3358bbb"
+      ],
+      "batch": "batch1",
+      "method": "uniform",
+      "reason": "uniform random draw, seed 20260918",
+      "added_at": "2026-09-18T19:25:48+00:00"
+    },
+    {
+      "id": "7d0966d61b3648e88314eb67631be160",
+      "scenario_id": "support-0084",
+      "trace_ids": [
+        "70d6cf1c37d1fe669f6b67997213bcf2"
+      ],
+      "batch": "batch1",
+      "method": "cluster_representative",
+      "reason": "cluster c3, #2 closest to centroid",
+      "added_at": "2026-09-18T19:25:48+00:00"
+    },
+    {
+      "id": "9e0d628226c54d3f9b0e43bd0749a408",
+      "scenario_id": "support-0140",
+      "trace_ids": [
+        "a0d563363d7902c7d78a17abb137ecff"
+      ],
+      "batch": "batch1",
+      "method": "uniform",
+      "reason": "uniform random draw, seed 20260918",
+      "added_at": "2026-09-18T19:25:48+00:00"
+    },
+    {
+      "id": "93c67a4311f14b1b994843044a1bb1f9",
+      "scenario_id": "support-0122",
+      "trace_ids": [
+        "b46cbead23298c4b0fd98a8e6e390331"
+      ],
+      "batch": "batch1",
+      "method": "cluster_representative",
+      "reason": "cluster c0, #1 closest to centroid",
+      "added_at": "2026-09-18T19:25:48+00:00"
+    },
+    {
+      "id": "42925af765ff4a8aa452bc898ae3acdc",
+      "scenario_id": "support-0041",
+      "trace_ids": [
+        "53a03c5e009863c6e92fc9d701a2e5f5"
+      ],
+      "batch": "batch1",
+      "method": "cluster_representative",
+      "reason": "cluster c5, #1 closest to centroid",
+      "added_at": "2026-09-18T19:25:48+00:00"
+    },
+    {
+      "id": "5eff9c62a8bf41529cbb287668432186",
+      "scenario_id": "support-0098",
+      "trace_ids": [
+        "faf8226295be48d078f773e0fc2ac999"
+      ],
+      "batch": "batch1",
+      "method": "uniform",
+      "reason": "uniform random draw, seed 20260918",
+      "added_at": "2026-09-18T19:25:48+00:00"
+    },
+    {
+      "id": "11d602332f90475faf3f9056929224cb",
+      "scenario_id": "support-0113",
+      "trace_ids": [
+        "d22d61ecbfa2d980f87dfc241ea19595"
+      ],
+      "batch": "batch1",
+      "method": "uniform",
+      "reason": "uniform random draw, seed 20260918",
+      "added_at": "2026-09-18T19:25:48+00:00"
+    },
+    {
+      "id": "e8894a5f65bb4aff9542b434d168720e",
+      "scenario_id": "support-0042",
+      "trace_ids": [
+        "a57fe48010dc8e00708643d594816c33"
+      ],
+      "batch": "batch1",
+      "method": "uniform",
+      "reason": "uniform random draw, seed 20260918",
+      "added_at": "2026-09-18T19:25:48+00:00"
+    },
+    {
+      "id": "35e6316b61a142f8b0a00ab47de37ceb",
+      "scenario_id": "support-0067",
+      "trace_ids": [
+        "9dfeb792d83aaa6d8cd8390f4b984fbb"
+      ],
+      "batch": "batch1",
+      "method": "cluster_representative",
+      "reason": "cluster c6, #1 closest to centroid",
+      "added_at": "2026-09-18T19:25:48+00:00"
+    },
+    {
+      "id": "b18a0f99224c4d20b5dc36c90e31ebe4",
+      "scenario_id": "support-0117",
+      "trace_ids": [
+        "aa3e856bed8854d4f11a59e8d72e0c75"
+      ],
+      "batch": "batch1",
+      "method": "cluster_representative",
+      "reason": "cluster c0, #2 closest to centroid",
+      "added_at": "2026-09-18T19:25:48+00:00"
+    },
+    {
+      "id": "5aa412ad35604279a4fc25af5027edb0",
+      "scenario_id": "support-0203",
+      "trace_ids": [
+        "974c66468124d531653471c029304889"
+      ],
+      "batch": "batch1",
+      "method": "uniform",
+      "reason": "uniform random draw, seed 20260918",
+      "added_at": "2026-09-18T19:25:48+00:00"
+    },
+    {
+      "id": "e6f2828396fa4bddbcf79c9ada8b4243",
+      "scenario_id": "support-0171",
+      "trace_ids": [
+        "affed0f54159195bc1b9a210e6ecdc8b"
+      ],
+      "batch": "batch1",
+      "method": "uniform",
+      "reason": "uniform random draw, seed 20260918",
+      "added_at": "2026-09-18T19:25:48+00:00"
+    },
+    {
+      "id": "52931076b6ae44c7bf9ff4bf74212407",
+      "scenario_id": "support-0244",
+      "trace_ids": [
+        "718bdf7235613c5d6c06ca8bbb9b2c4c"
+      ],
+      "batch": "batch1",
+      "method": "uniform",
+      "reason": "uniform random draw, seed 20260918",
+      "added_at": "2026-09-18T19:25:48+00:00"
+    },
+    {
+      "id": "73313aa30f56424ab3daa540116241c9",
+      "scenario_id": "support-0219",
+      "trace_ids": [
+        "cb00bd991792e6695bf00c1d617d8bbd",
+        "bebf67d8083c185f4bffdba50125265e"
+      ],
+      "batch": "batch1",
+      "method": "uniform",
+      "reason": "uniform random draw, seed 20260918",
+      "added_at": "2026-09-18T19:25:48+00:00"
+    },
+    {
+      "id": "85e2957e58454e7ab149c8e6a5cbb728",
+      "scenario_id": "support-0216",
+      "trace_ids": [
+        "fa54c20bd1503495a3ed498a01bfe7c1",
+        "7116a1e609e42c76a4d8375be9dfbb93"
+      ],
+      "batch": "batch1",
+      "method": "cluster_representative",
+      "reason": "cluster c1, #1 closest to centroid",
+      "added_at": "2026-09-18T19:25:48+00:00"
+    },
+    {
+      "id": "a8a0af39811744b2a015ec6a4c085d46",
+      "scenario_id": "support-0081",
+      "trace_ids": [
+        "c3afb629e3f44d4a43a6e0445b29e4ad"
+      ],
+      "batch": "batch1",
+      "method": "uniform",
+      "reason": "uniform random draw, seed 20260918",
+      "added_at": "2026-09-18T19:25:48+00:00"
+    },
+    {
+      "id": "d4587aff33d441278686c188b9a41fb4",
+      "scenario_id": "support-0129",
+      "trace_ids": [
+        "938d525f70a90ad1671b43f1bd4ee9ee"
+      ],
+      "batch": "batch1",
+      "method": "uniform",
+      "reason": "uniform random draw, seed 20260918",
+      "added_at": "2026-09-18T19:25:48+00:00"
+    },
+    {
+      "id": "7eb15b45ee844b84ad16c12ff3d9d668",
+      "scenario_id": "support-0010",
+      "trace_ids": [
+        "dbfe29dd753614621722cf9824f491c7"
+      ],
+      "batch": "batch1",
+      "method": "cluster_representative",
+      "reason": "cluster c7, #2 closest to centroid",
+      "added_at": "2026-09-18T19:25:48+00:00"
+    },
+    {
+      "id": "ce128687ea0b4cce8d1845d944e0496b",
+      "scenario_id": "support-0247",
+      "trace_ids": [
+        "2e470305d0c11babd423d23ff0f75071"
+      ],
+      "batch": "batch1",
+      "method": "cluster_representative",
+      "reason": "cluster c4, #2 closest to centroid",
+      "added_at": "2026-09-18T19:25:48+00:00"
+    },
+    {
+      "id": "a01b4bac9bc74dfea7d02faae6152700",
+      "scenario_id": "support-0050",
+      "trace_ids": [
+        "ecb37f83590611e0b2788951395b1670"
+      ],
+      "batch": "batch1",
+      "method": "uniform",
+      "reason": "uniform random draw, seed 20260918",
+      "added_at": "2026-09-18T19:25:48+00:00"
+    },
+    {
+      "id": "d0d95316922f425a9da013a6029042c0",
+      "scenario_id": "support-0198",
+      "trace_ids": [
+        "db471ca3d749ec41be83369e12a3f2b5"
+      ],
+      "batch": "batch1",
+      "method": "uniform",
+      "reason": "uniform random draw, seed 20260918",
+      "added_at": "2026-09-18T19:25:48+00:00"
+    },
+    {
+      "id": "6e0b9f1943c243f08147a22c22bd46c4",
+      "scenario_id": "support-0218",
+      "trace_ids": [
+        "d71914f097c24a4614bd6612a8e6f875",
+        "5b1719562ebed4997a0d6558a7a63c13"
+      ],
+      "batch": "batch1",
+      "method": "cluster_representative",
+      "reason": "cluster c1, #2 closest to centroid",
+      "added_at": "2026-09-18T19:25:48+00:00"
+    },
+    {
+      "id": "333bc1a3130040cea510ebfec3826e4e",
+      "scenario_id": "support-0226",
+      "trace_ids": [
+        "476539a81c695d8f2565ca6ceb3a81c0"
+      ],
+      "batch": "batch1",
+      "method": "uniform",
+      "reason": "uniform random draw, seed 20260918",
+      "added_at": "2026-09-18T19:25:48+00:00"
+    },
+    {
+      "id": "1e8700c7d45148e295b43f1202b7bde1",
+      "scenario_id": "support-0034",
+      "trace_ids": [
+        "963fe3cf7aaa1b15762c436818cd2806"
+      ],
+      "batch": "batch1",
+      "method": "cluster_representative",
+      "reason": "cluster c2, #1 closest to centroid",
+      "added_at": "2026-09-18T19:25:48+00:00"
+    }
+  ]
+}
