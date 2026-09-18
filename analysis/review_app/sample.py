@@ -6,10 +6,11 @@ manifest (no conversation counts toward two batches), and shuffles the review
 order so the reviewer can't tell which method picked a conversation.
 
     uv run python analysis/review_app/sample.py batch1            # 15 uniform + 15 cluster reps
+    uv run python analysis/review_app/sample.py stratified --batch batch2 --dimension intent --per 3 --seed 2
     uv run python analysis/review_app/sample.py uniform --batch batch4 --k 15 --seed 4
 
-Batches 2 and 3 are chosen by the reviewer (a dimension picked in advance,
-then depth searches), so they're added with ``add --batch ... --ids ...``.
+Batch 3 (depth searches for candidate modes and close negatives) is chosen
+by the reviewer, so it's added with ``add --batch ... --ids ...``.
 """
 
 from __future__ import annotations
@@ -105,6 +106,39 @@ def uniform(batch_id: str, k: int, seed: int) -> None:
     print(f"{batch_id}: {k} uniform -> {MANIFEST.relative_to(REPO)}")
 
 
+def _dimension_value(conv: dict[str, Any], dimension: str) -> str:
+    if dimension == "role":
+        return conv["role"]
+    if dimension == "group":
+        return conv["scenario"]["group"]
+    return str(conv["scenario"]["tuple"].get(dimension))
+
+
+def stratified(batch_id: str, dimension: str, per_value: int, seed: int) -> None:
+    """Batch 2: a dimension chosen before looking at outcomes, spread evenly
+    across its values, with a seeded uniform draw inside each value."""
+    manifest, convs = _load_manifest(), _conversations()
+    if any(b["id"] == batch_id for b in manifest["batches"]):
+        raise SystemExit(f"{batch_id} already exists in the manifest; not redrawing")
+    taken = {c["id"] for c in manifest["conversations"]}
+    strata: dict[str, list[str]] = {}
+    for conv_id in sorted(convs):
+        if conv_id not in taken:
+            strata.setdefault(_dimension_value(convs[conv_id], dimension), []).append(conv_id)
+    rng = random.Random(seed)
+    entries = []
+    for value in sorted(strata):
+        pool = strata[value]
+        for conv_id in rng.sample(pool, min(per_value, len(pool))):
+            entries.append(_entry(convs[conv_id], batch_id, f"stratified:{dimension}",
+                                  f"{dimension}={value}, uniform within stratum, seed {seed}"))
+    batch = {"id": batch_id, "method": f"{per_value} per {dimension} value, uniform within each value",
+             "dimension": dimension, "values": sorted(strata), "seed": seed, "created_at": _now(),
+             "size": len(entries)}
+    _save(manifest, batch, entries, seed)
+    print(f"{batch_id}: {len(entries)} across {len(strata)} {dimension} values -> {MANIFEST.relative_to(REPO)}")
+
+
 def add(batch_id: str, method: str, scenario_ids: list[str], reason: str) -> None:
     manifest, convs = _load_manifest(), _conversations()
     by_scenario = {c["scenario_id"]: c for c in convs.values()}
@@ -136,6 +170,11 @@ def main() -> None:
     u.add_argument("--batch", required=True)
     u.add_argument("--k", type=int, default=15)
     u.add_argument("--seed", type=int, required=True)
+    st = sub.add_parser("stratified")
+    st.add_argument("--batch", required=True)
+    st.add_argument("--dimension", required=True, help="role, group, or a tuple field such as intent")
+    st.add_argument("--per", type=int, required=True)
+    st.add_argument("--seed", type=int, required=True)
     a = sub.add_parser("add")
     a.add_argument("--batch", required=True)
     a.add_argument("--method", required=True)
@@ -144,6 +183,8 @@ def main() -> None:
     args = p.parse_args()
     if args.cmd == "batch1":
         batch1(args.uniform, args.cluster, args.seed)
+    elif args.cmd == "stratified":
+        stratified(args.batch, args.dimension, args.per, args.seed)
     elif args.cmd == "uniform":
         uniform(args.batch, args.k, args.seed)
     else:

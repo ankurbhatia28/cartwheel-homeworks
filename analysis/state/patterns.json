@@ -1,1 +1,327 @@
-{"modes": []}
+{
+  "updated_at": "2026-09-18T22:06:55+00:00",
+  "modes": [
+    {
+      "name": "exposes_internal_identifiers",
+      "definition": "Fail if the reply shown to the user contains a raw internal identifier or mechanic: a policy id (e.g. cw-returns, store-\u2026-policy), a tool or function name, or a description of how the system works internally (\"the tool gave me\u2026\"). Pass if policies are cited in plain language and no internals appear.",
+      "annotation_ids": [
+        "a_ngq7fom7",
+        "a_003j8cni",
+        "a_2wz42crq",
+        "a_lg8cunrn",
+        "a_94rgc5d2",
+        "a_4glzovwr",
+        "a_tw9mp2sz",
+        "a_toruaibi",
+        "a_ljpo6yfy",
+        "a_c906asl1",
+        "a_5s95u3cr",
+        "a_ti2td51x",
+        "a_rdahzkrm",
+        "a_qslvy3vf",
+        "a_cbs4wysm",
+        "a_5zaoy6p9"
+      ],
+      "boundary": "Nearest neighbor: surfaces_irrelevant_detail. This mode is about identifiers and internal mechanics (checkable by pattern); irrelevant but user-level detail (dates, data glitches) belongs to surfaces_irrelevant_detail.",
+      "evaluator_type": "code",
+      "requirement_source": "SPEC.md RESP-1 (revised in HW4: plain-language citation, no raw ids in replies)",
+      "status": "candidate",
+      "first_seen_batch": "batch1",
+      "positive_conversations": [
+        "support-0022",
+        "support-0024",
+        "support-0034",
+        "support-0052",
+        "support-0056",
+        "support-0058",
+        "support-0067",
+        "support-0077",
+        "support-0079",
+        "support-0098",
+        "support-0168",
+        "support-0198",
+        "support-0216",
+        "support-0219",
+        "support-0236",
+        "support-0247"
+      ],
+      "close_negatives": [],
+      "history": [
+        {
+          "ts": "2026-09-18T20:12:52+00:00",
+          "change": "proposed by agent from batch 1 open codes; accepted by reviewer"
+        },
+        {
+          "ts": "2026-09-18T22:06:55+00:00",
+          "change": "batch 2: 7 supporting notes added"
+        }
+      ]
+    },
+    {
+      "name": "promises_unconfirmed_outcome",
+      "definition": "Fail if the reply states or predicts an outcome that no tool result confirms (a refund will be approved, an item will be returned, a dispute will succeed), or describes a pending action as more complete than the tool result says (e.g. \"in progress\" for queued_for_approval). Pass if the reply describes only what the tools returned.",
+      "annotation_ids": [
+        "a_voeg4h6r",
+        "a_7yw8hlc2",
+        "a_toruaibi",
+        "a_4tfa65q9",
+        "a_o1042m0l",
+        "a_5ilq6hcc",
+        "a_8guw141z",
+        "a_l5f5tagq"
+      ],
+      "boundary": "Nearest neighbor: dead_end_without_escalation. This mode is about claims beyond the evidence; dead_end is about failing to act. A reply can escalate correctly and still fail here by promising the human's decision.",
+      "evaluator_type": "judge",
+      "requirement_source": "SPEC.md RESP-2 (covers claimed success; extension to predictions pending \u2014 see open items)",
+      "status": "candidate",
+      "first_seen_batch": "batch1",
+      "positive_conversations": [
+        "support-0098",
+        "support-0107",
+        "support-0111",
+        "support-0183",
+        "support-0216",
+        "support-0217",
+        "support-0218",
+        "support-0226"
+      ],
+      "close_negatives": [],
+      "history": [
+        {
+          "ts": "2026-09-18T20:12:52+00:00",
+          "change": "proposed by agent from batch 1 open codes; accepted by reviewer"
+        },
+        {
+          "ts": "2026-09-18T22:06:55+00:00",
+          "change": "batch 2: 3 supporting notes added (0107/0111 say 'Done' for an escalation)"
+        }
+      ]
+    },
+    {
+      "name": "surfaces_irrelevant_detail",
+      "definition": "Fail if the reply includes raw data or detail that does not help the user and adds confusion, including explaining a visibly wrong record (e.g. a negative price) instead of saying it needs review by a person. Pass if the reply stays on what the user needs.",
+      "annotation_ids": [
+        "a_x9ludf7l",
+        "a_7sk2mwbu",
+        "a_xtm5g8fx",
+        "a_64tskcl4",
+        "a_g1kzyvvf",
+        "a_3r2vqyw3",
+        "a_0f91mkit"
+      ],
+      "boundary": "Nearest neighbor: exposes_internal_identifiers (see there). For a visibly wrong record, the required behavior is: say it needs human review, make no claims about the value (RESP-3 as clarified).",
+      "evaluator_type": "judge",
+      "requirement_source": "SPEC.md RESP-3 (clarified in HW4 for visibly wrong records) and RESP-5",
+      "status": "candidate",
+      "first_seen_batch": "batch1",
+      "positive_conversations": [
+        "support-0022",
+        "support-0062",
+        "support-0079",
+        "support-0198",
+        "support-0201",
+        "support-0203"
+      ],
+      "close_negatives": [],
+      "history": [
+        {
+          "ts": "2026-09-18T20:12:52+00:00",
+          "change": "proposed by agent from batch 1 open codes; accepted by reviewer"
+        },
+        {
+          "ts": "2026-09-18T22:06:55+00:00",
+          "change": "batch 2: 3 supporting notes added"
+        }
+      ]
+    },
+    {
+      "name": "missed_required_escalation",
+      "definition": "Fail if the case needs a human (a dispute, an account change, anything the agent cannot resolve or is unsure about \u2014 ESC-2/3/4) or the agent says it cannot do what the user needs, and the agent neither escalates promptly nor takes the next step it could take itself. Offering escalation only as an afterthought after handling the case itself counts as a fail. Pass if it escalates early, completes the step, or the request is out of scope.",
+      "annotation_ids": [
+        "a_3b8d2ffz",
+        "a_tw9mp2sz",
+        "a_xl9a6l30",
+        "a_c59n5f2o"
+      ],
+      "boundary": "Nearest neighbor: promises_unconfirmed_outcome. This mode is about failing to hand off or act; promising what the human will decide is promises_unconfirmed_outcome.",
+      "evaluator_type": "judge",
+      "requirement_source": "SPEC.md ESC-3, ESC-4 (and ESC-2 for account changes)",
+      "status": "candidate",
+      "first_seen_batch": "batch1",
+      "positive_conversations": [
+        "support-0034",
+        "support-0050",
+        "support-0236",
+        "support-0247"
+      ],
+      "close_negatives": [],
+      "history": [
+        {
+          "ts": "2026-09-18T20:12:52+00:00",
+          "change": "proposed by agent from batch 1 open codes; accepted by reviewer"
+        },
+        {
+          "ts": "2026-09-18T22:06:55+00:00",
+          "change": "batch 2: renamed from dead_end_without_escalation and widened to delayed escalation of cases SPEC routes to a human (support-0236)"
+        }
+      ]
+    },
+    {
+      "name": "incomplete_status_answer",
+      "definition": "Fail if an order-status reply does not tell the user what happens next or when (e.g. an expected ship or delivery date) although the order record and policy make it knowable. Pass if the next step and timing are given, or cannot be known.",
+      "annotation_ids": [
+        "a_cta6fm7a",
+        "a_umi00aij",
+        "a_3ih81d09",
+        "a_4cfz6uy6"
+      ],
+      "boundary": "Nearest neighbor: dead_end_without_escalation (see there).",
+      "evaluator_type": "judge",
+      "requirement_source": "Not yet in SPEC (cw-shipping supplies the dates) \u2014 revision pending",
+      "status": "candidate",
+      "first_seen_batch": "batch1",
+      "positive_conversations": [
+        "support-0003",
+        "support-0005",
+        "support-0006",
+        "support-0010"
+      ],
+      "close_negatives": [],
+      "history": [
+        {
+          "ts": "2026-09-18T20:12:52+00:00",
+          "change": "proposed by agent from batch 1 open codes; accepted by reviewer"
+        },
+        {
+          "ts": "2026-09-18T22:06:55+00:00",
+          "change": "batch 2: 2 supporting notes added"
+        }
+      ]
+    },
+    {
+      "name": "misstates_result_completeness",
+      "definition": "Fail if a search or list result the agent relies on is partial (capped or truncated) and the reply either presents it as complete or describes its size inaccurately (e.g. counts that don't add up to what was shown and what exists). Pass if the reply accurately says the results are partial, or the result is complete.",
+      "annotation_ids": [
+        "a_stv7fw09",
+        "a_4r09490h",
+        "a_7nsyjjll"
+      ],
+      "boundary": "Nearest neighbor: incomplete_status_answer. This mode is about partial result sets and their counts; incomplete_status_answer is about missing next-step facts for one order.",
+      "evaluator_type": "code",
+      "requirement_source": "Not yet in SPEC \u2014 revision pending (related: truncated-history weak spot)",
+      "status": "candidate",
+      "first_seen_batch": "batch1",
+      "positive_conversations": [
+        "support-0084",
+        "support-0145",
+        "support-0171"
+      ],
+      "close_negatives": [],
+      "history": [
+        {
+          "ts": "2026-09-18T20:12:52+00:00",
+          "change": "proposed by agent from batch 1 open codes; accepted by reviewer"
+        },
+        {
+          "ts": "2026-09-18T22:06:55+00:00",
+          "change": "batch 2: renamed from undisclosed_result_limit and widened to inaccurate counts (support-0145); one product fix covers both"
+        }
+      ]
+    },
+    {
+      "name": "misses_store_specific_policy",
+      "definition": "Fail if the order is from a store whose own policy changes the answer (a different return window or a restocking fee) and the reply applies only the platform policy, ignoring the store's. Pass if the store policy is applied, or the store has no override.",
+      "annotation_ids": [
+        "a_f05a02g4"
+      ],
+      "boundary": "Nearest neighbor: exposes_internal_identifiers (citation form). This mode is about using the wrong policy's substance, not how it is cited.",
+      "evaluator_type": "judge",
+      "requirement_source": "SPEC.md RESP-1; cw-store-overrides; cw-restocking-fees",
+      "status": "candidate",
+      "first_seen_batch": "batch2",
+      "close_negatives": [],
+      "history": [
+        {
+          "ts": "2026-09-18T22:06:55+00:00",
+          "change": "proposed by agent from batch 2 open codes; accepted by reviewer"
+        }
+      ],
+      "positive_conversations": [
+        "support-0233"
+      ]
+    },
+    {
+      "name": "gives_off_platform_advice",
+      "definition": "Fail if, for an out-of-scope request, the reply goes beyond declining and pointing to what Cartwheel can help with, by recommending outside resources or giving the advice anyway. Pass if it declines briefly and redirects to Cartwheel help.",
+      "annotation_ids": [
+        "a_siinwmuf"
+      ],
+      "boundary": "Close negatives: support-0105, support-0106 (declined without outside suggestions; reviewed as no failure). Nearest neighbor: surfaces_irrelevant_detail.",
+      "evaluator_type": "judge",
+      "requirement_source": "SPEC.md SCOPE-2",
+      "status": "candidate",
+      "first_seen_batch": "batch2",
+      "close_negatives": [],
+      "history": [
+        {
+          "ts": "2026-09-18T22:06:55+00:00",
+          "change": "proposed by agent from batch 2 open codes; accepted by reviewer"
+        }
+      ],
+      "positive_conversations": [
+        "support-0149"
+      ]
+    },
+    {
+      "name": "presents_missing_data_as_fact",
+      "definition": "Fail if a field the answer depends on is missing or inconsistent in the record (e.g. an empty product title, a missing delivery date) and the reply presents a value anyway without saying the data is missing or inconsistent. Pass if it states the gap (RESP-3).",
+      "annotation_ids": [
+        "a_dve4ofq0"
+      ],
+      "boundary": "Nearest neighbor: surfaces_irrelevant_detail. That mode is about adding needless detail; this one is about hiding that required data is missing.",
+      "evaluator_type": "judge",
+      "requirement_source": "SPEC.md RESP-3",
+      "status": "candidate",
+      "first_seen_batch": "batch2",
+      "close_negatives": [],
+      "history": [
+        {
+          "ts": "2026-09-18T22:06:55+00:00",
+          "change": "proposed by agent from batch 2 open codes; accepted by reviewer"
+        }
+      ],
+      "positive_conversations": [
+        "support-0197"
+      ]
+    }
+  ],
+  "open_codes_unassigned": [
+    {
+      "annotation_ids": [
+        "a_auto9q98"
+      ],
+      "note": "tool choice (search_help_center vs get_policy); only a failure if the answer was wrong or unsupported"
+    },
+    {
+      "annotation_ids": [
+        "a_my2lun1s",
+        "a_6yy462bp"
+      ],
+      "note": "reply after a failed store search; tied to the rejected misuses_tool_arguments group"
+    }
+  ],
+  "rejected_groups": [
+    {
+      "name": "misuses_tool_arguments",
+      "proposed_at": "2026-09-18T22:06:55+00:00",
+      "proposed_by": "agent",
+      "rejected_by": "reviewer",
+      "annotation_ids": [
+        "a_dvno8w05",
+        "a_y7mym7cy"
+      ],
+      "definition": "A tool call fails because the agent passed an argument of the wrong kind that it could have gotten right from context (merchant product searches passed the store id where search_products expects the store name).",
+      "reason": "Rejected by reviewer. Kept as open codes; the failures remain recorded on 0147 and 0148."
+    }
+  ]
+}

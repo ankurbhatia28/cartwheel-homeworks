@@ -13,6 +13,26 @@
       "created_at": "2026-09-18T19:25:48+00:00",
       "size": 30,
       "cluster_config": "analysis/state/graph.json (KMeans k=8, seed 7, on role, intent, tools, flags, turns, latency)"
+    },
+    {
+      "id": "batch2",
+      "method": "3 per intent value, uniform within each value",
+      "dimension": "intent",
+      "values": [
+        "account_change",
+        "cancellation",
+        "dispute",
+        "order_history",
+        "order_status",
+        "out_of_scope",
+        "policy_question",
+        "product_search",
+        "refund",
+        "return_deadline"
+      ],
+      "seed": 20260919,
+      "created_at": "2026-09-18T20:25:05+00:00",
+      "size": 30
     }
   ],
   "conversations": [
@@ -348,6 +368,337 @@
       "method": "cluster_representative",
       "reason": "cluster c2, #1 closest to centroid",
       "added_at": "2026-09-18T19:25:48+00:00"
+    },
+    {
+      "id": "8bea7c4182e84173b4f1f6daf4d66acd",
+      "scenario_id": "support-0110",
+      "trace_ids": [
+        "e8f5a6b6dc21dd728aee08042ebb0325"
+      ],
+      "batch": "batch2",
+      "method": "stratified:intent",
+      "reason": "intent=account_change, uniform within stratum, seed 20260919",
+      "added_at": "2026-09-18T20:25:05+00:00"
+    },
+    {
+      "id": "de56ec36d710492a8dbf3fc53f4671ee",
+      "scenario_id": "support-0056",
+      "trace_ids": [
+        "1b7f98be0d02285628981a0ca8a682f4"
+      ],
+      "batch": "batch2",
+      "method": "stratified:intent",
+      "reason": "intent=return_deadline, uniform within stratum, seed 20260919",
+      "added_at": "2026-09-18T20:25:05+00:00"
+    },
+    {
+      "id": "9f62b27dd1b74a508c4871d40237d258",
+      "scenario_id": "support-0162",
+      "trace_ids": [
+        "d2fcc804b5dbb31d217be283b8cfd4d8"
+      ],
+      "batch": "batch2",
+      "method": "stratified:intent",
+      "reason": "intent=cancellation, uniform within stratum, seed 20260919",
+      "added_at": "2026-09-18T20:25:05+00:00"
+    },
+    {
+      "id": "fae185d9e09d463298249511ef189ab2",
+      "scenario_id": "support-0022",
+      "trace_ids": [
+        "3f771ff4db6dc28033a7a9ed16f21c75"
+      ],
+      "batch": "batch2",
+      "method": "stratified:intent",
+      "reason": "intent=refund, uniform within stratum, seed 20260919",
+      "added_at": "2026-09-18T20:25:05+00:00"
+    },
+    {
+      "id": "b6a6806e43734767accf2ab4e911eeb5",
+      "scenario_id": "support-0106",
+      "trace_ids": [
+        "34f8540c7d41a45a6bedb07e2f7c539c"
+      ],
+      "batch": "batch2",
+      "method": "stratified:intent",
+      "reason": "intent=out_of_scope, uniform within stratum, seed 20260919",
+      "added_at": "2026-09-18T20:25:05+00:00"
+    },
+    {
+      "id": "e3144a43cbe44adfa5b39774f3eeb295",
+      "scenario_id": "support-0145",
+      "trace_ids": [
+        "b5dcc3a7c0783167b9e32b6a4ed479ac"
+      ],
+      "batch": "batch2",
+      "method": "stratified:intent",
+      "reason": "intent=order_history, uniform within stratum, seed 20260919",
+      "added_at": "2026-09-18T20:25:05+00:00"
+    },
+    {
+      "id": "d00e21ad04e54c3cb8626aff6bb0e0ec",
+      "scenario_id": "support-0093",
+      "trace_ids": [
+        "b8c7410040d7ad8a058da4fa0e75003a"
+      ],
+      "batch": "batch2",
+      "method": "stratified:intent",
+      "reason": "intent=product_search, uniform within stratum, seed 20260919",
+      "added_at": "2026-09-18T20:25:05+00:00"
+    },
+    {
+      "id": "afee185f3c554aff953aca0e9dc2c338",
+      "scenario_id": "support-0200",
+      "trace_ids": [
+        "5e111d6d8aff33ed4630b85e3ed652d5"
+      ],
+      "batch": "batch2",
+      "method": "stratified:intent",
+      "reason": "intent=order_status, uniform within stratum, seed 20260919",
+      "added_at": "2026-09-18T20:25:05+00:00"
+    },
+    {
+      "id": "fcce57b1fa5646229b89493aa4b82e99",
+      "scenario_id": "support-0149",
+      "trace_ids": [
+        "8120fb59a8ddaf1f50165d21c84ef26a"
+      ],
+      "batch": "batch2",
+      "method": "stratified:intent",
+      "reason": "intent=out_of_scope, uniform within stratum, seed 20260919",
+      "added_at": "2026-09-18T20:25:05+00:00"
+    },
+    {
+      "id": "48c129a0c0204da2bf261515b6b5e3a5",
+      "scenario_id": "support-0052",
+      "trace_ids": [
+        "1dccbe4a64aa3e2cef5df454b9f38bc9"
+      ],
+      "batch": "batch2",
+      "method": "stratified:intent",
+      "reason": "intent=cancellation, uniform within stratum, seed 20260919",
+      "added_at": "2026-09-18T20:25:05+00:00"
+    },
+    {
+      "id": "fa7d040f3a2044ecb4945b58d4061483",
+      "scenario_id": "support-0079",
+      "trace_ids": [
+        "ad7201afd866f4ca4f531487c781c85f"
+      ],
+      "batch": "batch2",
+      "method": "stratified:intent",
+      "reason": "intent=policy_question, uniform within stratum, seed 20260919",
+      "added_at": "2026-09-18T20:25:05+00:00"
+    },
+    {
+      "id": "037b28758a704f1394333c65a3497668",
+      "scenario_id": "support-0107",
+      "trace_ids": [
+        "74ec63f763b43418effd66e0e3bf650c"
+      ],
+      "batch": "batch2",
+      "method": "stratified:intent",
+      "reason": "intent=account_change, uniform within stratum, seed 20260919",
+      "added_at": "2026-09-18T20:25:05+00:00"
+    },
+    {
+      "id": "c9a1acda3396417e83f65869e8573e4f",
+      "scenario_id": "support-0099",
+      "trace_ids": [
+        "5f520aac61ec43773df7540e94316910"
+      ],
+      "batch": "batch2",
+      "method": "stratified:intent",
+      "reason": "intent=dispute, uniform within stratum, seed 20260919",
+      "added_at": "2026-09-18T20:25:05+00:00"
+    },
+    {
+      "id": "c0b4d9e8327541e88c0c073b40b75037",
+      "scenario_id": "support-0148",
+      "trace_ids": [
+        "4d6364d2294479288c8f29b33ea9e788"
+      ],
+      "batch": "batch2",
+      "method": "stratified:intent",
+      "reason": "intent=product_search, uniform within stratum, seed 20260919",
+      "added_at": "2026-09-18T20:25:05+00:00"
+    },
+    {
+      "id": "3c19186440de453fbec5088be63804bd",
+      "scenario_id": "support-0058",
+      "trace_ids": [
+        "9c267e336bae079ac3a45def1158780c"
+      ],
+      "batch": "batch2",
+      "method": "stratified:intent",
+      "reason": "intent=return_deadline, uniform within stratum, seed 20260919",
+      "added_at": "2026-09-18T20:25:05+00:00"
+    },
+    {
+      "id": "184ab2625dbc4878ac2c911b374f5428",
+      "scenario_id": "support-0105",
+      "trace_ids": [
+        "61705326f6ec26f23ea6cabecdfb2a6a"
+      ],
+      "batch": "batch2",
+      "method": "stratified:intent",
+      "reason": "intent=out_of_scope, uniform within stratum, seed 20260919",
+      "added_at": "2026-09-18T20:25:05+00:00"
+    },
+    {
+      "id": "4c0fffc90d3c4dc5aedc389ce5dbe19f",
+      "scenario_id": "support-0197",
+      "trace_ids": [
+        "5396cfda7fc88a2598e300e56de3319e"
+      ],
+      "batch": "batch2",
+      "method": "stratified:intent",
+      "reason": "intent=order_history, uniform within stratum, seed 20260919",
+      "added_at": "2026-09-18T20:25:05+00:00"
+    },
+    {
+      "id": "43bc6b78b35547b7bdfb8c82be43cbca",
+      "scenario_id": "support-0233",
+      "trace_ids": [
+        "ef504c2f04ca087198f15382763344b5"
+      ],
+      "batch": "batch2",
+      "method": "stratified:intent",
+      "reason": "intent=refund, uniform within stratum, seed 20260919",
+      "added_at": "2026-09-18T20:25:05+00:00"
+    },
+    {
+      "id": "c7d1692612034b40a3c1eca43b5aae68",
+      "scenario_id": "support-0111",
+      "trace_ids": [
+        "a71b032598da5f7cb1000632459b5544"
+      ],
+      "batch": "batch2",
+      "method": "stratified:intent",
+      "reason": "intent=account_change, uniform within stratum, seed 20260919",
+      "added_at": "2026-09-18T20:25:05+00:00"
+    },
+    {
+      "id": "920d27a0985b43b8a4709f9b3feca1de",
+      "scenario_id": "support-0062",
+      "trace_ids": [
+        "79960a544a09b05829f72d9a372c7fb7"
+      ],
+      "batch": "batch2",
+      "method": "stratified:intent",
+      "reason": "intent=return_deadline, uniform within stratum, seed 20260919",
+      "added_at": "2026-09-18T20:25:05+00:00"
+    },
+    {
+      "id": "27a207685d3243d3930a5a89c2388c55",
+      "scenario_id": "support-0217",
+      "trace_ids": [
+        "db3f823b3dc702010bf988fba62439fe",
+        "dc4ab203df89746ff726ad53fbea2164"
+      ],
+      "batch": "batch2",
+      "method": "stratified:intent",
+      "reason": "intent=refund, uniform within stratum, seed 20260919",
+      "added_at": "2026-09-18T20:25:05+00:00"
+    },
+    {
+      "id": "73f472cb4c8c40a593836f2b64c7e069",
+      "scenario_id": "support-0236",
+      "trace_ids": [
+        "5631f8123b7c938d0dc499df89d66e07"
+      ],
+      "batch": "batch2",
+      "method": "stratified:intent",
+      "reason": "intent=dispute, uniform within stratum, seed 20260919",
+      "added_at": "2026-09-18T20:25:05+00:00"
+    },
+    {
+      "id": "3f1bbd186bfb467fb88991e698974b7a",
+      "scenario_id": "support-0114",
+      "trace_ids": [
+        "ffa1b72b7756ccf4d4855fb2c2be213d"
+      ],
+      "batch": "batch2",
+      "method": "stratified:intent",
+      "reason": "intent=order_history, uniform within stratum, seed 20260919",
+      "added_at": "2026-09-18T20:25:05+00:00"
+    },
+    {
+      "id": "083fcf100cbc4e90a9737fc264a781ef",
+      "scenario_id": "support-0003",
+      "trace_ids": [
+        "435533df3191c0ab3691157794f58528"
+      ],
+      "batch": "batch2",
+      "method": "stratified:intent",
+      "reason": "intent=order_status, uniform within stratum, seed 20260919",
+      "added_at": "2026-09-18T20:25:05+00:00"
+    },
+    {
+      "id": "7c13e45754f041f481a30736146d3b0f",
+      "scenario_id": "support-0006",
+      "trace_ids": [
+        "7c92e96d7f3ff0a55330ca45b5fd6666"
+      ],
+      "batch": "batch2",
+      "method": "stratified:intent",
+      "reason": "intent=order_status, uniform within stratum, seed 20260919",
+      "added_at": "2026-09-18T20:25:05+00:00"
+    },
+    {
+      "id": "9af48a312df949b38a7b7b860ccaafed",
+      "scenario_id": "support-0044",
+      "trace_ids": [
+        "8e781c483b569c9cc118ae1dc54e2c7e"
+      ],
+      "batch": "batch2",
+      "method": "stratified:intent",
+      "reason": "intent=cancellation, uniform within stratum, seed 20260919",
+      "added_at": "2026-09-18T20:25:05+00:00"
+    },
+    {
+      "id": "038ec9f0564e40bc903ee6d84b92ce56",
+      "scenario_id": "support-0100",
+      "trace_ids": [
+        "c662a27172f6f6d1de73869a94dfa61d"
+      ],
+      "batch": "batch2",
+      "method": "stratified:intent",
+      "reason": "intent=dispute, uniform within stratum, seed 20260919",
+      "added_at": "2026-09-18T20:25:05+00:00"
+    },
+    {
+      "id": "5db729b39cee413f87865a95e45f0aff",
+      "scenario_id": "support-0147",
+      "trace_ids": [
+        "c941d458125c31e840cb3578fbeabce5"
+      ],
+      "batch": "batch2",
+      "method": "stratified:intent",
+      "reason": "intent=product_search, uniform within stratum, seed 20260919",
+      "added_at": "2026-09-18T20:25:05+00:00"
+    },
+    {
+      "id": "8bfc9a93f16047269b619a422e6eafd6",
+      "scenario_id": "support-0168",
+      "trace_ids": [
+        "27e5ba4af3374abb0f952f698567a5ae"
+      ],
+      "batch": "batch2",
+      "method": "stratified:intent",
+      "reason": "intent=policy_question, uniform within stratum, seed 20260919",
+      "added_at": "2026-09-18T20:25:05+00:00"
+    },
+    {
+      "id": "10e1684192c24464a7f0418f068c033b",
+      "scenario_id": "support-0071",
+      "trace_ids": [
+        "66fccfdc01905167dcc68bd8a83c855f"
+      ],
+      "batch": "batch2",
+      "method": "stratified:intent",
+      "reason": "intent=policy_question, uniform within stratum, seed 20260919",
+      "added_at": "2026-09-18T20:25:05+00:00"
     }
   ]
 }
