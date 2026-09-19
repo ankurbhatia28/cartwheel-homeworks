@@ -8,17 +8,11 @@ conversations, 276 traces). No offline fallback was needed.
 
 ## What made review slow in Langfuse's own view
 
-*(Reviewer: add your own observations from the start of Part A here.)* Found while inspecting 10
-traces before designing the app:
-
-- **A multi-turn conversation is split into separate traces**, one per user turn. Langfuse's
-  `sessionId` field is empty for these traces (the session id is in `metadata.attributes`), so the
-  Sessions view can't regroup them.
-- **The agent's thinking and its text before each tool call are hidden inside the next generation's
-  input.** Every `openai.response` generation has `output = null`, so the reasoning isn't where the
-  tree suggests it is.
-- **Tool results are separate spans**, away from the reasoning that led to the call and the reply that
-  described the result.
+Found while inspecting 10 traces before designing the app:
+- The UI is slow to navigate with too much clutter and cruft
+- Multiple turns are split up
+- Not color coded
+- Hard to follow a single thread
 
 ## One design retained from the reference
 
