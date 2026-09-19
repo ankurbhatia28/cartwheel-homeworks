@@ -42,7 +42,7 @@ from agent import db
 from agent.agent import DEFAULT_MODEL, build_agent, prompt_version
 from agent.auth import ROLES, AuthContext
 from agent.config import REPO_ROOT, db_path
-from observability.instrument import load_env, setup_tracing
+from observability.instrument import load_env, setup_raindrop, setup_tracing
 
 MAX_TURNS = 12  # cap runaway loops; keeps conversations bounded
 SESSIONS_DB = REPO_ROOT / ".sessions.db"
@@ -62,6 +62,7 @@ _tracer = trace.get_tracer("cartwheel.server")
 async def lifespan(app: FastAPI) -> AsyncIterator[None]:
     load_env()
     setup_tracing()  # no-op with a warning if LANGFUSE_PUBLIC_KEY is unset
+    setup_raindrop()  # HW4 Part C: opt-in local Workshop mirror (RAINDROP_LOCAL_DEBUGGER)
     yield
 
 

@@ -1,0 +1,4022 @@
+{
+  "generated_at": "2026-09-19T03:26:29+00:00",
+  "note": "Suggestions only; the reviewer confirms or flips each before saving.",
+  "drafts": {
+    "exposes_internal_identifiers": {
+      "7648ecfc7cd1499fa12140791df2acee": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: No need to cite technical terms"
+      },
+      "ac3bb0a34d524d2ead9f10481936b6c0": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "6da1c27928324d38b5c166bdb07ede85": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: Don't cite technical terms"
+      },
+      "bb794f532ade46cc928b0fe626062912": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "bdff31db5443484cb31a92a3ff53ea70": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "0a60a3dfbbf544418298aa44d685b2db": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "edf4a43cb63b43f7b55807b92243695d": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "7d0966d61b3648e88314eb67631be160": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "9e0d628226c54d3f9b0e43bd0749a408": {
+        "label": 1,
+        "basis": "code",
+        "evidence": "code: reply contains 'cw-roles' \u2014 \u2026*Roles and permissions** policy (**cw-roles**):  - **Merchants** can view and\u2026"
+      },
+      "93c67a4311f14b1b994843044a1bb1f9": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "42925af765ff4a8aa452bc898ae3acdc": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "5eff9c62a8bf41529cbb287668432186": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: Don't claim this is going to be returned and don't cite technical terms"
+      },
+      "11d602332f90475faf3f9056929224cb": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "e8894a5f65bb4aff9542b434d168720e": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "35e6316b61a142f8b0a00ab47de37ceb": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: Don't cite technical policy terms"
+      },
+      "b18a0f99224c4d20b5dc36c90e31ebe4": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "5aa412ad35604279a4fc25af5027edb0": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "e6f2828396fa4bddbcf79c9ada8b4243": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "52931076b6ae44c7bf9ff4bf74212407": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "73313aa30f56424ab3daa540116241c9": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: Don't cite technical policy names"
+      },
+      "85e2957e58454e7ab149c8e6a5cbb728": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: Don't cite technical policy names"
+      },
+      "a8a0af39811744b2a015ec6a4c085d46": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "d4587aff33d441278686c188b9a41fb4": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "7eb15b45ee844b84ad16c12ff3d9d668": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "ce128687ea0b4cce8d1845d944e0496b": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: Don't talk about internal tooling"
+      },
+      "a01b4bac9bc74dfea7d02faae6152700": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "d0d95316922f425a9da013a6029042c0": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: Don't city policy names"
+      },
+      "6e0b9f1943c243f08147a22c22bd46c4": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "333bc1a3130040cea510ebfec3826e4e": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "1e8700c7d45148e295b43f1202b7bde1": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: Don't city policy names and just say this needs a human in the loop"
+      },
+      "8bea7c4182e84173b4f1f6daf4d66acd": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "de56ec36d710492a8dbf3fc53f4671ee": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: No need to cite technical terms"
+      },
+      "9f62b27dd1b74a508c4871d40237d258": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "fae185d9e09d463298249511ef189ab2": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: No need to cite technical terms"
+      },
+      "b6a6806e43734767accf2ab4e911eeb5": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "e3144a43cbe44adfa5b39774f3eeb295": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "d00e21ad04e54c3cb8626aff6bb0e0ec": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "afee185f3c554aff953aca0e9dc2c338": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "fcce57b1fa5646229b89493aa4b82e99": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "48c129a0c0204da2bf261515b6b5e3a5": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: No need to cite technical terms"
+      },
+      "fa7d040f3a2044ecb4945b58d4061483": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: No need to cite technical terms"
+      },
+      "037b28758a704f1394333c65a3497668": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "c9a1acda3396417e83f65869e8573e4f": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "c0b4d9e8327541e88c0c073b40b75037": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "3c19186440de453fbec5088be63804bd": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: No need to cite technical terms"
+      },
+      "184ab2625dbc4878ac2c911b374f5428": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "4c0fffc90d3c4dc5aedc389ce5dbe19f": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "43bc6b78b35547b7bdfb8c82be43cbca": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "c7d1692612034b40a3c1eca43b5aae68": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "920d27a0985b43b8a4709f9b3feca1de": {
+        "label": 1,
+        "basis": "code",
+        "evidence": "code: reply contains 'cw-returns' \u2014 \u2026return window** applies (policy **cw-returns**). That window counts from the de\u2026"
+      },
+      "27a207685d3243d3930a5a89c2388c55": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "73f472cb4c8c40a593836f2b64c7e069": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: No need to cite technical terms"
+      },
+      "3f1bbd186bfb467fb88991e698974b7a": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "083fcf100cbc4e90a9737fc264a781ef": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "7c13e45754f041f481a30736146d3b0f": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "9af48a312df949b38a7b7b860ccaafed": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "038ec9f0564e40bc903ee6d84b92ce56": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "5db729b39cee413f87865a95e45f0aff": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "8bfc9a93f16047269b619a422e6eafd6": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: No need to cite technical terms"
+      },
+      "10e1684192c24464a7f0418f068c033b": {
+        "label": 1,
+        "basis": "code",
+        "evidence": "code: reply contains 'cw-disputes' \u2014 \u2026efund on the same order. *(Policy: cw-disputes)*  - **Returns/Refunds:** If you'r\u2026"
+      },
+      "048caa00571a46b8ae0b499d5cca79d9": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "5cd8a957d667423798629379764af670": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "b96a0ae09ed84793b4b0c7972da9a6bc": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "7c1cc87401674ce7b5a527c18e5f9fa8": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "efaa84f278ac4a74887bc5eced71e3f9": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "0414a610cfa94eebb035902a622d4da7": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "3aa729242ad0403bb6a1b9adffabe446": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: No need to cite technical term"
+      },
+      "2b038cd963d0496e8e02001e657f3d71": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: No need to cite technical term"
+      },
+      "ebb9a96e1ac24194828fd4196de8f8d5": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "1ed1fd782fa248bf97b85b66a3ca3255": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "bcab547a7d0745048d6f0471b62bf6ef": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "4d3833f3da874f5aa9c1bff9299ce23a": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "32e1bd44a8104c6994c8ed97bac0060b": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "fe994c8288a8448fb4b734f135a5745f": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "306aaa963cf9426e91348f8e9ecaaaa1": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: No need to cite technical term"
+      },
+      "a9a3c0140334427997d9231f36219d3d": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "648d860f064e4586bff596a67f900e24": {
+        "label": 1,
+        "basis": "code",
+        "evidence": "code: reply contains 'store-northwind-books-policy' \u2014 \u2026, 2026 (45-day window per policy **store-northwind-books-policy**)  You've got about 11 days left,\u2026"
+      },
+      "2831aa27a4194bd4a1151ee8ff4b6691": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "1c6c23738742488aaca56042bbd79a9c": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "34c06b421e814a06a676e6134ac397e9": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "d29f49b7bc0b4903916084f63ddf7da5": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "6b1754ac6cd7492387aa34055baaebd0": {
+        "label": 1,
+        "basis": "code",
+        "evidence": "code: reply contains 'cw-returns' \u2014 \u2026*30 days from delivery** (policy **cw-returns**), but since the delivery date is\u2026"
+      },
+      "e22067c61f56427ba994004f36b8761e": {
+        "label": 1,
+        "basis": "code",
+        "evidence": "code: reply contains 'cw-refunds' \u2014 \u2026d within **5\u201310 business days** (**cw-refunds**).  Nothing embarrassing about ch\u2026"
+      },
+      "765200e221f64d219ae1d6410d80bd5f": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "1c84d7c890fd496dae576f269a9c171c": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "50928b7d31ef4fa882d9b5eb9e2c853c": {
+        "label": 1,
+        "basis": "code",
+        "evidence": "code: reply contains 'store-northwind-books-policy' \u2014 \u2026g else I can help with?  *(Policy: store-northwind-books-policy)*\u2026"
+      },
+      "88f25614edc14313a39ceba5c306861d": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "319627675b084703889755b6b6a8c804": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "743c3d6df9f94cbc840d4995ac09d206": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "980eb26d995f4d4da8de5c9fe6d5e617": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "8eaababe2018486090a9ec865fedab93": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "230c6fa0612a49da8ff4411d64ad6195": {
+        "label": 1,
+        "basis": "code",
+        "evidence": "code: reply contains 'cw-restocking-fees' \u2014 \u2026ing fees per Cartwheel's policy (**cw-restocking-fees**):  - **Yes**, sellers can charge\u2026"
+      },
+      "663581a45e1a4d9a8d7b9757fad250f5": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "89104522ff77473c83aa7c820737f327": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "1fded2fd62c94af49615433a3b92a447": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: No need to cite technical policy names"
+      },
+      "4333a30cd40544c599c8f8284bc259a6": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no policy id or tool name in the reply"
+      },
+      "2de48abbdc294834b6f81b8ab4dbe19b": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: Don't show internal errors to user"
+      },
+      "311762a0cc724df7a8da517dae839484": {
+        "label": 1,
+        "basis": "code",
+        "evidence": "code: reply contains 'cw-returns' \u2014 \u202630-day return window per policy **cw-returns**. I can go ahead and issue the fu\u2026"
+      },
+      "8fcf2269f13c419ca0fd33574cda7210": {
+        "label": 1,
+        "basis": "code",
+        "evidence": "code: reply contains 'store-meridian-cycles-policy' \u2014 \u2026Meridian Cycles' store policy \u2014 **store-meridian-cycles-policy**) - **Return deadline:** June 23,\u2026"
+      },
+      "9eebcc301ebe4ef0abfc867799d33c5d": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: No need to cite technical policy names"
+      }
+    },
+    "promises_unconfirmed_outcome": {
+      "7648ecfc7cd1499fa12140791df2acee": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "ac3bb0a34d524d2ead9f10481936b6c0": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "6da1c27928324d38b5c166bdb07ede85": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "bb794f532ade46cc928b0fe626062912": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "bdff31db5443484cb31a92a3ff53ea70": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: Don't promise a refund if unsure"
+      },
+      "0a60a3dfbbf544418298aa44d685b2db": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "edf4a43cb63b43f7b55807b92243695d": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "7d0966d61b3648e88314eb67631be160": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "9e0d628226c54d3f9b0e43bd0749a408": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "93c67a4311f14b1b994843044a1bb1f9": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "42925af765ff4a8aa452bc898ae3acdc": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "5eff9c62a8bf41529cbb287668432186": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: Don't claim this is going to be returned and don't cite technical terms"
+      },
+      "11d602332f90475faf3f9056929224cb": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "e8894a5f65bb4aff9542b434d168720e": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "35e6316b61a142f8b0a00ab47de37ceb": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "b18a0f99224c4d20b5dc36c90e31ebe4": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "5aa412ad35604279a4fc25af5027edb0": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "e6f2828396fa4bddbcf79c9ada8b4243": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "52931076b6ae44c7bf9ff4bf74212407": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "73313aa30f56424ab3daa540116241c9": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "85e2957e58454e7ab149c8e6a5cbb728": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: Don't make promises about the future"
+      },
+      "a8a0af39811744b2a015ec6a4c085d46": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "d4587aff33d441278686c188b9a41fb4": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "7eb15b45ee844b84ad16c12ff3d9d668": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "ce128687ea0b4cce8d1845d944e0496b": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "a01b4bac9bc74dfea7d02faae6152700": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "d0d95316922f425a9da013a6029042c0": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "6e0b9f1943c243f08147a22c22bd46c4": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: Don't call this in progress. It is pending an approval and should be clear on suhc"
+      },
+      "333bc1a3130040cea510ebfec3826e4e": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: Don't make claims"
+      },
+      "1e8700c7d45148e295b43f1202b7bde1": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "8bea7c4182e84173b4f1f6daf4d66acd": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "de56ec36d710492a8dbf3fc53f4671ee": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "9f62b27dd1b74a508c4871d40237d258": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "fae185d9e09d463298249511ef189ab2": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "b6a6806e43734767accf2ab4e911eeb5": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "e3144a43cbe44adfa5b39774f3eeb295": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "d00e21ad04e54c3cb8626aff6bb0e0ec": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "afee185f3c554aff953aca0e9dc2c338": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "fcce57b1fa5646229b89493aa4b82e99": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "48c129a0c0204da2bf261515b6b5e3a5": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "fa7d040f3a2044ecb4945b58d4061483": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "037b28758a704f1394333c65a3497668": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: Don't claim things are done when they are just initiated"
+      },
+      "c9a1acda3396417e83f65869e8573e4f": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "c0b4d9e8327541e88c0c073b40b75037": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "3c19186440de453fbec5088be63804bd": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "184ab2625dbc4878ac2c911b374f5428": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "4c0fffc90d3c4dc5aedc389ce5dbe19f": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "43bc6b78b35547b7bdfb8c82be43cbca": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "c7d1692612034b40a3c1eca43b5aae68": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: Don't say it's done when it's in progress with a human"
+      },
+      "920d27a0985b43b8a4709f9b3feca1de": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "27a207685d3243d3930a5a89c2388c55": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: This sounds like it's already in progress. That's not right"
+      },
+      "73f472cb4c8c40a593836f2b64c7e069": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "3f1bbd186bfb467fb88991e698974b7a": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "083fcf100cbc4e90a9737fc264a781ef": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "7c13e45754f041f481a30736146d3b0f": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "9af48a312df949b38a7b7b860ccaafed": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "038ec9f0564e40bc903ee6d84b92ce56": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "5db729b39cee413f87865a95e45f0aff": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "8bfc9a93f16047269b619a422e6eafd6": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "10e1684192c24464a7f0418f068c033b": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "048caa00571a46b8ae0b499d5cca79d9": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "5cd8a957d667423798629379764af670": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "b96a0ae09ed84793b4b0c7972da9a6bc": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "7c1cc87401674ce7b5a527c18e5f9fa8": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "efaa84f278ac4a74887bc5eced71e3f9": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "0414a610cfa94eebb035902a622d4da7": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "3aa729242ad0403bb6a1b9adffabe446": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "2b038cd963d0496e8e02001e657f3d71": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "ebb9a96e1ac24194828fd4196de8f8d5": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "1ed1fd782fa248bf97b85b66a3ca3255": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "bcab547a7d0745048d6f0471b62bf6ef": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "4d3833f3da874f5aa9c1bff9299ce23a": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "32e1bd44a8104c6994c8ed97bac0060b": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "fe994c8288a8448fb4b734f135a5745f": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "306aaa963cf9426e91348f8e9ecaaaa1": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "a9a3c0140334427997d9231f36219d3d": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: Don't say done when it's in progress with a human"
+      },
+      "648d860f064e4586bff596a67f900e24": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "2831aa27a4194bd4a1151ee8ff4b6691": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "1c6c23738742488aaca56042bbd79a9c": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "34c06b421e814a06a676e6134ac397e9": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "d29f49b7bc0b4903916084f63ddf7da5": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "6b1754ac6cd7492387aa34055baaebd0": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "e22067c61f56427ba994004f36b8761e": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: Don't promise outcomes"
+      },
+      "765200e221f64d219ae1d6410d80bd5f": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "1c84d7c890fd496dae576f269a9c171c": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "50928b7d31ef4fa882d9b5eb9e2c853c": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "88f25614edc14313a39ceba5c306861d": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "319627675b084703889755b6b6a8c804": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "743c3d6df9f94cbc840d4995ac09d206": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "980eb26d995f4d4da8de5c9fe6d5e617": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "8eaababe2018486090a9ec865fedab93": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "230c6fa0612a49da8ff4411d64ad6195": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "663581a45e1a4d9a8d7b9757fad250f5": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "89104522ff77473c83aa7c820737f327": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "1fded2fd62c94af49615433a3b92a447": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "4333a30cd40544c599c8f8284bc259a6": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "2de48abbdc294834b6f81b8ab4dbe19b": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "311762a0cc724df7a8da517dae839484": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "8fcf2269f13c419ca0fd33574cda7210": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "9eebcc301ebe4ef0abfc867799d33c5d": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      }
+    },
+    "surfaces_irrelevant_detail": {
+      "7648ecfc7cd1499fa12140791df2acee": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "ac3bb0a34d524d2ead9f10481936b6c0": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "6da1c27928324d38b5c166bdb07ede85": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "bb794f532ade46cc928b0fe626062912": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "bdff31db5443484cb31a92a3ff53ea70": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "0a60a3dfbbf544418298aa44d685b2db": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "edf4a43cb63b43f7b55807b92243695d": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "7d0966d61b3648e88314eb67631be160": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "9e0d628226c54d3f9b0e43bd0749a408": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "93c67a4311f14b1b994843044a1bb1f9": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "42925af765ff4a8aa452bc898ae3acdc": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "5eff9c62a8bf41529cbb287668432186": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "11d602332f90475faf3f9056929224cb": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "e8894a5f65bb4aff9542b434d168720e": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "35e6316b61a142f8b0a00ab47de37ceb": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "b18a0f99224c4d20b5dc36c90e31ebe4": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "5aa412ad35604279a4fc25af5027edb0": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "e6f2828396fa4bddbcf79c9ada8b4243": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "52931076b6ae44c7bf9ff4bf74212407": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "73313aa30f56424ab3daa540116241c9": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "85e2957e58454e7ab149c8e6a5cbb728": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "a8a0af39811744b2a015ec6a4c085d46": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "d4587aff33d441278686c188b9a41fb4": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "7eb15b45ee844b84ad16c12ff3d9d668": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "ce128687ea0b4cce8d1845d944e0496b": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "a01b4bac9bc74dfea7d02faae6152700": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "d0d95316922f425a9da013a6029042c0": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: Too much information | This isn't helpful since it is out of date"
+      },
+      "6e0b9f1943c243f08147a22c22bd46c4": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "333bc1a3130040cea510ebfec3826e4e": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "1e8700c7d45148e295b43f1202b7bde1": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "8bea7c4182e84173b4f1f6daf4d66acd": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "de56ec36d710492a8dbf3fc53f4671ee": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "9f62b27dd1b74a508c4871d40237d258": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "fae185d9e09d463298249511ef189ab2": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: Too much additional info and the customer already said they want the refund"
+      },
+      "b6a6806e43734767accf2ab4e911eeb5": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "e3144a43cbe44adfa5b39774f3eeb295": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "d00e21ad04e54c3cb8626aff6bb0e0ec": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "afee185f3c554aff953aca0e9dc2c338": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "fcce57b1fa5646229b89493aa4b82e99": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: Don't make outside suggestions"
+      },
+      "48c129a0c0204da2bf261515b6b5e3a5": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "fa7d040f3a2044ecb4945b58d4061483": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: No need for additional unrelated information"
+      },
+      "037b28758a704f1394333c65a3497668": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "c9a1acda3396417e83f65869e8573e4f": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "c0b4d9e8327541e88c0c073b40b75037": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "3c19186440de453fbec5088be63804bd": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "184ab2625dbc4878ac2c911b374f5428": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "4c0fffc90d3c4dc5aedc389ce5dbe19f": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "43bc6b78b35547b7bdfb8c82be43cbca": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "c7d1692612034b40a3c1eca43b5aae68": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "920d27a0985b43b8a4709f9b3feca1de": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: No need for extraneous details"
+      },
+      "27a207685d3243d3930a5a89c2388c55": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "73f472cb4c8c40a593836f2b64c7e069": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "3f1bbd186bfb467fb88991e698974b7a": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "083fcf100cbc4e90a9737fc264a781ef": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "7c13e45754f041f481a30736146d3b0f": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "9af48a312df949b38a7b7b860ccaafed": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "038ec9f0564e40bc903ee6d84b92ce56": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "5db729b39cee413f87865a95e45f0aff": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "8bfc9a93f16047269b619a422e6eafd6": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "10e1684192c24464a7f0418f068c033b": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "048caa00571a46b8ae0b499d5cca79d9": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "5cd8a957d667423798629379764af670": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "b96a0ae09ed84793b4b0c7972da9a6bc": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "7c1cc87401674ce7b5a527c18e5f9fa8": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: No off platform advice"
+      },
+      "efaa84f278ac4a74887bc5eced71e3f9": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "0414a610cfa94eebb035902a622d4da7": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "3aa729242ad0403bb6a1b9adffabe446": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "2b038cd963d0496e8e02001e657f3d71": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "ebb9a96e1ac24194828fd4196de8f8d5": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "1ed1fd782fa248bf97b85b66a3ca3255": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "bcab547a7d0745048d6f0471b62bf6ef": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "4d3833f3da874f5aa9c1bff9299ce23a": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "32e1bd44a8104c6994c8ed97bac0060b": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "fe994c8288a8448fb4b734f135a5745f": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "306aaa963cf9426e91348f8e9ecaaaa1": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "a9a3c0140334427997d9231f36219d3d": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "648d860f064e4586bff596a67f900e24": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "2831aa27a4194bd4a1151ee8ff4b6691": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: Don't give off platform advice"
+      },
+      "1c6c23738742488aaca56042bbd79a9c": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "34c06b421e814a06a676e6134ac397e9": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "d29f49b7bc0b4903916084f63ddf7da5": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "6b1754ac6cd7492387aa34055baaebd0": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: Too much extra info. Escalate to human when unsure / unable to complete on your own"
+      },
+      "e22067c61f56427ba994004f36b8761e": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "765200e221f64d219ae1d6410d80bd5f": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "1c84d7c890fd496dae576f269a9c171c": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "50928b7d31ef4fa882d9b5eb9e2c853c": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: No need to cite unrelated policies"
+      },
+      "88f25614edc14313a39ceba5c306861d": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "319627675b084703889755b6b6a8c804": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "743c3d6df9f94cbc840d4995ac09d206": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "980eb26d995f4d4da8de5c9fe6d5e617": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "8eaababe2018486090a9ec865fedab93": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "230c6fa0612a49da8ff4411d64ad6195": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "663581a45e1a4d9a8d7b9757fad250f5": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "89104522ff77473c83aa7c820737f327": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "1fded2fd62c94af49615433a3b92a447": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: Don't show non applicable items"
+      },
+      "4333a30cd40544c599c8f8284bc259a6": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "2de48abbdc294834b6f81b8ab4dbe19b": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "311762a0cc724df7a8da517dae839484": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "8fcf2269f13c419ca0fd33574cda7210": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "9eebcc301ebe4ef0abfc867799d33c5d": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      }
+    },
+    "missed_required_escalation": {
+      "7648ecfc7cd1499fa12140791df2acee": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "ac3bb0a34d524d2ead9f10481936b6c0": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "6da1c27928324d38b5c166bdb07ede85": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "bb794f532ade46cc928b0fe626062912": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "bdff31db5443484cb31a92a3ff53ea70": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "0a60a3dfbbf544418298aa44d685b2db": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "edf4a43cb63b43f7b55807b92243695d": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "7d0966d61b3648e88314eb67631be160": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "9e0d628226c54d3f9b0e43bd0749a408": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "93c67a4311f14b1b994843044a1bb1f9": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "42925af765ff4a8aa452bc898ae3acdc": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "5eff9c62a8bf41529cbb287668432186": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "11d602332f90475faf3f9056929224cb": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "e8894a5f65bb4aff9542b434d168720e": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "35e6316b61a142f8b0a00ab47de37ceb": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "b18a0f99224c4d20b5dc36c90e31ebe4": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "5aa412ad35604279a4fc25af5027edb0": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "e6f2828396fa4bddbcf79c9ada8b4243": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "52931076b6ae44c7bf9ff4bf74212407": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "73313aa30f56424ab3daa540116241c9": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "85e2957e58454e7ab149c8e6a5cbb728": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "a8a0af39811744b2a015ec6a4c085d46": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "d4587aff33d441278686c188b9a41fb4": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "7eb15b45ee844b84ad16c12ff3d9d668": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "ce128687ea0b4cce8d1845d944e0496b": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: Since you can't do this, escalate to someone who can"
+      },
+      "a01b4bac9bc74dfea7d02faae6152700": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: Just do this to see if it's eligible"
+      },
+      "d0d95316922f425a9da013a6029042c0": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "6e0b9f1943c243f08147a22c22bd46c4": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "333bc1a3130040cea510ebfec3826e4e": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "1e8700c7d45148e295b43f1202b7bde1": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: Don't city policy names and just say this needs a human in the loop"
+      },
+      "8bea7c4182e84173b4f1f6daf4d66acd": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "de56ec36d710492a8dbf3fc53f4671ee": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "9f62b27dd1b74a508c4871d40237d258": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "fae185d9e09d463298249511ef189ab2": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "b6a6806e43734767accf2ab4e911eeb5": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "e3144a43cbe44adfa5b39774f3eeb295": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "d00e21ad04e54c3cb8626aff6bb0e0ec": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "afee185f3c554aff953aca0e9dc2c338": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "fcce57b1fa5646229b89493aa4b82e99": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "48c129a0c0204da2bf261515b6b5e3a5": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "fa7d040f3a2044ecb4945b58d4061483": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "037b28758a704f1394333c65a3497668": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "c9a1acda3396417e83f65869e8573e4f": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "c0b4d9e8327541e88c0c073b40b75037": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "3c19186440de453fbec5088be63804bd": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "184ab2625dbc4878ac2c911b374f5428": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "4c0fffc90d3c4dc5aedc389ce5dbe19f": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "43bc6b78b35547b7bdfb8c82be43cbca": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "c7d1692612034b40a3c1eca43b5aae68": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "920d27a0985b43b8a4709f9b3feca1de": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "27a207685d3243d3930a5a89c2388c55": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "73f472cb4c8c40a593836f2b64c7e069": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: This should be higher up"
+      },
+      "3f1bbd186bfb467fb88991e698974b7a": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "083fcf100cbc4e90a9737fc264a781ef": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "7c13e45754f041f481a30736146d3b0f": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "9af48a312df949b38a7b7b860ccaafed": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "038ec9f0564e40bc903ee6d84b92ce56": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "5db729b39cee413f87865a95e45f0aff": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "8bfc9a93f16047269b619a422e6eafd6": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "10e1684192c24464a7f0418f068c033b": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "048caa00571a46b8ae0b499d5cca79d9": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "5cd8a957d667423798629379764af670": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "b96a0ae09ed84793b4b0c7972da9a6bc": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "7c1cc87401674ce7b5a527c18e5f9fa8": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "efaa84f278ac4a74887bc5eced71e3f9": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "0414a610cfa94eebb035902a622d4da7": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "3aa729242ad0403bb6a1b9adffabe446": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "2b038cd963d0496e8e02001e657f3d71": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "ebb9a96e1ac24194828fd4196de8f8d5": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "1ed1fd782fa248bf97b85b66a3ca3255": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "bcab547a7d0745048d6f0471b62bf6ef": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "4d3833f3da874f5aa9c1bff9299ce23a": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: Route directly to human"
+      },
+      "32e1bd44a8104c6994c8ed97bac0060b": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "fe994c8288a8448fb4b734f135a5745f": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "306aaa963cf9426e91348f8e9ecaaaa1": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "a9a3c0140334427997d9231f36219d3d": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "648d860f064e4586bff596a67f900e24": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "2831aa27a4194bd4a1151ee8ff4b6691": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "1c6c23738742488aaca56042bbd79a9c": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "34c06b421e814a06a676e6134ac397e9": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "d29f49b7bc0b4903916084f63ddf7da5": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "6b1754ac6cd7492387aa34055baaebd0": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: Too much extra info. Escalate to human when unsure / unable to complete on your own"
+      },
+      "e22067c61f56427ba994004f36b8761e": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "765200e221f64d219ae1d6410d80bd5f": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "1c84d7c890fd496dae576f269a9c171c": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: Escalate to person"
+      },
+      "50928b7d31ef4fa882d9b5eb9e2c853c": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "88f25614edc14313a39ceba5c306861d": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "319627675b084703889755b6b6a8c804": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "743c3d6df9f94cbc840d4995ac09d206": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "980eb26d995f4d4da8de5c9fe6d5e617": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "8eaababe2018486090a9ec865fedab93": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "230c6fa0612a49da8ff4411d64ad6195": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "663581a45e1a4d9a8d7b9757fad250f5": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "89104522ff77473c83aa7c820737f327": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "1fded2fd62c94af49615433a3b92a447": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "4333a30cd40544c599c8f8284bc259a6": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "2de48abbdc294834b6f81b8ab4dbe19b": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "311762a0cc724df7a8da517dae839484": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "8fcf2269f13c419ca0fd33574cda7210": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "9eebcc301ebe4ef0abfc867799d33c5d": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      }
+    },
+    "incomplete_status_answer": {
+      "7648ecfc7cd1499fa12140791df2acee": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "ac3bb0a34d524d2ead9f10481936b6c0": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: User says they haven't heard anything so let them know it could be in spam . Also give a concrete expected date"
+      },
+      "6da1c27928324d38b5c166bdb07ede85": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "bb794f532ade46cc928b0fe626062912": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "bdff31db5443484cb31a92a3ff53ea70": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "0a60a3dfbbf544418298aa44d685b2db": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "edf4a43cb63b43f7b55807b92243695d": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "7d0966d61b3648e88314eb67631be160": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "9e0d628226c54d3f9b0e43bd0749a408": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "93c67a4311f14b1b994843044a1bb1f9": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "42925af765ff4a8aa452bc898ae3acdc": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "5eff9c62a8bf41529cbb287668432186": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "11d602332f90475faf3f9056929224cb": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "e8894a5f65bb4aff9542b434d168720e": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "35e6316b61a142f8b0a00ab47de37ceb": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "b18a0f99224c4d20b5dc36c90e31ebe4": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "5aa412ad35604279a4fc25af5027edb0": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "e6f2828396fa4bddbcf79c9ada8b4243": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "52931076b6ae44c7bf9ff4bf74212407": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "73313aa30f56424ab3daa540116241c9": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "85e2957e58454e7ab149c8e6a5cbb728": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "a8a0af39811744b2a015ec6a4c085d46": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "d4587aff33d441278686c188b9a41fb4": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "7eb15b45ee844b84ad16c12ff3d9d668": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: This doesn't really answer the original question. The user still doesn't know what's going on with it"
+      },
+      "ce128687ea0b4cce8d1845d944e0496b": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "a01b4bac9bc74dfea7d02faae6152700": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "d0d95316922f425a9da013a6029042c0": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "6e0b9f1943c243f08147a22c22bd46c4": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "333bc1a3130040cea510ebfec3826e4e": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "1e8700c7d45148e295b43f1202b7bde1": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "8bea7c4182e84173b4f1f6daf4d66acd": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "de56ec36d710492a8dbf3fc53f4671ee": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "9f62b27dd1b74a508c4871d40237d258": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "fae185d9e09d463298249511ef189ab2": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "b6a6806e43734767accf2ab4e911eeb5": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "e3144a43cbe44adfa5b39774f3eeb295": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "d00e21ad04e54c3cb8626aff6bb0e0ec": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "afee185f3c554aff953aca0e9dc2c338": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "fcce57b1fa5646229b89493aa4b82e99": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "48c129a0c0204da2bf261515b6b5e3a5": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "fa7d040f3a2044ecb4945b58d4061483": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "037b28758a704f1394333c65a3497668": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "c9a1acda3396417e83f65869e8573e4f": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "c0b4d9e8327541e88c0c073b40b75037": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "3c19186440de453fbec5088be63804bd": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "184ab2625dbc4878ac2c911b374f5428": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "4c0fffc90d3c4dc5aedc389ce5dbe19f": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "43bc6b78b35547b7bdfb8c82be43cbca": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "c7d1692612034b40a3c1eca43b5aae68": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "920d27a0985b43b8a4709f9b3feca1de": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "27a207685d3243d3930a5a89c2388c55": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "73f472cb4c8c40a593836f2b64c7e069": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "3f1bbd186bfb467fb88991e698974b7a": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "083fcf100cbc4e90a9737fc264a781ef": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: Give a more exact end date. Allow for 7 days shipping so incorporate that to the resposne"
+      },
+      "7c13e45754f041f481a30736146d3b0f": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: Be more direct with expected timeline"
+      },
+      "9af48a312df949b38a7b7b860ccaafed": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "038ec9f0564e40bc903ee6d84b92ce56": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "5db729b39cee413f87865a95e45f0aff": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "8bfc9a93f16047269b619a422e6eafd6": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "10e1684192c24464a7f0418f068c033b": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "048caa00571a46b8ae0b499d5cca79d9": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "5cd8a957d667423798629379764af670": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "b96a0ae09ed84793b4b0c7972da9a6bc": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "7c1cc87401674ce7b5a527c18e5f9fa8": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "efaa84f278ac4a74887bc5eced71e3f9": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "0414a610cfa94eebb035902a622d4da7": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "3aa729242ad0403bb6a1b9adffabe446": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "2b038cd963d0496e8e02001e657f3d71": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "ebb9a96e1ac24194828fd4196de8f8d5": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "1ed1fd782fa248bf97b85b66a3ca3255": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: Give more info on when it should ship"
+      },
+      "bcab547a7d0745048d6f0471b62bf6ef": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "4d3833f3da874f5aa9c1bff9299ce23a": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "32e1bd44a8104c6994c8ed97bac0060b": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "fe994c8288a8448fb4b734f135a5745f": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "306aaa963cf9426e91348f8e9ecaaaa1": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "a9a3c0140334427997d9231f36219d3d": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "648d860f064e4586bff596a67f900e24": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "2831aa27a4194bd4a1151ee8ff4b6691": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "1c6c23738742488aaca56042bbd79a9c": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "34c06b421e814a06a676e6134ac397e9": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "d29f49b7bc0b4903916084f63ddf7da5": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "6b1754ac6cd7492387aa34055baaebd0": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "e22067c61f56427ba994004f36b8761e": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "765200e221f64d219ae1d6410d80bd5f": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: Give a more exact end date. Allow for 7 days shipping so incorporate that to the resposne | Give a more concrete answer based on expected delivery date"
+      },
+      "1c84d7c890fd496dae576f269a9c171c": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "50928b7d31ef4fa882d9b5eb9e2c853c": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "88f25614edc14313a39ceba5c306861d": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "319627675b084703889755b6b6a8c804": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "743c3d6df9f94cbc840d4995ac09d206": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "980eb26d995f4d4da8de5c9fe6d5e617": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "8eaababe2018486090a9ec865fedab93": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "230c6fa0612a49da8ff4411d64ad6195": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "663581a45e1a4d9a8d7b9757fad250f5": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "89104522ff77473c83aa7c820737f327": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "1fded2fd62c94af49615433a3b92a447": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "4333a30cd40544c599c8f8284bc259a6": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "2de48abbdc294834b6f81b8ab4dbe19b": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "311762a0cc724df7a8da517dae839484": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "8fcf2269f13c419ca0fd33574cda7210": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      },
+      "9eebcc301ebe4ef0abfc867799d33c5d": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "not an order-status request"
+      }
+    },
+    "misstates_result_completeness": {
+      "7648ecfc7cd1499fa12140791df2acee": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "ac3bb0a34d524d2ead9f10481936b6c0": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "6da1c27928324d38b5c166bdb07ede85": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "bb794f532ade46cc928b0fe626062912": {
+        "label": 1,
+        "basis": "code",
+        "evidence": "code: search_products returned 5 (limit 5); the reply does not say the results are partial"
+      },
+      "bdff31db5443484cb31a92a3ff53ea70": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "0a60a3dfbbf544418298aa44d685b2db": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "edf4a43cb63b43f7b55807b92243695d": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "7d0966d61b3648e88314eb67631be160": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: Do not limit to 5, show more in the price range"
+      },
+      "9e0d628226c54d3f9b0e43bd0749a408": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "93c67a4311f14b1b994843044a1bb1f9": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "42925af765ff4a8aa452bc898ae3acdc": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "5eff9c62a8bf41529cbb287668432186": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "11d602332f90475faf3f9056929224cb": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "e8894a5f65bb4aff9542b434d168720e": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "35e6316b61a142f8b0a00ab47de37ceb": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "b18a0f99224c4d20b5dc36c90e31ebe4": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "5aa412ad35604279a4fc25af5027edb0": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "e6f2828396fa4bddbcf79c9ada8b4243": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: Let the user know a limit was applied"
+      },
+      "52931076b6ae44c7bf9ff4bf74212407": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "73313aa30f56424ab3daa540116241c9": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "85e2957e58454e7ab149c8e6a5cbb728": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "a8a0af39811744b2a015ec6a4c085d46": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "d4587aff33d441278686c188b9a41fb4": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "7eb15b45ee844b84ad16c12ff3d9d668": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "ce128687ea0b4cce8d1845d944e0496b": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: list_my_orders returned 20 of 25; the reply discloses it \u2014 check the counts agree"
+      },
+      "a01b4bac9bc74dfea7d02faae6152700": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "d0d95316922f425a9da013a6029042c0": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "6e0b9f1943c243f08147a22c22bd46c4": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "333bc1a3130040cea510ebfec3826e4e": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "1e8700c7d45148e295b43f1202b7bde1": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "8bea7c4182e84173b4f1f6daf4d66acd": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "de56ec36d710492a8dbf3fc53f4671ee": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "9f62b27dd1b74a508c4871d40237d258": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "fae185d9e09d463298249511ef189ab2": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "b6a6806e43734767accf2ab4e911eeb5": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "e3144a43cbe44adfa5b39774f3eeb295": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: 10 more doesn't align with 498 total"
+      },
+      "d00e21ad04e54c3cb8626aff6bb0e0ec": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "afee185f3c554aff953aca0e9dc2c338": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "fcce57b1fa5646229b89493aa4b82e99": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "48c129a0c0204da2bf261515b6b5e3a5": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "fa7d040f3a2044ecb4945b58d4061483": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "037b28758a704f1394333c65a3497668": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "c9a1acda3396417e83f65869e8573e4f": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "c0b4d9e8327541e88c0c073b40b75037": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "3c19186440de453fbec5088be63804bd": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "184ab2625dbc4878ac2c911b374f5428": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "4c0fffc90d3c4dc5aedc389ce5dbe19f": {
+        "label": 1,
+        "basis": "code",
+        "evidence": "code: list_my_orders returned 20 of 27; the reply does not say the results are partial"
+      },
+      "43bc6b78b35547b7bdfb8c82be43cbca": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "c7d1692612034b40a3c1eca43b5aae68": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "920d27a0985b43b8a4709f9b3feca1de": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "27a207685d3243d3930a5a89c2388c55": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "73f472cb4c8c40a593836f2b64c7e069": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "3f1bbd186bfb467fb88991e698974b7a": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "083fcf100cbc4e90a9737fc264a781ef": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "7c13e45754f041f481a30736146d3b0f": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "9af48a312df949b38a7b7b860ccaafed": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "038ec9f0564e40bc903ee6d84b92ce56": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "5db729b39cee413f87865a95e45f0aff": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "8bfc9a93f16047269b619a422e6eafd6": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "10e1684192c24464a7f0418f068c033b": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "048caa00571a46b8ae0b499d5cca79d9": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "5cd8a957d667423798629379764af670": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: Don't present a truncated list as complete"
+      },
+      "b96a0ae09ed84793b4b0c7972da9a6bc": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "7c1cc87401674ce7b5a527c18e5f9fa8": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "efaa84f278ac4a74887bc5eced71e3f9": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "0414a610cfa94eebb035902a622d4da7": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "3aa729242ad0403bb6a1b9adffabe446": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "2b038cd963d0496e8e02001e657f3d71": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "ebb9a96e1ac24194828fd4196de8f8d5": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: list_my_orders returned 20 of 489; the reply discloses it \u2014 check the counts agree"
+      },
+      "1ed1fd782fa248bf97b85b66a3ca3255": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "bcab547a7d0745048d6f0471b62bf6ef": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "4d3833f3da874f5aa9c1bff9299ce23a": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "32e1bd44a8104c6994c8ed97bac0060b": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "fe994c8288a8448fb4b734f135a5745f": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "306aaa963cf9426e91348f8e9ecaaaa1": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "a9a3c0140334427997d9231f36219d3d": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "648d860f064e4586bff596a67f900e24": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "2831aa27a4194bd4a1151ee8ff4b6691": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "1c6c23738742488aaca56042bbd79a9c": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "34c06b421e814a06a676e6134ac397e9": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: Don't present truncated list as complete"
+      },
+      "d29f49b7bc0b4903916084f63ddf7da5": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "6b1754ac6cd7492387aa34055baaebd0": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "e22067c61f56427ba994004f36b8761e": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "765200e221f64d219ae1d6410d80bd5f": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "1c84d7c890fd496dae576f269a9c171c": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "50928b7d31ef4fa882d9b5eb9e2c853c": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "88f25614edc14313a39ceba5c306861d": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "319627675b084703889755b6b6a8c804": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "743c3d6df9f94cbc840d4995ac09d206": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "980eb26d995f4d4da8de5c9fe6d5e617": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "8eaababe2018486090a9ec865fedab93": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "230c6fa0612a49da8ff4411d64ad6195": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "663581a45e1a4d9a8d7b9757fad250f5": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "89104522ff77473c83aa7c820737f327": {
+        "label": 1,
+        "basis": "code",
+        "evidence": "code: search_products returned 5 (limit 5); the reply does not say the results are partial"
+      },
+      "1fded2fd62c94af49615433a3b92a447": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "4333a30cd40544c599c8f8284bc259a6": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "2de48abbdc294834b6f81b8ab4dbe19b": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "311762a0cc724df7a8da517dae839484": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "8fcf2269f13c419ca0fd33574cda7210": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      },
+      "9eebcc301ebe4ef0abfc867799d33c5d": {
+        "label": 0,
+        "basis": "code",
+        "evidence": "code: no capped list or search result"
+      }
+    },
+    "mishandles_bad_record": {
+      "7648ecfc7cd1499fa12140791df2acee": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "ac3bb0a34d524d2ead9f10481936b6c0": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "6da1c27928324d38b5c166bdb07ede85": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "bb794f532ade46cc928b0fe626062912": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "bdff31db5443484cb31a92a3ff53ea70": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "0a60a3dfbbf544418298aa44d685b2db": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "edf4a43cb63b43f7b55807b92243695d": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: Don't cite clearly erroneous data."
+      },
+      "7d0966d61b3648e88314eb67631be160": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "9e0d628226c54d3f9b0e43bd0749a408": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "93c67a4311f14b1b994843044a1bb1f9": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "42925af765ff4a8aa452bc898ae3acdc": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "5eff9c62a8bf41529cbb287668432186": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "11d602332f90475faf3f9056929224cb": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "e8894a5f65bb4aff9542b434d168720e": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "35e6316b61a142f8b0a00ab47de37ceb": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "b18a0f99224c4d20b5dc36c90e31ebe4": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "5aa412ad35604279a4fc25af5027edb0": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: No need for details"
+      },
+      "e6f2828396fa4bddbcf79c9ada8b4243": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "52931076b6ae44c7bf9ff4bf74212407": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "73313aa30f56424ab3daa540116241c9": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "85e2957e58454e7ab149c8e6a5cbb728": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "a8a0af39811744b2a015ec6a4c085d46": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "d4587aff33d441278686c188b9a41fb4": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "7eb15b45ee844b84ad16c12ff3d9d668": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "ce128687ea0b4cce8d1845d944e0496b": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "a01b4bac9bc74dfea7d02faae6152700": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "d0d95316922f425a9da013a6029042c0": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: Don't create a name"
+      },
+      "6e0b9f1943c243f08147a22c22bd46c4": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "333bc1a3130040cea510ebfec3826e4e": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "1e8700c7d45148e295b43f1202b7bde1": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "8bea7c4182e84173b4f1f6daf4d66acd": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "de56ec36d710492a8dbf3fc53f4671ee": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "9f62b27dd1b74a508c4871d40237d258": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "fae185d9e09d463298249511ef189ab2": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "b6a6806e43734767accf2ab4e911eeb5": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "e3144a43cbe44adfa5b39774f3eeb295": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "d00e21ad04e54c3cb8626aff6bb0e0ec": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "afee185f3c554aff953aca0e9dc2c338": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: Don't make up a name"
+      },
+      "fcce57b1fa5646229b89493aa4b82e99": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "48c129a0c0204da2bf261515b6b5e3a5": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "fa7d040f3a2044ecb4945b58d4061483": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "037b28758a704f1394333c65a3497668": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "c9a1acda3396417e83f65869e8573e4f": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "c0b4d9e8327541e88c0c073b40b75037": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "3c19186440de453fbec5088be63804bd": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "184ab2625dbc4878ac2c911b374f5428": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "4c0fffc90d3c4dc5aedc389ce5dbe19f": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: This is a made up title"
+      },
+      "43bc6b78b35547b7bdfb8c82be43cbca": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "c7d1692612034b40a3c1eca43b5aae68": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "920d27a0985b43b8a4709f9b3feca1de": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "27a207685d3243d3930a5a89c2388c55": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "73f472cb4c8c40a593836f2b64c7e069": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "3f1bbd186bfb467fb88991e698974b7a": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "083fcf100cbc4e90a9737fc264a781ef": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "7c13e45754f041f481a30736146d3b0f": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "9af48a312df949b38a7b7b860ccaafed": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "038ec9f0564e40bc903ee6d84b92ce56": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "5db729b39cee413f87865a95e45f0aff": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "8bfc9a93f16047269b619a422e6eafd6": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "10e1684192c24464a7f0418f068c033b": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "048caa00571a46b8ae0b499d5cca79d9": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "5cd8a957d667423798629379764af670": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "b96a0ae09ed84793b4b0c7972da9a6bc": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "7c1cc87401674ce7b5a527c18e5f9fa8": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "efaa84f278ac4a74887bc5eced71e3f9": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "0414a610cfa94eebb035902a622d4da7": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "3aa729242ad0403bb6a1b9adffabe446": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "2b038cd963d0496e8e02001e657f3d71": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "ebb9a96e1ac24194828fd4196de8f8d5": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "1ed1fd782fa248bf97b85b66a3ca3255": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "bcab547a7d0745048d6f0471b62bf6ef": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "4d3833f3da874f5aa9c1bff9299ce23a": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "32e1bd44a8104c6994c8ed97bac0060b": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "fe994c8288a8448fb4b734f135a5745f": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "306aaa963cf9426e91348f8e9ecaaaa1": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "a9a3c0140334427997d9231f36219d3d": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "648d860f064e4586bff596a67f900e24": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "2831aa27a4194bd4a1151ee8ff4b6691": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "1c6c23738742488aaca56042bbd79a9c": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "34c06b421e814a06a676e6134ac397e9": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "d29f49b7bc0b4903916084f63ddf7da5": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "6b1754ac6cd7492387aa34055baaebd0": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "e22067c61f56427ba994004f36b8761e": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "765200e221f64d219ae1d6410d80bd5f": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "1c84d7c890fd496dae576f269a9c171c": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "50928b7d31ef4fa882d9b5eb9e2c853c": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "88f25614edc14313a39ceba5c306861d": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "319627675b084703889755b6b6a8c804": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "743c3d6df9f94cbc840d4995ac09d206": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "980eb26d995f4d4da8de5c9fe6d5e617": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "8eaababe2018486090a9ec865fedab93": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "230c6fa0612a49da8ff4411d64ad6195": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "663581a45e1a4d9a8d7b9757fad250f5": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "89104522ff77473c83aa7c820737f327": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "1fded2fd62c94af49615433a3b92a447": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "4333a30cd40544c599c8f8284bc259a6": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "2de48abbdc294834b6f81b8ab4dbe19b": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "311762a0cc724df7a8da517dae839484": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "8fcf2269f13c419ca0fd33574cda7210": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      },
+      "9eebcc301ebe4ef0abfc867799d33c5d": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no missing, inconsistent, or visibly wrong record field"
+      }
+    },
+    "reveals_inaccessible_record": {
+      "7648ecfc7cd1499fa12140791df2acee": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "ac3bb0a34d524d2ead9f10481936b6c0": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "6da1c27928324d38b5c166bdb07ede85": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "bb794f532ade46cc928b0fe626062912": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "bdff31db5443484cb31a92a3ff53ea70": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "0a60a3dfbbf544418298aa44d685b2db": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "edf4a43cb63b43f7b55807b92243695d": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "7d0966d61b3648e88314eb67631be160": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "9e0d628226c54d3f9b0e43bd0749a408": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "93c67a4311f14b1b994843044a1bb1f9": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "42925af765ff4a8aa452bc898ae3acdc": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "5eff9c62a8bf41529cbb287668432186": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "11d602332f90475faf3f9056929224cb": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "e8894a5f65bb4aff9542b434d168720e": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "35e6316b61a142f8b0a00ab47de37ceb": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "b18a0f99224c4d20b5dc36c90e31ebe4": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "5aa412ad35604279a4fc25af5027edb0": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "e6f2828396fa4bddbcf79c9ada8b4243": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "52931076b6ae44c7bf9ff4bf74212407": {
+        "label": 0,
+        "basis": "no_note",
+        "evidence": "no note for this mode; check for a second failure"
+      },
+      "73313aa30f56424ab3daa540116241c9": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "85e2957e58454e7ab149c8e6a5cbb728": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "a8a0af39811744b2a015ec6a4c085d46": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "d4587aff33d441278686c188b9a41fb4": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "7eb15b45ee844b84ad16c12ff3d9d668": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "ce128687ea0b4cce8d1845d944e0496b": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "a01b4bac9bc74dfea7d02faae6152700": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "d0d95316922f425a9da013a6029042c0": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "6e0b9f1943c243f08147a22c22bd46c4": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "333bc1a3130040cea510ebfec3826e4e": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "1e8700c7d45148e295b43f1202b7bde1": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "8bea7c4182e84173b4f1f6daf4d66acd": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "de56ec36d710492a8dbf3fc53f4671ee": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "9f62b27dd1b74a508c4871d40237d258": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "fae185d9e09d463298249511ef189ab2": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "b6a6806e43734767accf2ab4e911eeb5": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "e3144a43cbe44adfa5b39774f3eeb295": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "d00e21ad04e54c3cb8626aff6bb0e0ec": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "afee185f3c554aff953aca0e9dc2c338": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "fcce57b1fa5646229b89493aa4b82e99": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "48c129a0c0204da2bf261515b6b5e3a5": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "fa7d040f3a2044ecb4945b58d4061483": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "037b28758a704f1394333c65a3497668": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "c9a1acda3396417e83f65869e8573e4f": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "c0b4d9e8327541e88c0c073b40b75037": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "3c19186440de453fbec5088be63804bd": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "184ab2625dbc4878ac2c911b374f5428": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "4c0fffc90d3c4dc5aedc389ce5dbe19f": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "43bc6b78b35547b7bdfb8c82be43cbca": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "c7d1692612034b40a3c1eca43b5aae68": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "920d27a0985b43b8a4709f9b3feca1de": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "27a207685d3243d3930a5a89c2388c55": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "73f472cb4c8c40a593836f2b64c7e069": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "3f1bbd186bfb467fb88991e698974b7a": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "083fcf100cbc4e90a9737fc264a781ef": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "7c13e45754f041f481a30736146d3b0f": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "9af48a312df949b38a7b7b860ccaafed": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "038ec9f0564e40bc903ee6d84b92ce56": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "5db729b39cee413f87865a95e45f0aff": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "8bfc9a93f16047269b619a422e6eafd6": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "10e1684192c24464a7f0418f068c033b": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "048caa00571a46b8ae0b499d5cca79d9": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "5cd8a957d667423798629379764af670": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "b96a0ae09ed84793b4b0c7972da9a6bc": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "7c1cc87401674ce7b5a527c18e5f9fa8": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "efaa84f278ac4a74887bc5eced71e3f9": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: Don't confirm order existence"
+      },
+      "0414a610cfa94eebb035902a622d4da7": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "3aa729242ad0403bb6a1b9adffabe446": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "2b038cd963d0496e8e02001e657f3d71": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "ebb9a96e1ac24194828fd4196de8f8d5": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "1ed1fd782fa248bf97b85b66a3ca3255": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "bcab547a7d0745048d6f0471b62bf6ef": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "4d3833f3da874f5aa9c1bff9299ce23a": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "32e1bd44a8104c6994c8ed97bac0060b": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: Don't confirm order existence outside of permissions"
+      },
+      "fe994c8288a8448fb4b734f135a5745f": {
+        "label": 1,
+        "basis": "note",
+        "evidence": "your note: Don't reveal ownership"
+      },
+      "306aaa963cf9426e91348f8e9ecaaaa1": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "a9a3c0140334427997d9231f36219d3d": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "648d860f064e4586bff596a67f900e24": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "2831aa27a4194bd4a1151ee8ff4b6691": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "1c6c23738742488aaca56042bbd79a9c": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "34c06b421e814a06a676e6134ac397e9": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "d29f49b7bc0b4903916084f63ddf7da5": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "6b1754ac6cd7492387aa34055baaebd0": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "e22067c61f56427ba994004f36b8761e": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "765200e221f64d219ae1d6410d80bd5f": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "1c84d7c890fd496dae576f269a9c171c": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "50928b7d31ef4fa882d9b5eb9e2c853c": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "88f25614edc14313a39ceba5c306861d": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "319627675b084703889755b6b6a8c804": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "743c3d6df9f94cbc840d4995ac09d206": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "980eb26d995f4d4da8de5c9fe6d5e617": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "8eaababe2018486090a9ec865fedab93": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "230c6fa0612a49da8ff4411d64ad6195": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "663581a45e1a4d9a8d7b9757fad250f5": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "89104522ff77473c83aa7c820737f327": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "1fded2fd62c94af49615433a3b92a447": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "4333a30cd40544c599c8f8284bc259a6": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "2de48abbdc294834b6f81b8ab4dbe19b": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "311762a0cc724df7a8da517dae839484": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "8fcf2269f13c419ca0fd33574cda7210": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      },
+      "9eebcc301ebe4ef0abfc867799d33c5d": {
+        "label": 0,
+        "basis": "not_applicable",
+        "evidence": "no permission denial in this conversation"
+      }
+    }
+  }
+}
