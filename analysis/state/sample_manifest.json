@@ -40,6 +40,13 @@
       "created_at": "2026-09-18T23:07:25+00:00",
       "size": 25,
       "seed": 20260920
+    },
+    {
+      "id": "batch4",
+      "method": "15 uniform random from conversations not yet sampled",
+      "seed": 20260921,
+      "created_at": "2026-09-19T03:12:21+00:00",
+      "size": 15
     }
   ],
   "conversations": [
@@ -981,6 +988,172 @@
       "method": "depth_search:missed_required_escalation",
       "reason": "likely positive: case SPEC routes to a human (dispute / account change)",
       "added_at": "2026-09-18T23:07:25+00:00"
+    },
+    {
+      "id": "50928b7d31ef4fa882d9b5eb9e2c853c",
+      "scenario_id": "support-0222",
+      "trace_ids": [
+        "d331be6cbaf7791ab4e47ca336706c9f"
+      ],
+      "batch": "batch4",
+      "method": "uniform",
+      "reason": "uniform random draw from unreviewed, seed 20260921",
+      "added_at": "2026-09-19T03:12:21+00:00"
+    },
+    {
+      "id": "88f25614edc14313a39ceba5c306861d",
+      "scenario_id": "support-0153",
+      "trace_ids": [
+        "5b7154811dcc1161661a7ef92be3b378"
+      ],
+      "batch": "batch4",
+      "method": "uniform",
+      "reason": "uniform random draw from unreviewed, seed 20260921",
+      "added_at": "2026-09-19T03:12:21+00:00"
+    },
+    {
+      "id": "319627675b084703889755b6b6a8c804",
+      "scenario_id": "support-0130",
+      "trace_ids": [
+        "d9ae74f9687cd82ac040fbe388bb74e7"
+      ],
+      "batch": "batch4",
+      "method": "uniform",
+      "reason": "uniform random draw from unreviewed, seed 20260921",
+      "added_at": "2026-09-19T03:12:21+00:00"
+    },
+    {
+      "id": "743c3d6df9f94cbc840d4995ac09d206",
+      "scenario_id": "support-0121",
+      "trace_ids": [
+        "d4bbdbd7376b99e0227a986b1ff54779"
+      ],
+      "batch": "batch4",
+      "method": "uniform",
+      "reason": "uniform random draw from unreviewed, seed 20260921",
+      "added_at": "2026-09-19T03:12:21+00:00"
+    },
+    {
+      "id": "980eb26d995f4d4da8de5c9fe6d5e617",
+      "scenario_id": "support-0249",
+      "trace_ids": [
+        "d28104494ef2c06f031f6185eb778c0e",
+        "93bf1298bccd82a727776e0365fa3ec2"
+      ],
+      "batch": "batch4",
+      "method": "uniform",
+      "reason": "uniform random draw from unreviewed, seed 20260921",
+      "added_at": "2026-09-19T03:12:21+00:00"
+    },
+    {
+      "id": "8eaababe2018486090a9ec865fedab93",
+      "scenario_id": "support-0132",
+      "trace_ids": [
+        "2af8cd3bb54c01c674ffc65400e130c3"
+      ],
+      "batch": "batch4",
+      "method": "uniform",
+      "reason": "uniform random draw from unreviewed, seed 20260921",
+      "added_at": "2026-09-19T03:12:21+00:00"
+    },
+    {
+      "id": "230c6fa0612a49da8ff4411d64ad6195",
+      "scenario_id": "support-0138",
+      "trace_ids": [
+        "54ed8ee3e58318e36164ce20627c35b4"
+      ],
+      "batch": "batch4",
+      "method": "uniform",
+      "reason": "uniform random draw from unreviewed, seed 20260921",
+      "added_at": "2026-09-19T03:12:21+00:00"
+    },
+    {
+      "id": "663581a45e1a4d9a8d7b9757fad250f5",
+      "scenario_id": "support-0163",
+      "trace_ids": [
+        "f067203fd9721a426319f47478466e4e"
+      ],
+      "batch": "batch4",
+      "method": "uniform",
+      "reason": "uniform random draw from unreviewed, seed 20260921",
+      "added_at": "2026-09-19T03:12:21+00:00"
+    },
+    {
+      "id": "89104522ff77473c83aa7c820737f327",
+      "scenario_id": "support-0085",
+      "trace_ids": [
+        "add7d27c24447e8b7b092590a607c331"
+      ],
+      "batch": "batch4",
+      "method": "uniform",
+      "reason": "uniform random draw from unreviewed, seed 20260921",
+      "added_at": "2026-09-19T03:12:21+00:00"
+    },
+    {
+      "id": "1fded2fd62c94af49615433a3b92a447",
+      "scenario_id": "support-0187",
+      "trace_ids": [
+        "94ed07cc773ba05869595ec90e6ee76d"
+      ],
+      "batch": "batch4",
+      "method": "uniform",
+      "reason": "uniform random draw from unreviewed, seed 20260921",
+      "added_at": "2026-09-19T03:12:21+00:00"
+    },
+    {
+      "id": "4333a30cd40544c599c8f8284bc259a6",
+      "scenario_id": "support-0020",
+      "trace_ids": [
+        "94bc9877192c77c186ef9cbcfd8cf1dc"
+      ],
+      "batch": "batch4",
+      "method": "uniform",
+      "reason": "uniform random draw from unreviewed, seed 20260921",
+      "added_at": "2026-09-19T03:12:21+00:00"
+    },
+    {
+      "id": "2de48abbdc294834b6f81b8ab4dbe19b",
+      "scenario_id": "support-0178",
+      "trace_ids": [
+        "13724861071d87dae06619f636aa340f"
+      ],
+      "batch": "batch4",
+      "method": "uniform",
+      "reason": "uniform random draw from unreviewed, seed 20260921",
+      "added_at": "2026-09-19T03:12:21+00:00"
+    },
+    {
+      "id": "311762a0cc724df7a8da517dae839484",
+      "scenario_id": "support-0125",
+      "trace_ids": [
+        "b87c89f08a6815921479690c1cf9d39a"
+      ],
+      "batch": "batch4",
+      "method": "uniform",
+      "reason": "uniform random draw from unreviewed, seed 20260921",
+      "added_at": "2026-09-19T03:12:21+00:00"
+    },
+    {
+      "id": "8fcf2269f13c419ca0fd33574cda7210",
+      "scenario_id": "support-0229",
+      "trace_ids": [
+        "fb20547ba9751a039d352cc9b37f76aa"
+      ],
+      "batch": "batch4",
+      "method": "uniform",
+      "reason": "uniform random draw from unreviewed, seed 20260921",
+      "added_at": "2026-09-19T03:12:21+00:00"
+    },
+    {
+      "id": "9eebcc301ebe4ef0abfc867799d33c5d",
+      "scenario_id": "support-0234",
+      "trace_ids": [
+        "b9a134476594e97813308ea58e0aa9bc"
+      ],
+      "batch": "batch4",
+      "method": "uniform",
+      "reason": "uniform random draw from unreviewed, seed 20260921",
+      "added_at": "2026-09-19T03:12:21+00:00"
     }
   ]
 }

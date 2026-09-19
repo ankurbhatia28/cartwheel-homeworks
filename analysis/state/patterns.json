@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-09-19T03:12:13+00:00",
+  "updated_at": "2026-09-19T03:25:51+00:00",
   "modes": [
     {
       "name": "exposes_internal_identifiers",
-      "definition": "Fail if the reply shown to the user contains a raw internal identifier or mechanic: a policy id (e.g. cw-returns, store-\u2026-policy), a tool or function name, or a description of how the system works internally (\"the tool gave me\u2026\"). Pass if policies are cited in plain language and no internals appear.",
+      "definition": "Fail if the reply shown to the user contains a raw internal identifier or mechanic: a policy id (e.g. cw-returns, store-\u2026-policy), a tool or function name, or a description of how the system works internally (\"the tool gave me\u2026\", \"the system doesn't have a \u2026 record\"). Pass if policies are cited in plain language and no internals appear. Saying that information is missing in user terms (\"we don't have a delivery date on file\") is a Pass here and is what RESP-3 requires.",
       "annotation_ids": [
         "a_ngq7fom7",
         "a_003j8cni",
@@ -23,7 +23,10 @@
         "a_5zaoy6p9",
         "a_01hssadm",
         "a_ym81ulic",
-        "a_4yodq2g4"
+        "a_4yodq2g4",
+        "a_g6psxpzm",
+        "a_mqmy7prs",
+        "a_srcn8x84"
       ],
       "boundary": "Nearest neighbor: surfaces_irrelevant_detail. This mode is about identifiers and internal mechanics (checkable by pattern); irrelevant but user-level detail (dates, data glitches) belongs to surfaces_irrelevant_detail.",
       "evaluator_type": "code",
@@ -43,11 +46,14 @@
         "support-0079",
         "support-0098",
         "support-0168",
+        "support-0178",
+        "support-0187",
         "support-0198",
         "support-0216",
         "support-0219",
         "support-0225",
         "support-0231",
+        "support-0234",
         "support-0236",
         "support-0247"
       ],
@@ -76,6 +82,14 @@
         {
           "ts": "2026-09-18T23:32:10+00:00",
           "change": "close negatives added from reviewed no-failure conversations: support-0023, support-0042, support-0162"
+        },
+        {
+          "ts": "2026-09-19T03:25:51+00:00",
+          "change": "batch 4: +0187, +0234, +0178"
+        },
+        {
+          "ts": "2026-09-19T03:25:51+00:00",
+          "change": "boundary sharpened from support-0178 (reviewer chose option a): describing the system's records is a Fail here; stating in user terms that data is missing is required by RESP-3 and passes"
         }
       ],
       "workshop_evidence": [
@@ -158,7 +172,9 @@
         "a_siinwmuf",
         "a_udkigu9f",
         "a_15jdu1bn",
-        "a_z47emzxx"
+        "a_z47emzxx",
+        "a_pxc3kpji",
+        "a_g978fxtx"
       ],
       "boundary": "Nearest neighbors: exposes_internal_identifiers (system internals, checkable by pattern) and mishandles_bad_record (broken record data, RESP-3).",
       "evaluator_type": "judge",
@@ -173,7 +189,9 @@
         "support-0104",
         "support-0149",
         "support-0176",
-        "support-0198"
+        "support-0187",
+        "support-0198",
+        "support-0222"
       ],
       "close_negatives": [
         "support-0101 (declined without outside suggestions)",
@@ -200,6 +218,10 @@
         {
           "ts": "2026-09-18T23:32:10+00:00",
           "change": "close negatives added from reviewed no-failure conversations: support-0101, support-0105, support-0106"
+        },
+        {
+          "ts": "2026-09-19T03:25:51+00:00",
+          "change": "batch 4: +0222, +0187"
         }
       ]
     },
@@ -380,7 +402,8 @@
       "first_seen_batch": "batch1",
       "close_negatives": [
         "support-0182",
-        "support-0186"
+        "support-0186",
+        "support-0178 (said the delivery date is missing and escalated; its wording failed exposes_internal_identifiers instead)"
       ],
       "workshop_evidence": [
         "workshop-W7 (4c92bfed\u2026): 'pricing error on our end', advice not to order, no human review (RESP-3)"
@@ -389,6 +412,10 @@
         {
           "ts": "2026-09-18T23:31:35+00:00",
           "change": "merged by reviewer: presents_missing_data_as_fact + the bad-record cases of surfaces_irrelevant_detail (0201, 0203); one product change (flag the bad record, send to human review) fixes both. 0198 and 0200 added from re-check suggestions (criteria drift)."
+        },
+        {
+          "ts": "2026-09-19T03:25:51+00:00",
+          "change": "close negative support-0178 added (batch 4)"
         }
       ],
       "positive_conversations": [
@@ -488,5 +515,12 @@
       "merged_into": "surfaces_irrelevant_detail",
       "at": "2026-09-18T23:31:35+00:00"
     }
-  ]
+  ],
+  "stability": {
+    "final_batch": "batch4",
+    "size": 15,
+    "new_consequential_modes": 0,
+    "detail": "4 of 15 conversations had failures; all fit existing modes (0222, 0187 surfaces_irrelevant_detail; 0187, 0234, 0178 exposes_internal_identifiers). 11 no failure observed.",
+    "assessed_at": "2026-09-19T03:25:51+00:00"
+  }
 }

@@ -137,6 +137,9 @@
   .cell button.fail.on { background:#fee2e2; border-color:#dc2626; color:#991b1b; font-weight:700; }
   td.dirty { background:#fffbeb; }
   td.missing { background:#fef2f2; }
+  td.suggested { background:#fff; outline:1px dashed #c4b5fd; outline-offset:-3px; }
+  td.suggested .cell button.on { opacity:.6; }
+  .sgtag { font-size:10px; color:var(--sugg); margin-top:2px; } .savedtag { font-size:10px; color:var(--reply); margin-top:2px; }
   #toast { position:fixed; right:18px; bottom:18px; background:#111827; color:#fff; padding:10px 14px; border-radius:8px; font-size:13px; display:none; z-index:50; }
   .empty { color:var(--muted); padding:30px; text-align:center; }
 </style>
@@ -609,36 +612,56 @@ function jump(id) { setView("content"); if (!sampleEntry(id)) { S.scope = "all";
 // ---------------------------------------------------------------------------
 // labels: one Pass/Fail per reviewed conversation per mode
 // ---------------------------------------------------------------------------
+const BASIS = {note: "your note", code: "code check", not_applicable: "not applicable", no_note: "no note — check for a second failure"};
 function renderLabels() {
   const modes = liveModes(), rows = S.samples.conversations.filter(c => isReviewed(c.id));
   if (!modes.length) { $("#labels").innerHTML = `<div class="empty">No failure modes yet. The labeling grid appears once the taxonomy has modes.</div>`; return; }
+  const sug = (cid, m) => S.labelDrafts?.[m]?.[cid];
   const cell = (cid, m) => {
-    const key = `${cid}|${m}`, draft = S.draftLabels[key], saved = S.labels[m]?.[cid];
-    const v = draft ? draft.label : saved?.label;
-    const ev = (draft ? draft.evidence : saved?.evidence) || "";
-    const cls = draft ? "dirty" : v === undefined ? "missing" : "";
+    const key = `${cid}|${m}`, draft = S.draftLabels[key], saved = S.labels[m]?.[cid], sg = sug(cid, m);
+    const confirmed = draft || saved;
+    const v = draft ? draft.label : saved ? saved.label : sg?.label;
+    const ev = (draft ? draft.evidence : saved ? saved.evidence : sg?.evidence) || "";
+    const cls = draft ? "dirty" : saved ? "" : sg ? "suggested" : "missing";
+    const tag = !confirmed && sg ? `<div class="sgtag">suggested · ${esc(BASIS[sg.basis] || sg.basis)}</div>` : saved && !draft ? `<div class="savedtag">saved</div>` : "";
     return `<td class="${cls}" title="${esc(ev)}"><div class="cell">
       <button class="pass ${v === 0 ? "on" : ""}" onclick="setLabel('${cid}','${m}',0)">Pass</button>
       <button class="fail ${v === 1 ? "on" : ""}" onclick="setLabel('${cid}','${m}',1)">Fail</button></div>
-      ${ev ? `<div class="stat" style="font-size:11px">${esc(ev.slice(0, 60))}</div>` : ""}</td>`;
+      ${tag}${ev && (v === 1 || sg?.basis === "code") ? `<div class="stat" style="font-size:11px">${esc(ev.slice(0, 90))}</div>` : ""}</td>`;
   };
-  const missing = modes.map(m => rows.filter(r => S.labels[m.name]?.[r.id] === undefined && !S.draftLabels[`${r.id}|${m.name}`]).length);
+  const rowNotes = cid => annsFor(cid).filter(a => a.kind === "note").map(a => (a.first_failure ? "★ " : "") + a.note).join(" · ") || "no failure observed";
+  const unconfirmed = cid => modes.filter(m => !S.labels[m.name]?.[cid] && !S.draftLabels[`${cid}|${m.name}`]).length;
+  const savedRows = rows.filter(r => modes.every(m => S.labels[m.name]?.[r.id])).length;
   const dirty = Object.keys(S.draftLabels).length;
-  let h = `<div style="display:flex;gap:10px;align-items:center;margin-bottom:10px">
+  let h = `<div style="display:flex;gap:10px;align-items:center;margin-bottom:6px;flex-wrap:wrap">
     <button class="btn primary" onclick="saveLabels()" ${dirty ? "" : "disabled"}>Save ${dirty} label(s) → files + Langfuse</button>
-    <span class="stat">Pass = failure absent, Fail = failure present. Fail asks for evidence. A conversation's label is written to each of its traces.
+    <span class="stat"><b>${savedRows} / ${rows.length}</b> conversations fully saved · Pass = failure absent, Fail = failure present.
     ${S.meta.offline ? " <b>Offline mode: Langfuse scores are not written.</b>" : ""}</span></div>
-    <table class="grid"><tr><th>Conversation</th>${modes.map((m, i) => `<th title="${esc(m.definition || "")}" class="mono">${esc(m.name)}<div class="stat">${missing[i]} missing</div></th>`).join("")}</tr>` +
-    rows.map(r => `<tr><td class="link" onclick="jump('${r.id}')">${esc(S.byId[r.id]?.scenario_id)}<div class="stat">${esc(r.batch)} · ${S.byId[r.id]?.trace_ids.length} trace(s)</div></td>
+    <div class="stat" style="margin-bottom:10px">Dashed cells are <b>suggestions</b> (never saved on their own). For each row: open the conversation if needed, flip any cell that's wrong
+    (a Fail asks for evidence), then <b>Confirm row</b> to accept the rest. Yellow = confirmed but unsaved; nothing reaches the files or Langfuse until you press Save.</div>
+    <table class="grid"><tr><th style="min-width:260px">Conversation · your notes</th>${modes.map(m => `<th title="${esc(m.definition || "")}" class="mono" style="font-size:11px">${esc(m.name)}</th>`).join("")}</tr>` +
+    rows.map(r => `<tr><td><span class="link" onclick="jump('${r.id}')">${esc(S.byId[r.id]?.scenario_id)}</span>
+        <span class="stat">${esc(r.batch)} · ${S.byId[r.id]?.trace_ids.length} trace(s)</span>
+        <div style="font-size:12px;margin:3px 0">${esc(rowNotes(r.id).slice(0, 200))}</div>
+        ${unconfirmed(r.id) ? `<button class="btn" style="font-size:12px;padding:2px 8px" onclick="confirmRow('${r.id}')">Confirm row (${unconfirmed(r.id)})</button>` : `<span class="stat">✓ confirmed</span>`}</td>
       ${modes.map(m => cell(r.id, m.name)).join("")}</tr>`).join("") + `</table>`;
   $("#labels").innerHTML = h;
 }
 function setLabel(cid, mode, label) {
-  const key = `${cid}|${mode}`, saved = S.labels[mode]?.[cid];
-  let evidence = S.draftLabels[key]?.evidence ?? saved?.evidence ?? "";
+  const key = `${cid}|${mode}`, saved = S.labels[mode]?.[cid], sg = S.labelDrafts?.[mode]?.[cid];
+  let evidence = S.draftLabels[key]?.evidence ?? saved?.evidence ?? (sg && sg.label === label ? sg.evidence : "");
   if (label === 1) { const v = prompt("Evidence for Fail (tool result, reply text, requirement):", evidence); if (v === null) return; evidence = v.trim(); if (!evidence) { toast("Fail needs evidence"); return; } }
+  if (label === 0 && sg && sg.label === 0) evidence = evidence || sg.evidence;
   if (saved && saved.label === label && (label === 0 || saved.evidence === evidence)) delete S.draftLabels[key];
-  else S.draftLabels[key] = {conversation_id: cid, mode, label, evidence};
+  else S.draftLabels[key] = {conversation_id: cid, mode, label, evidence, suggested: sg ? {label: sg.label, basis: sg.basis} : null};
+  renderLabels();
+}
+function confirmRow(cid) {
+  for (const m of liveModes()) {
+    const key = `${cid}|${m.name}`, sg = S.labelDrafts?.[m.name]?.[cid];
+    if (S.labels[m.name]?.[cid] || S.draftLabels[key] || !sg) continue;
+    S.draftLabels[key] = {conversation_id: cid, mode: m.name, label: sg.label, evidence: sg.evidence, suggested: {label: sg.label, basis: sg.basis}};
+  }
   renderLabels();
 }
 async function saveLabels() {
@@ -695,6 +718,7 @@ function paintAnnotationsSafe() { if ($("#pop").style.display !== "block") rende
     api("/api/conversations"), api("/api/meta"), api("/api/samples"), api("/api/annotations"),
     api("/api/patterns"), api("/api/suggestions"), api("/api/labels"), api("/api/graph")]);
   Object.assign(S, {convs, meta, samples, annotations: anns.annotations || [], patterns, suggestions: sugg, labels, graph});
+  S.labelDrafts = (await api("/api/label_drafts")).drafts || {};
   S.convs.forEach(c => S.byId[c.id] = c);
   sig = {samples: JSON.stringify(samples), patterns: JSON.stringify(patterns), suggestions: JSON.stringify(sugg)};
   if (!S.samples.conversations?.length) { S.samples = {batches: [], conversations: []}; S.scope = "all"; $("#scope").value = "all"; }

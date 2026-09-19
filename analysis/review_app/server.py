@@ -21,6 +21,7 @@ API:
     GET  POST /api/annotations      human open codes             (state/annotations.json)
     GET  POST /api/patterns         the taxonomy                 (state/patterns.json)
     GET  POST /api/suggestions      AI suggestions and decisions (state/suggestions.json)
+    GET  /api/label_drafts          suggested labels (draft_labels.py); never saved as labels
     GET  /api/labels                live Pass/Fail per conversation and mode
     POST /api/labels                save labels: local files + Langfuse scores
 
@@ -57,6 +58,7 @@ FILES = {
     "/api/patterns": (STATE_DIR / "patterns.json", {"modes": []}),
     "/api/suggestions": (STATE_DIR / "suggestions.json", []),
     "/api/graph": (STATE_DIR / "graph.json", {"nodes": [], "clusters": []}),
+    "/api/label_drafts": (STATE_DIR / "label_drafts.json", {"drafts": {}}),
 }
 WRITABLE = {"/api/samples", "/api/annotations", "/api/patterns", "/api/suggestions"}
 # Labels from the course demo fixture; not part of this review.
@@ -182,6 +184,10 @@ def _save_labels(items: list[dict[str, Any]]) -> dict[str, Any]:
             record = {"trace_id": trace_id, "label": label, "source": "human", "ts": _now(),
                       "label_id": label_id, "conversation_id": conv_id, "scenario_id": conv["scenario_id"],
                       "evidence": item.get("evidence", "")}
+            if item.get("suggested") is not None:
+                # What the draft suggested, so agreement with the drafts stays inspectable.
+                record["suggested_label"] = item["suggested"].get("label")
+                record["suggestion_basis"] = item["suggested"].get("basis")
             if client is not None:
                 try:
                     write_label_score(trace_id, mode, label, comment=item.get("evidence") or None, client=client)
