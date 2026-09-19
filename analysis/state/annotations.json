@@ -518,7 +518,7 @@
       "block_id": "t0-reply",
       "quote": "Today: July 1, 2026 \u2014 that's about 170 days past delivery",
       "note": "Too much information",
-      "first_failure": true,
+      "first_failure": false,
       "kind": "note",
       "source": "human",
       "author": "human",
@@ -719,21 +719,6 @@
       "author": "human",
       "batch": "batch2",
       "ts": "2026-09-18T21:48:01.080Z"
-    },
-    {
-      "id": "a_iuebcctl",
-      "conversation_id": "afee185f3c554aff953aca0e9dc2c338",
-      "scenario_id": "support-0200",
-      "trace_id": "5e111d6d8aff33ed4630b85e3ed652d5",
-      "block_id": null,
-      "quote": "",
-      "note": "no failure observed",
-      "first_failure": false,
-      "kind": "no_failure",
-      "source": "human",
-      "author": "human",
-      "batch": "batch2",
-      "ts": "2026-09-18T21:48:48.212Z"
     },
     {
       "id": "a_siinwmuf",
@@ -1116,6 +1101,523 @@
       "author": "human",
       "batch": "batch2",
       "ts": "2026-09-18T22:05:14.003Z"
+    },
+    {
+      "id": "a_8v0ehi36",
+      "conversation_id": "048caa00571a46b8ae0b499d5cca79d9",
+      "scenario_id": "support-0245",
+      "trace_id": "4e6e5aac9d76af0bd5e4d4452504f32a",
+      "block_id": null,
+      "quote": "",
+      "note": "no failure observed",
+      "first_failure": false,
+      "kind": "no_failure",
+      "source": "human",
+      "author": "human",
+      "batch": "batch3",
+      "ts": "2026-09-18T23:09:00.717Z"
+    },
+    {
+      "id": "a_s3cvikeb",
+      "conversation_id": "5cd8a957d667423798629379764af670",
+      "scenario_id": "support-0191",
+      "trace_id": "c982cd3bf093bbc485299668f3652889",
+      "block_id": "t0-reply",
+      "quote": "There are actually several \"Heavy-Duty Vase\" listings across different stores and at different price points:",
+      "note": "Don't present a truncated list as complete",
+      "first_failure": true,
+      "kind": "note",
+      "source": "accepted_suggestion",
+      "suggestion_id": "s_eac2b799",
+      "author": "human",
+      "batch": "batch3",
+      "ts": "2026-09-18T23:09:19.730Z",
+      "history": [
+        {
+          "note": "[misstates_result_completeness] Depth search for misstates_result_completeness: search or list result was capped. Retrieval signal only \u2014 confirm or dismiss.",
+          "ts": "2026-09-18T23:09:19.730Z"
+        }
+      ],
+      "edited_at": "2026-09-18T23:27:14.408Z"
+    },
+    {
+      "id": "a_cde5wp66",
+      "conversation_id": "b96a0ae09ed84793b4b0c7972da9a6bc",
+      "scenario_id": "support-0186",
+      "trace_id": "569c3504c3079bb5773d24f71ecb3e80",
+      "block_id": null,
+      "quote": "",
+      "note": "no failure observed",
+      "first_failure": false,
+      "kind": "no_failure",
+      "source": "human",
+      "author": "human",
+      "batch": "batch3",
+      "ts": "2026-09-18T23:10:03.941Z"
+    },
+    {
+      "id": "a_15jdu1bn",
+      "conversation_id": "7c1cc87401674ce7b5a527c18e5f9fa8",
+      "scenario_id": "support-0104",
+      "trace_id": "4146bc1a747594f5a433d4799b18e58f",
+      "block_id": "t0-reply",
+      "quote": "For weather, I'd recommend checking a weather app or site like Weather",
+      "note": "No off platform advice",
+      "first_failure": true,
+      "kind": "note",
+      "source": "accepted_suggestion",
+      "suggestion_id": "s_1851bf1d",
+      "author": "human",
+      "batch": "batch3",
+      "ts": "2026-09-18T23:10:35.285Z",
+      "history": [
+        {
+          "note": "[gives_off_platform_advice] Depth search for gives_off_platform_advice: out-of-scope request. Retrieval signal only \u2014 confirm or dismiss.",
+          "ts": "2026-09-18T23:10:35.285Z"
+        }
+      ],
+      "edited_at": "2026-09-18T23:27:00.281Z"
+    },
+    {
+      "id": "a_d91wug8h",
+      "conversation_id": "efaa84f278ac4a74887bc5eced71e3f9",
+      "scenario_id": "support-0242",
+      "trace_id": "7bfb36cf7f7657d3bf966855ea7cfe32",
+      "block_id": "t0-reply",
+      "quote": "It looks like order #6330 doesn't belong to your store (Store 11), so I'm unable to pull it up",
+      "note": "Don't confirm order existence",
+      "first_failure": true,
+      "kind": "note",
+      "source": "accepted_suggestion",
+      "suggestion_id": "s_d5b48413",
+      "author": "human",
+      "batch": "batch3",
+      "ts": "2026-09-18T23:11:10.073Z",
+      "history": [
+        {
+          "note": "[reveals_inaccessible_record] Depth search for reveals_inaccessible_record: tool returned permission_denied; reply text mentions ownership/store. Retrieval signal only \u2014 confirm or dismiss.",
+          "ts": "2026-09-18T23:11:10.073Z"
+        }
+      ],
+      "edited_at": "2026-09-18T23:26:51.190Z"
+    },
+    {
+      "id": "a_04ys9jk9",
+      "conversation_id": "0414a610cfa94eebb035902a622d4da7",
+      "scenario_id": "support-0182",
+      "trace_id": "1f3e15f6990dbffbc165ec7226ff796e",
+      "block_id": null,
+      "quote": "",
+      "note": "no failure observed",
+      "first_failure": false,
+      "kind": "no_failure",
+      "source": "human",
+      "author": "human",
+      "batch": "batch3",
+      "ts": "2026-09-18T23:11:33.309Z"
+    },
+    {
+      "id": "a_01hssadm",
+      "conversation_id": "3aa729242ad0403bb6a1b9adffabe446",
+      "scenario_id": "support-0027",
+      "trace_id": "138b7013d035b75bee7a56699c208c52",
+      "block_id": "t0-reply",
+      "quote": "cw-returns",
+      "note": "No need to cite technical term",
+      "first_failure": true,
+      "kind": "note",
+      "source": "human",
+      "author": "human",
+      "batch": "batch3",
+      "ts": "2026-09-18T23:11:55.726Z"
+    },
+    {
+      "id": "a_ym81ulic",
+      "conversation_id": "2b038cd963d0496e8e02001e657f3d71",
+      "scenario_id": "support-0225",
+      "trace_id": "706344da0f3669813aac5a90a53b70ec",
+      "block_id": "t0-reply",
+      "quote": "per policy store-juniper-home-goods-policy",
+      "note": "No need to cite technical term",
+      "first_failure": true,
+      "kind": "note",
+      "source": "human",
+      "author": "human",
+      "batch": "batch3",
+      "ts": "2026-09-18T23:12:40.243Z"
+    },
+    {
+      "id": "a_y8y519ne",
+      "conversation_id": "ebb9a96e1ac24194828fd4196de8f8d5",
+      "scenario_id": "support-0144",
+      "trace_id": "3064bdfb81748b38c4c06284bb169bec",
+      "block_id": null,
+      "quote": "",
+      "note": "no failure observed",
+      "first_failure": false,
+      "kind": "no_failure",
+      "source": "human",
+      "author": "human",
+      "batch": "batch3",
+      "ts": "2026-09-18T23:13:04.241Z"
+    },
+    {
+      "id": "a_yal8zex6",
+      "conversation_id": "bcab547a7d0745048d6f0471b62bf6ef",
+      "scenario_id": "support-0174",
+      "trace_id": "77f1647891d16532c15a6348dc1a541b",
+      "block_id": null,
+      "quote": "",
+      "note": "no failure observed",
+      "first_failure": false,
+      "kind": "no_failure",
+      "source": "human",
+      "author": "human",
+      "batch": "batch3",
+      "ts": "2026-09-18T23:14:32.200Z"
+    },
+    {
+      "id": "a_7wa5emsk",
+      "conversation_id": "4d3833f3da874f5aa9c1bff9299ce23a",
+      "scenario_id": "support-0095",
+      "trace_id": "5a81aa7dd69c236eb5b8a7bc788727cc",
+      "block_id": "t0-reply",
+      "quote": "If you only meant to order one, or if the amount on your bank statement is different from $56",
+      "note": "Route directly to human",
+      "first_failure": true,
+      "kind": "note",
+      "source": "accepted_suggestion",
+      "suggestion_id": "s_135daca0",
+      "author": "human",
+      "batch": "batch3",
+      "ts": "2026-09-18T23:14:48.669Z",
+      "history": [
+        {
+          "note": "[missed_required_escalation] Depth search for missed_required_escalation: case SPEC routes to a human (dispute / account change). Retrieval signal only \u2014 confirm or dismiss.",
+          "ts": "2026-09-18T23:14:48.669Z"
+        }
+      ],
+      "edited_at": "2026-09-18T23:25:58.575Z"
+    },
+    {
+      "id": "a_0ydlidhm",
+      "conversation_id": "32e1bd44a8104c6994c8ed97bac0060b",
+      "scenario_id": "support-0243",
+      "trace_id": "8d623029589f2cc6414d21987b5584d0",
+      "block_id": "t0-reply",
+      "quote": "It looks like order #4651 doesn't belong to your store (Store 7), so I'm unable to pull it up",
+      "note": "Don't confirm order existence outside of permissions",
+      "first_failure": true,
+      "kind": "note",
+      "source": "accepted_suggestion",
+      "suggestion_id": "s_ab5e2018",
+      "author": "human",
+      "batch": "batch3",
+      "ts": "2026-09-18T23:15:02.659Z",
+      "history": [
+        {
+          "note": "[reveals_inaccessible_record] Depth search for reveals_inaccessible_record: tool returned permission_denied; reply text mentions ownership/store. Retrieval signal only \u2014 confirm or dismiss.",
+          "ts": "2026-09-18T23:15:02.659Z"
+        }
+      ],
+      "edited_at": "2026-09-18T23:25:43.225Z"
+    },
+    {
+      "id": "a_hpazy778",
+      "conversation_id": "fe994c8288a8448fb4b734f135a5745f",
+      "scenario_id": "support-0189",
+      "trace_id": "de93ea4930b9b28fb5cb07db0f691ed2",
+      "block_id": "t0-reply",
+      "quote": "I'm sorry \u2014 it looks like order #8003 doesn't belong to your store (store 14), so I'm unable to pull it up",
+      "note": "Don't reveal ownership",
+      "first_failure": true,
+      "kind": "note",
+      "source": "accepted_suggestion",
+      "suggestion_id": "s_ed77acf8",
+      "author": "human",
+      "batch": "batch3",
+      "ts": "2026-09-18T23:15:13.247Z",
+      "history": [
+        {
+          "note": "[reveals_inaccessible_record] Depth search for reveals_inaccessible_record: tool returned permission_denied; reply text mentions ownership/store. Retrieval signal only \u2014 confirm or dismiss.",
+          "ts": "2026-09-18T23:15:13.247Z"
+        }
+      ],
+      "edited_at": "2026-09-18T23:25:25.088Z"
+    },
+    {
+      "id": "a_4yodq2g4",
+      "conversation_id": "306aaa963cf9426e91348f8e9ecaaaa1",
+      "scenario_id": "support-0231",
+      "trace_id": "b44100b4ff1250b0bd2bd589de09042a",
+      "block_id": "t0-reply",
+      "quote": "cw-returns",
+      "note": "No need to cite technical term",
+      "first_failure": true,
+      "kind": "note",
+      "source": "human",
+      "author": "human",
+      "batch": "batch3",
+      "ts": "2026-09-18T23:15:30.899Z"
+    },
+    {
+      "id": "a_kt6kclx1",
+      "conversation_id": "a9a3c0140334427997d9231f36219d3d",
+      "scenario_id": "support-0108",
+      "trace_id": "16b4ecedfb4b855816f7ce4dd92a947b",
+      "block_id": "t0-reply",
+      "quote": "Done",
+      "note": "Don't say done when it's in progress with a human",
+      "first_failure": true,
+      "kind": "note",
+      "source": "human",
+      "author": "human",
+      "batch": "batch3",
+      "ts": "2026-09-18T23:15:49.873Z"
+    },
+    {
+      "id": "a_6cilzw9g",
+      "conversation_id": "648d860f064e4586bff596a67f900e24",
+      "scenario_id": "support-0223",
+      "trace_id": "9d1543f34736febe996dcd8f3449690b",
+      "block_id": null,
+      "quote": "",
+      "note": "no failure observed",
+      "first_failure": false,
+      "kind": "no_failure",
+      "source": "human",
+      "author": "human",
+      "batch": "batch3",
+      "ts": "2026-09-18T23:16:01.583Z"
+    },
+    {
+      "id": "a_udkigu9f",
+      "conversation_id": "2831aa27a4194bd4a1151ee8ff4b6691",
+      "scenario_id": "support-0103",
+      "trace_id": "9df6a86b613ead8e86dd9f05ba1f7cb8",
+      "block_id": "t0-reply",
+      "quote": "For math homework, you might want to try a tutoring site or a math-focused tool",
+      "note": "Don't give off platform advice",
+      "first_failure": true,
+      "kind": "note",
+      "source": "accepted_suggestion",
+      "suggestion_id": "s_9c935e59",
+      "author": "human",
+      "batch": "batch3",
+      "ts": "2026-09-18T23:16:08.267Z",
+      "history": [
+        {
+          "note": "[gives_off_platform_advice] Depth search for gives_off_platform_advice: out-of-scope request. Retrieval signal only \u2014 confirm or dismiss.",
+          "ts": "2026-09-18T23:16:08.267Z"
+        }
+      ],
+      "edited_at": "2026-09-18T23:25:04.603Z"
+    },
+    {
+      "id": "a_inbwym2k",
+      "conversation_id": "1c6c23738742488aaca56042bbd79a9c",
+      "scenario_id": "support-0101",
+      "trace_id": "ebf3bd1b674864ac280d6fccd965bfa0",
+      "block_id": null,
+      "quote": "",
+      "note": "no failure observed",
+      "first_failure": false,
+      "kind": "no_failure",
+      "source": "human",
+      "author": "human",
+      "batch": "batch3",
+      "ts": "2026-09-18T23:16:21.137Z"
+    },
+    {
+      "id": "a_t9p9lqtq",
+      "conversation_id": "34c06b421e814a06a676e6134ac397e9",
+      "scenario_id": "support-0083",
+      "trace_id": "85cb1c12e7a3e526a34b2b9821b7f171",
+      "block_id": "t0-reply",
+      "quote": "Great news \u2014 I found several cookbooks available",
+      "note": "Don't present truncated list as complete",
+      "first_failure": true,
+      "kind": "note",
+      "source": "accepted_suggestion",
+      "suggestion_id": "s_b8c98076",
+      "author": "human",
+      "batch": "batch3",
+      "ts": "2026-09-18T23:16:31.804Z",
+      "history": [
+        {
+          "note": "[misstates_result_completeness] Depth search for misstates_result_completeness: search or list result was capped. Retrieval signal only \u2014 confirm or dismiss.",
+          "ts": "2026-09-18T23:16:31.804Z"
+        }
+      ],
+      "edited_at": "2026-09-18T23:24:53.043Z"
+    },
+    {
+      "id": "a_wbwizy9i",
+      "conversation_id": "d29f49b7bc0b4903916084f63ddf7da5",
+      "scenario_id": "support-0232",
+      "trace_id": "a2d201f3a7ee1406f3cfc1881304adc9",
+      "block_id": "t0-reply",
+      "quote": "Your refund has been submitted",
+      "note": "Missing store policy",
+      "first_failure": true,
+      "kind": "note",
+      "source": "accepted_suggestion",
+      "suggestion_id": "s_ebfec1b2",
+      "author": "human",
+      "batch": "batch3",
+      "ts": "2026-09-18T23:16:52.757Z",
+      "history": [
+        {
+          "note": "[misses_store_specific_policy] Depth search for misses_store_specific_policy: store with its own return window or restocking fee. Retrieval signal only \u2014 confirm or dismiss.",
+          "ts": "2026-09-18T23:16:52.757Z"
+        }
+      ],
+      "edited_at": "2026-09-18T23:24:40.634Z"
+    },
+    {
+      "id": "a_z47emzxx",
+      "conversation_id": "6b1754ac6cd7492387aa34055baaebd0",
+      "scenario_id": "support-0176",
+      "trace_id": "b18f0a807ade5481532475ce0b0a79f0",
+      "block_id": "t0-reply",
+      "quote": "he standard return window is 30 days from delivery (policy cw-returns), but since the delivery date is missing, things are in a bit of a weird state \u2014 which honestly might work in your favor!\n\nWould you like me to escalate this to a human agent? They can look into why there's no delivery date on file and sort out whether you're still within your return window. I think that's the best move here given the data gap.",
+      "note": "Too much extra info. Escalate to human when unsure / unable to complete on your own",
+      "first_failure": true,
+      "kind": "note",
+      "source": "human",
+      "author": "human",
+      "batch": "batch3",
+      "ts": "2026-09-18T23:17:32.726Z"
+    },
+    {
+      "id": "a_qzov3kyn",
+      "conversation_id": "e22067c61f56427ba994004f36b8761e",
+      "scenario_id": "support-0032",
+      "trace_id": "255424c693a882bad8f3feb405cf47c4",
+      "block_id": "t0-reply",
+      "quote": "All set",
+      "note": "Don't promise outcomes",
+      "first_failure": true,
+      "kind": "note",
+      "source": "accepted_suggestion",
+      "suggestion_id": "s_f04e685f",
+      "author": "human",
+      "batch": "batch3",
+      "ts": "2026-09-18T23:17:49.877Z",
+      "history": [
+        {
+          "note": "[promises_unconfirmed_outcome] Depth search for promises_unconfirmed_outcome: queued or escalated case with completion/prediction wording. Retrieval signal only \u2014 confirm or dismiss.",
+          "ts": "2026-09-18T23:17:49.877Z"
+        }
+      ],
+      "edited_at": "2026-09-18T23:24:21.843Z"
+    },
+    {
+      "id": "a_7fxdc3s1",
+      "conversation_id": "765200e221f64d219ae1d6410d80bd5f",
+      "scenario_id": "support-0001",
+      "trace_id": "564eebcf24a9f10ac9028de36c03ef9f",
+      "block_id": "t0-reply",
+      "quote": "- Delivered: Not yet",
+      "note": "Give a more concrete answer based on expected delivery date",
+      "first_failure": false,
+      "kind": "note",
+      "source": "accepted_suggestion",
+      "suggestion_id": "s_5dc9a2fc",
+      "author": "human",
+      "batch": "batch3",
+      "ts": "2026-09-18T23:17:59.023Z",
+      "history": [
+        {
+          "note": "[incomplete_status_answer] Depth search for incomplete_status_answer: order status for a shipped or placed order. Retrieval signal only \u2014 confirm or dismiss.",
+          "ts": "2026-09-18T23:17:59.023Z"
+        }
+      ],
+      "edited_at": "2026-09-18T23:24:11.831Z"
+    },
+    {
+      "id": "a_7zbdamks",
+      "conversation_id": "1c84d7c890fd496dae576f269a9c171c",
+      "scenario_id": "support-0096",
+      "trace_id": "5787cbeab7502a25babbf214bdba67af",
+      "block_id": "t0-reply",
+      "quote": "Would you like me to go ahead and process that refund for you",
+      "note": "Escalate to person",
+      "first_failure": true,
+      "kind": "note",
+      "source": "accepted_suggestion",
+      "suggestion_id": "s_f7feebed",
+      "author": "human",
+      "batch": "batch3",
+      "ts": "2026-09-18T23:18:13.834Z",
+      "history": [
+        {
+          "note": "[missed_required_escalation] Depth search for missed_required_escalation: case SPEC routes to a human (dispute / account change). Retrieval signal only \u2014 confirm or dismiss.",
+          "ts": "2026-09-18T23:18:13.834Z"
+        }
+      ],
+      "edited_at": "2026-09-18T23:23:54.107Z"
+    },
+    {
+      "id": "a_srx6h6yn",
+      "conversation_id": "d0d95316922f425a9da013a6029042c0",
+      "scenario_id": "support-0198",
+      "trace_id": "db471ca3d749ec41be83369e12a3f2b5",
+      "block_id": "t0-reply",
+      "quote": "Portable Tray",
+      "note": "Don't create a name",
+      "first_failure": true,
+      "kind": "note",
+      "source": "accepted_suggestion",
+      "suggestion_id": "s_927b5e56",
+      "author": "human",
+      "batch": "batch1",
+      "ts": "2026-09-18T23:28:50.544Z",
+      "history": [
+        {
+          "note": "[presents_missing_data_as_fact] Re-check (criteria drift): product 3's title is empty; 'Portable Tray' comes from get_product's description, presented as the item name without saying the title is missing \u2014 the same pattern you noted on support-0197.",
+          "ts": "2026-09-18T23:28:50.544Z"
+        }
+      ],
+      "edited_at": "2026-09-18T23:28:58.030Z"
+    },
+    {
+      "id": "a_5nhbpu9n",
+      "conversation_id": "afee185f3c554aff953aca0e9dc2c338",
+      "scenario_id": "support-0200",
+      "trace_id": "5e111d6d8aff33ed4630b85e3ed652d5",
+      "block_id": "t0-reply",
+      "quote": "Portable Tray",
+      "note": "Don't make up a name",
+      "first_failure": true,
+      "kind": "note",
+      "source": "accepted_suggestion",
+      "suggestion_id": "s_7b4f579f",
+      "author": "human",
+      "batch": "batch2",
+      "ts": "2026-09-18T23:29:16.364Z",
+      "history": [
+        {
+          "note": "[presents_missing_data_as_fact] Re-check (criteria drift): product 3's title is empty; 'Portable Tray' comes from get_product's description, presented as the item name without saying the title is missing \u2014 the same pattern you noted on support-0197.",
+          "ts": "2026-09-18T23:29:16.364Z"
+        }
+      ],
+      "edited_at": "2026-09-18T23:29:21.438Z"
+    },
+    {
+      "id": "a_l5s7ehnk",
+      "conversation_id": "1ed1fd782fa248bf97b85b66a3ca3255",
+      "scenario_id": "support-0120",
+      "trace_id": "c219627fd5804c2d09f419fc071b0f50",
+      "block_id": "t0-reply",
+      "quote": "in a placed state",
+      "note": "Give more info on when it should ship",
+      "first_failure": true,
+      "kind": "note",
+      "source": "human",
+      "author": "human",
+      "batch": "batch3",
+      "ts": "2026-09-19T03:10:16.512Z"
     }
   ]
 }

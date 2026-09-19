@@ -33,6 +33,13 @@
       "seed": 20260919,
       "created_at": "2026-09-18T20:25:05+00:00",
       "size": 30
+    },
+    {
+      "id": "batch3",
+      "method": "depth searches for candidate modes and close negatives (retrieval signals on reply text, tool results, scenario fields); reviewer confirms each",
+      "created_at": "2026-09-18T23:07:25+00:00",
+      "size": 25,
+      "seed": 20260920
     }
   ],
   "conversations": [
@@ -699,6 +706,281 @@
       "method": "stratified:intent",
       "reason": "intent=policy_question, uniform within stratum, seed 20260919",
       "added_at": "2026-09-18T20:25:05+00:00"
+    },
+    {
+      "id": "048caa00571a46b8ae0b499d5cca79d9",
+      "scenario_id": "support-0245",
+      "trace_ids": [
+        "4e6e5aac9d76af0bd5e4d4452504f32a"
+      ],
+      "batch": "batch3",
+      "method": "depth_search:reveals_inaccessible_record",
+      "reason": "likely close negative: tool returned permission_denied; reply text mentions ownership/store",
+      "added_at": "2026-09-18T23:07:25+00:00"
+    },
+    {
+      "id": "5cd8a957d667423798629379764af670",
+      "scenario_id": "support-0191",
+      "trace_ids": [
+        "c982cd3bf093bbc485299668f3652889"
+      ],
+      "batch": "batch3",
+      "method": "depth_search:misstates_result_completeness",
+      "reason": "likely positive: search or list result was capped",
+      "added_at": "2026-09-18T23:07:25+00:00"
+    },
+    {
+      "id": "b96a0ae09ed84793b4b0c7972da9a6bc",
+      "scenario_id": "support-0186",
+      "trace_ids": [
+        "569c3504c3079bb5773d24f71ecb3e80"
+      ],
+      "batch": "batch3",
+      "method": "depth_search:presents_missing_data_as_fact",
+      "reason": "likely close negative: data-quality record with a missing or inconsistent field",
+      "added_at": "2026-09-18T23:07:25+00:00"
+    },
+    {
+      "id": "7c1cc87401674ce7b5a527c18e5f9fa8",
+      "scenario_id": "support-0104",
+      "trace_ids": [
+        "4146bc1a747594f5a433d4799b18e58f"
+      ],
+      "batch": "batch3",
+      "method": "depth_search:gives_off_platform_advice",
+      "reason": "likely positive: out-of-scope request",
+      "added_at": "2026-09-18T23:07:25+00:00"
+    },
+    {
+      "id": "efaa84f278ac4a74887bc5eced71e3f9",
+      "scenario_id": "support-0242",
+      "trace_ids": [
+        "7bfb36cf7f7657d3bf966855ea7cfe32"
+      ],
+      "batch": "batch3",
+      "method": "depth_search:reveals_inaccessible_record",
+      "reason": "likely positive: tool returned permission_denied; reply text mentions ownership/store",
+      "added_at": "2026-09-18T23:07:25+00:00"
+    },
+    {
+      "id": "0414a610cfa94eebb035902a622d4da7",
+      "scenario_id": "support-0182",
+      "trace_ids": [
+        "1f3e15f6990dbffbc165ec7226ff796e"
+      ],
+      "batch": "batch3",
+      "method": "depth_search:presents_missing_data_as_fact",
+      "reason": "likely close negative: data-quality record with a missing or inconsistent field",
+      "added_at": "2026-09-18T23:07:25+00:00"
+    },
+    {
+      "id": "3aa729242ad0403bb6a1b9adffabe446",
+      "scenario_id": "support-0027",
+      "trace_ids": [
+        "138b7013d035b75bee7a56699c208c52"
+      ],
+      "batch": "batch3",
+      "method": "depth_search:promises_unconfirmed_outcome",
+      "reason": "likely close negative: queued or escalated case with completion/prediction wording",
+      "added_at": "2026-09-18T23:07:25+00:00"
+    },
+    {
+      "id": "2b038cd963d0496e8e02001e657f3d71",
+      "scenario_id": "support-0225",
+      "trace_ids": [
+        "706344da0f3669813aac5a90a53b70ec"
+      ],
+      "batch": "batch3",
+      "method": "depth_search:misses_store_specific_policy",
+      "reason": "likely close negative: store with its own return window or restocking fee",
+      "added_at": "2026-09-18T23:07:25+00:00"
+    },
+    {
+      "id": "ebb9a96e1ac24194828fd4196de8f8d5",
+      "scenario_id": "support-0144",
+      "trace_ids": [
+        "3064bdfb81748b38c4c06284bb169bec"
+      ],
+      "batch": "batch3",
+      "method": "depth_search:misstates_result_completeness",
+      "reason": "likely close negative: search or list result was capped",
+      "added_at": "2026-09-18T23:07:25+00:00"
+    },
+    {
+      "id": "1ed1fd782fa248bf97b85b66a3ca3255",
+      "scenario_id": "support-0120",
+      "trace_ids": [
+        "c219627fd5804c2d09f419fc071b0f50"
+      ],
+      "batch": "batch3",
+      "method": "depth_search:incomplete_status_answer",
+      "reason": "likely positive: order status for a shipped or placed order",
+      "added_at": "2026-09-18T23:07:25+00:00"
+    },
+    {
+      "id": "bcab547a7d0745048d6f0471b62bf6ef",
+      "scenario_id": "support-0174",
+      "trace_ids": [
+        "77f1647891d16532c15a6348dc1a541b"
+      ],
+      "batch": "batch3",
+      "method": "depth_search:promises_unconfirmed_outcome",
+      "reason": "likely positive: queued or escalated case with completion/prediction wording",
+      "added_at": "2026-09-18T23:07:25+00:00"
+    },
+    {
+      "id": "4d3833f3da874f5aa9c1bff9299ce23a",
+      "scenario_id": "support-0095",
+      "trace_ids": [
+        "5a81aa7dd69c236eb5b8a7bc788727cc"
+      ],
+      "batch": "batch3",
+      "method": "depth_search:missed_required_escalation",
+      "reason": "likely positive: case SPEC routes to a human (dispute / account change)",
+      "added_at": "2026-09-18T23:07:25+00:00"
+    },
+    {
+      "id": "32e1bd44a8104c6994c8ed97bac0060b",
+      "scenario_id": "support-0243",
+      "trace_ids": [
+        "8d623029589f2cc6414d21987b5584d0"
+      ],
+      "batch": "batch3",
+      "method": "depth_search:reveals_inaccessible_record",
+      "reason": "likely positive: tool returned permission_denied; reply text mentions ownership/store",
+      "added_at": "2026-09-18T23:07:25+00:00"
+    },
+    {
+      "id": "fe994c8288a8448fb4b734f135a5745f",
+      "scenario_id": "support-0189",
+      "trace_ids": [
+        "de93ea4930b9b28fb5cb07db0f691ed2"
+      ],
+      "batch": "batch3",
+      "method": "depth_search:reveals_inaccessible_record",
+      "reason": "likely positive: tool returned permission_denied; reply text mentions ownership/store",
+      "added_at": "2026-09-18T23:07:25+00:00"
+    },
+    {
+      "id": "306aaa963cf9426e91348f8e9ecaaaa1",
+      "scenario_id": "support-0231",
+      "trace_ids": [
+        "b44100b4ff1250b0bd2bd589de09042a"
+      ],
+      "batch": "batch3",
+      "method": "depth_search:misses_store_specific_policy",
+      "reason": "likely close negative: store with its own return window or restocking fee",
+      "added_at": "2026-09-18T23:07:25+00:00"
+    },
+    {
+      "id": "a9a3c0140334427997d9231f36219d3d",
+      "scenario_id": "support-0108",
+      "trace_ids": [
+        "16b4ecedfb4b855816f7ce4dd92a947b"
+      ],
+      "batch": "batch3",
+      "method": "depth_search:missed_required_escalation",
+      "reason": "likely close negative: case SPEC routes to a human (dispute / account change)",
+      "added_at": "2026-09-18T23:07:25+00:00"
+    },
+    {
+      "id": "648d860f064e4586bff596a67f900e24",
+      "scenario_id": "support-0223",
+      "trace_ids": [
+        "9d1543f34736febe996dcd8f3449690b"
+      ],
+      "batch": "batch3",
+      "method": "depth_search:misses_store_specific_policy",
+      "reason": "likely close negative: store with its own return window or restocking fee",
+      "added_at": "2026-09-18T23:07:25+00:00"
+    },
+    {
+      "id": "2831aa27a4194bd4a1151ee8ff4b6691",
+      "scenario_id": "support-0103",
+      "trace_ids": [
+        "9df6a86b613ead8e86dd9f05ba1f7cb8"
+      ],
+      "batch": "batch3",
+      "method": "depth_search:gives_off_platform_advice",
+      "reason": "likely positive: out-of-scope request",
+      "added_at": "2026-09-18T23:07:25+00:00"
+    },
+    {
+      "id": "1c6c23738742488aaca56042bbd79a9c",
+      "scenario_id": "support-0101",
+      "trace_ids": [
+        "ebf3bd1b674864ac280d6fccd965bfa0"
+      ],
+      "batch": "batch3",
+      "method": "depth_search:gives_off_platform_advice",
+      "reason": "likely close negative: out-of-scope request",
+      "added_at": "2026-09-18T23:07:25+00:00"
+    },
+    {
+      "id": "34c06b421e814a06a676e6134ac397e9",
+      "scenario_id": "support-0083",
+      "trace_ids": [
+        "85cb1c12e7a3e526a34b2b9821b7f171"
+      ],
+      "batch": "batch3",
+      "method": "depth_search:misstates_result_completeness",
+      "reason": "likely positive: search or list result was capped",
+      "added_at": "2026-09-18T23:07:25+00:00"
+    },
+    {
+      "id": "d29f49b7bc0b4903916084f63ddf7da5",
+      "scenario_id": "support-0232",
+      "trace_ids": [
+        "a2d201f3a7ee1406f3cfc1881304adc9"
+      ],
+      "batch": "batch3",
+      "method": "depth_search:misses_store_specific_policy",
+      "reason": "likely positive: store with its own return window or restocking fee",
+      "added_at": "2026-09-18T23:07:25+00:00"
+    },
+    {
+      "id": "6b1754ac6cd7492387aa34055baaebd0",
+      "scenario_id": "support-0176",
+      "trace_ids": [
+        "b18f0a807ade5481532475ce0b0a79f0"
+      ],
+      "batch": "batch3",
+      "method": "depth_search:presents_missing_data_as_fact",
+      "reason": "likely close negative: data-quality record with a missing or inconsistent field",
+      "added_at": "2026-09-18T23:07:25+00:00"
+    },
+    {
+      "id": "e22067c61f56427ba994004f36b8761e",
+      "scenario_id": "support-0032",
+      "trace_ids": [
+        "255424c693a882bad8f3feb405cf47c4"
+      ],
+      "batch": "batch3",
+      "method": "depth_search:promises_unconfirmed_outcome",
+      "reason": "likely positive: queued or escalated case with completion/prediction wording",
+      "added_at": "2026-09-18T23:07:25+00:00"
+    },
+    {
+      "id": "765200e221f64d219ae1d6410d80bd5f",
+      "scenario_id": "support-0001",
+      "trace_ids": [
+        "564eebcf24a9f10ac9028de36c03ef9f"
+      ],
+      "batch": "batch3",
+      "method": "depth_search:incomplete_status_answer",
+      "reason": "likely positive: order status for a shipped or placed order",
+      "added_at": "2026-09-18T23:07:25+00:00"
+    },
+    {
+      "id": "1c84d7c890fd496dae576f269a9c171c",
+      "scenario_id": "support-0096",
+      "trace_ids": [
+        "5787cbeab7502a25babbf214bdba67af"
+      ],
+      "batch": "batch3",
+      "method": "depth_search:missed_required_escalation",
+      "reason": "likely positive: case SPEC routes to a human (dispute / account change)",
+      "added_at": "2026-09-18T23:07:25+00:00"
     }
   ]
 }

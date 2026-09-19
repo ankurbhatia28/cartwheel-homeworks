@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-18T23:03:26+00:00",
+  "updated_at": "2026-09-19T03:12:13+00:00",
   "modes": [
     {
       "name": "exposes_internal_identifiers",
@@ -20,7 +20,10 @@
         "a_rdahzkrm",
         "a_qslvy3vf",
         "a_cbs4wysm",
-        "a_5zaoy6p9"
+        "a_5zaoy6p9",
+        "a_01hssadm",
+        "a_ym81ulic",
+        "a_4yodq2g4"
       ],
       "boundary": "Nearest neighbor: surfaces_irrelevant_detail. This mode is about identifiers and internal mechanics (checkable by pattern); irrelevant but user-level detail (dates, data glitches) belongs to surfaces_irrelevant_detail.",
       "evaluator_type": "code",
@@ -30,6 +33,7 @@
       "positive_conversations": [
         "support-0022",
         "support-0024",
+        "support-0027",
         "support-0034",
         "support-0052",
         "support-0056",
@@ -42,10 +46,16 @@
         "support-0198",
         "support-0216",
         "support-0219",
+        "support-0225",
+        "support-0231",
         "support-0236",
         "support-0247"
       ],
-      "close_negatives": [],
+      "close_negatives": [
+        "support-0023",
+        "support-0042",
+        "support-0162"
+      ],
       "history": [
         {
           "ts": "2026-09-18T20:12:52+00:00",
@@ -58,6 +68,14 @@
         {
           "ts": "2026-09-18T23:03:26+00:00",
           "change": "Workshop evidence accepted by reviewer"
+        },
+        {
+          "ts": "2026-09-18T23:31:35+00:00",
+          "change": "batch 3: +0027, +0225, +0231"
+        },
+        {
+          "ts": "2026-09-18T23:32:10+00:00",
+          "change": "close negatives added from reviewed no-failure conversations: support-0023, support-0042, support-0162"
         }
       ],
       "workshop_evidence": [
@@ -75,16 +93,20 @@
         "a_o1042m0l",
         "a_5ilq6hcc",
         "a_8guw141z",
-        "a_l5f5tagq"
+        "a_l5f5tagq",
+        "a_qzov3kyn",
+        "a_kt6kclx1"
       ],
       "boundary": "Nearest neighbor: dead_end_without_escalation. This mode is about claims beyond the evidence; dead_end is about failing to act. A reply can escalate correctly and still fail here by promising the human's decision.",
       "evaluator_type": "judge",
-      "requirement_source": "SPEC.md RESP-2 (covers claimed success; extension to predictions pending \u2014 see open items)",
+      "requirement_source": "SPEC.md RESP-2",
       "status": "candidate",
       "first_seen_batch": "batch1",
       "positive_conversations": [
+        "support-0032",
         "support-0098",
         "support-0107",
+        "support-0108",
         "support-0111",
         "support-0183",
         "support-0216",
@@ -92,7 +114,11 @@
         "support-0218",
         "support-0226"
       ],
-      "close_negatives": [],
+      "close_negatives": [
+        "support-0174 (rejected suggestion: escalated with no promise)",
+        "support-0027",
+        "support-0129"
+      ],
       "history": [
         {
           "ts": "2026-09-18T20:12:52+00:00",
@@ -105,6 +131,14 @@
         {
           "ts": "2026-09-18T23:03:26+00:00",
           "change": "Workshop W2 folded in (reviewer): unsupported remedies count; required behavior is to offer human review without promising its outcome"
+        },
+        {
+          "ts": "2026-09-18T23:31:35+00:00",
+          "change": "batch 3: +0032 ('All set' on a queued refund), +0108 ('Done' on an escalation); 0174 suggestion rejected as a close negative"
+        },
+        {
+          "ts": "2026-09-18T23:32:10+00:00",
+          "change": "close negatives added from reviewed no-failure conversations: support-0129"
         }
       ],
       "workshop_evidence": [
@@ -114,30 +148,38 @@
     },
     {
       "name": "surfaces_irrelevant_detail",
-      "definition": "Fail if the reply includes raw data or detail that does not help the user and adds confusion, including explaining a visibly wrong record (e.g. a negative price) instead of saying it needs review by a person. Pass if the reply stays on what the user needs.",
+      "definition": "Fail if the reply adds content the user did not need and that adds confusion: unrequested detail about the record or policy, or, for an out-of-scope request, advice or outside recommendations instead of a brief decline and a pointer to what Cartwheel can help with. Pass if the reply stays on what the user asked.",
       "annotation_ids": [
         "a_x9ludf7l",
         "a_7sk2mwbu",
-        "a_xtm5g8fx",
-        "a_64tskcl4",
         "a_g1kzyvvf",
         "a_3r2vqyw3",
-        "a_0f91mkit"
+        "a_0f91mkit",
+        "a_siinwmuf",
+        "a_udkigu9f",
+        "a_15jdu1bn",
+        "a_z47emzxx"
       ],
-      "boundary": "Nearest neighbor: exposes_internal_identifiers (see there). For a visibly wrong record, the required behavior is: say it needs human review, make no claims about the value (RESP-3 as clarified).",
+      "boundary": "Nearest neighbors: exposes_internal_identifiers (system internals, checkable by pattern) and mishandles_bad_record (broken record data, RESP-3).",
       "evaluator_type": "judge",
-      "requirement_source": "SPEC.md RESP-3 (clarified in HW4 for visibly wrong records) and RESP-5",
+      "requirement_source": "SPEC.md RESP-5, SCOPE-2",
       "status": "candidate",
       "first_seen_batch": "batch1",
       "positive_conversations": [
         "support-0022",
         "support-0062",
         "support-0079",
-        "support-0198",
-        "support-0201",
-        "support-0203"
+        "support-0103",
+        "support-0104",
+        "support-0149",
+        "support-0176",
+        "support-0198"
       ],
-      "close_negatives": [],
+      "close_negatives": [
+        "support-0101 (declined without outside suggestions)",
+        "support-0105",
+        "support-0106"
+      ],
       "history": [
         {
           "ts": "2026-09-18T20:12:52+00:00",
@@ -150,10 +192,15 @@
         {
           "ts": "2026-09-18T23:03:26+00:00",
           "change": "Workshop evidence accepted by reviewer"
+        },
+        {
+          "ts": "2026-09-18T23:31:35+00:00",
+          "change": "merged by reviewer: gives_off_platform_advice folded in (one product change: answer what was asked and stop); bad-record cases 0201/0203 moved to mishandles_bad_record; +0176"
+        },
+        {
+          "ts": "2026-09-18T23:32:10+00:00",
+          "change": "close negatives added from reviewed no-failure conversations: support-0101, support-0105, support-0106"
         }
-      ],
-      "workshop_evidence": [
-        "workshop-W7 (4c92bfed\u2026): 'pricing error on our end', advice not to order, no human review (RESP-3)"
       ]
     },
     {
@@ -163,7 +210,10 @@
         "a_3b8d2ffz",
         "a_tw9mp2sz",
         "a_xl9a6l30",
-        "a_c59n5f2o"
+        "a_c59n5f2o",
+        "a_7wa5emsk",
+        "a_7zbdamks",
+        "a_z47emzxx"
       ],
       "boundary": "Nearest neighbor: promises_unconfirmed_outcome. This mode is about failing to hand off or act; promising what the human will decide is promises_unconfirmed_outcome.",
       "evaluator_type": "judge",
@@ -173,10 +223,18 @@
       "positive_conversations": [
         "support-0034",
         "support-0050",
+        "support-0095",
+        "support-0096",
+        "support-0176",
         "support-0236",
         "support-0247"
       ],
-      "close_negatives": [],
+      "close_negatives": [
+        "support-0108",
+        "support-0174",
+        "support-0099",
+        "support-0100"
+      ],
       "history": [
         {
           "ts": "2026-09-18T20:12:52+00:00",
@@ -185,6 +243,10 @@
         {
           "ts": "2026-09-18T22:06:55+00:00",
           "change": "batch 2: renamed from dead_end_without_escalation and widened to delayed escalation of cases SPEC routes to a human (support-0236)"
+        },
+        {
+          "ts": "2026-09-18T23:31:35+00:00",
+          "change": "batch 3: +0095, +0096 (disputes handled without escalation), +0176"
         }
       ]
     },
@@ -195,20 +257,28 @@
         "a_cta6fm7a",
         "a_umi00aij",
         "a_3ih81d09",
-        "a_4cfz6uy6"
+        "a_4cfz6uy6",
+        "a_o84wfpqh",
+        "a_7fxdc3s1",
+        "a_l5s7ehnk"
       ],
       "boundary": "Nearest neighbor: dead_end_without_escalation (see there).",
       "evaluator_type": "judge",
-      "requirement_source": "Not yet in SPEC (cw-shipping supplies the dates) \u2014 revision pending",
+      "requirement_source": "SPEC.md RESP-6 (added in HW4); cw-shipping",
       "status": "candidate",
       "first_seen_batch": "batch1",
       "positive_conversations": [
+        "support-0001",
         "support-0003",
         "support-0005",
         "support-0006",
-        "support-0010"
+        "support-0010",
+        "support-0120"
       ],
-      "close_negatives": [],
+      "close_negatives": [
+        "support-0117",
+        "support-0122"
+      ],
       "history": [
         {
           "ts": "2026-09-18T20:12:52+00:00",
@@ -221,6 +291,18 @@
         {
           "ts": "2026-09-18T23:03:26+00:00",
           "change": "Workshop evidence accepted by reviewer"
+        },
+        {
+          "ts": "2026-09-18T23:31:35+00:00",
+          "change": "batch 3: +0120, +0001"
+        },
+        {
+          "ts": "2026-09-18T23:32:10+00:00",
+          "change": "close negatives added from reviewed no-failure conversations: support-0120"
+        },
+        {
+          "ts": "2026-09-19T03:12:13+00:00",
+          "change": "0120 confirmed as a positive by reviewer ('Give more info on when it should ship'); requirement source RESP-6 added"
         }
       ],
       "workshop_evidence": [
@@ -233,19 +315,28 @@
       "annotation_ids": [
         "a_stv7fw09",
         "a_4r09490h",
-        "a_7nsyjjll"
+        "a_7nsyjjll",
+        "a_s3cvikeb",
+        "a_t9p9lqtq"
       ],
       "boundary": "Nearest neighbor: incomplete_status_answer. This mode is about partial result sets and their counts; incomplete_status_answer is about missing next-step facts for one order.",
       "evaluator_type": "code",
-      "requirement_source": "Not yet in SPEC \u2014 revision pending (related: truncated-history weak spot)",
+      "requirement_source": "SPEC.md RESP-7 (added in HW4)",
       "status": "candidate",
       "first_seen_batch": "batch1",
       "positive_conversations": [
+        "support-0083",
         "support-0084",
         "support-0145",
-        "support-0171"
+        "support-0171",
+        "support-0191"
       ],
-      "close_negatives": [],
+      "close_negatives": [
+        "support-0144",
+        "support-0113",
+        "support-0115",
+        "support-0092"
+      ],
       "history": [
         {
           "ts": "2026-09-18T20:12:52+00:00",
@@ -254,6 +345,18 @@
         {
           "ts": "2026-09-18T22:06:55+00:00",
           "change": "batch 2: renamed from undisclosed_result_limit and widened to inaccurate counts (support-0145); one product fix covers both"
+        },
+        {
+          "ts": "2026-09-18T23:31:35+00:00",
+          "change": "batch 3: +0191, +0083"
+        },
+        {
+          "ts": "2026-09-18T23:32:10+00:00",
+          "change": "close negatives added from reviewed no-failure conversations: support-0113, support-0115, support-0092"
+        },
+        {
+          "ts": "2026-09-19T03:12:13+00:00",
+          "change": "requirement source RESP-7 added"
         }
       ],
       "close_negatives_workshop": [
@@ -261,75 +364,49 @@
       ]
     },
     {
-      "name": "misses_store_specific_policy",
-      "definition": "Fail if the order is from a store whose own policy changes the answer (a different return window or a restocking fee) and the reply applies only the platform policy, ignoring the store's. Pass if the store policy is applied, or the store has no override.",
+      "name": "mishandles_bad_record",
+      "definition": "Fail if a field the answer depends on is missing, inconsistent, or visibly wrong in the record (an empty product title, a missing delivery date, reversed dates, a negative price) and the reply fills in, infers, or explains the value instead of saying the data is missing or wrong and that a person needs to review it. Pass if the reply states the problem and routes it to human review without claims about the value or its cause.",
       "annotation_ids": [
-        "a_f05a02g4"
+        "a_dve4ofq0",
+        "a_xtm5g8fx",
+        "a_64tskcl4",
+        "a_srx6h6yn",
+        "a_5nhbpu9n"
       ],
-      "boundary": "Nearest neighbor: exposes_internal_identifiers (citation form). This mode is about using the wrong policy's substance, not how it is cited.",
+      "boundary": "Nearest neighbor: surfaces_irrelevant_detail. That mode is about extra content on a healthy record; this one is about how a broken record is handled (RESP-3).",
       "evaluator_type": "judge",
-      "requirement_source": "SPEC.md RESP-1; cw-store-overrides; cw-restocking-fees",
+      "requirement_source": "SPEC.md RESP-3 (clarified in HW4 for visibly wrong records)",
       "status": "candidate",
-      "first_seen_batch": "batch2",
-      "close_negatives": [],
+      "first_seen_batch": "batch1",
+      "close_negatives": [
+        "support-0182",
+        "support-0186"
+      ],
+      "workshop_evidence": [
+        "workshop-W7 (4c92bfed\u2026): 'pricing error on our end', advice not to order, no human review (RESP-3)"
+      ],
       "history": [
         {
-          "ts": "2026-09-18T22:06:55+00:00",
-          "change": "proposed by agent from batch 2 open codes; accepted by reviewer"
+          "ts": "2026-09-18T23:31:35+00:00",
+          "change": "merged by reviewer: presents_missing_data_as_fact + the bad-record cases of surfaces_irrelevant_detail (0201, 0203); one product change (flag the bad record, send to human review) fixes both. 0198 and 0200 added from re-check suggestions (criteria drift)."
         }
       ],
       "positive_conversations": [
-        "support-0233"
-      ]
-    },
-    {
-      "name": "gives_off_platform_advice",
-      "definition": "Fail if, for an out-of-scope request, the reply goes beyond declining and pointing to what Cartwheel can help with, by recommending outside resources or giving the advice anyway. Pass if it declines briefly and redirects to Cartwheel help.",
-      "annotation_ids": [
-        "a_siinwmuf"
-      ],
-      "boundary": "Close negatives: support-0105, support-0106 (declined without outside suggestions; reviewed as no failure). Nearest neighbor: surfaces_irrelevant_detail.",
-      "evaluator_type": "judge",
-      "requirement_source": "SPEC.md SCOPE-2",
-      "status": "candidate",
-      "first_seen_batch": "batch2",
-      "close_negatives": [],
-      "history": [
-        {
-          "ts": "2026-09-18T22:06:55+00:00",
-          "change": "proposed by agent from batch 2 open codes; accepted by reviewer"
-        }
-      ],
-      "positive_conversations": [
-        "support-0149"
-      ]
-    },
-    {
-      "name": "presents_missing_data_as_fact",
-      "definition": "Fail if a field the answer depends on is missing or inconsistent in the record (e.g. an empty product title, a missing delivery date) and the reply presents a value anyway without saying the data is missing or inconsistent. Pass if it states the gap (RESP-3).",
-      "annotation_ids": [
-        "a_dve4ofq0"
-      ],
-      "boundary": "Nearest neighbor: surfaces_irrelevant_detail. That mode is about adding needless detail; this one is about hiding that required data is missing.",
-      "evaluator_type": "judge",
-      "requirement_source": "SPEC.md RESP-3",
-      "status": "candidate",
-      "first_seen_batch": "batch2",
-      "close_negatives": [],
-      "history": [
-        {
-          "ts": "2026-09-18T22:06:55+00:00",
-          "change": "proposed by agent from batch 2 open codes; accepted by reviewer"
-        }
-      ],
-      "positive_conversations": [
-        "support-0197"
+        "support-0197",
+        "support-0198",
+        "support-0200",
+        "support-0201",
+        "support-0203"
       ]
     },
     {
       "name": "reveals_inaccessible_record",
       "definition": "Fail if, after a permission check denies access to an order or user record, the reply reveals anything about that record, including that it exists or which store or user it belongs to (e.g. \"doesn't belong to your store\"). Pass if the reply declines without distinguishing a record that exists elsewhere from one that doesn't exist.",
-      "annotation_ids": [],
+      "annotation_ids": [
+        "a_hpazy778",
+        "a_d91wug8h",
+        "a_0ydlidhm"
+      ],
       "workshop_evidence": [
         "workshop-W1 (836972da\u2026): 'order #6330 doesn't belong to your store (Store 11)' after permission_denied"
       ],
@@ -338,14 +415,23 @@
       "requirement_source": "SPEC.md RESP-4, AUTH-1",
       "status": "candidate",
       "first_seen_batch": "workshop",
-      "positive_conversations": [],
+      "positive_conversations": [
+        "support-0189",
+        "support-0242",
+        "support-0243"
+      ],
       "close_negatives": [
-        "support-0244 (shopper denial worded without revealing; reviewed as no failure)"
+        "support-0245",
+        "support-0244"
       ],
       "history": [
         {
           "ts": "2026-09-18T23:03:26+00:00",
           "change": "proposed by coding agent from Raindrop Workshop run W1; accepted by reviewer. Needs positives from the reviewed sample (batch 3)."
+        },
+        {
+          "ts": "2026-09-18T23:31:35+00:00",
+          "change": "batch 3: 3 positives confirmed by reviewer from depth search"
         }
       ]
     }
@@ -377,6 +463,30 @@
       ],
       "definition": "A tool call fails because the agent passed an argument of the wrong kind that it could have gotten right from context (merchant product searches passed the store id where search_products expects the store name).",
       "reason": "Rejected by reviewer. Kept as open codes; the failures remain recorded on 0147 and 0148."
+    },
+    {
+      "name": "misses_store_specific_policy",
+      "proposed_at": "2026-09-18T22:06:55+00:00",
+      "rejected_by": "reviewer",
+      "rejected_at": "2026-09-18T23:31:35+00:00",
+      "annotation_ids": [
+        "a_f05a02g4",
+        "a_wbwizy9i"
+      ],
+      "definition": "Fail if the order is from a store whose own policy changes the answer (a different return window or a restocking fee) and the reply applies only the platform policy, ignoring the store's. Pass if the store policy is applied, or the store has no override.",
+      "reason": "Demoted by reviewer for insufficient support: 2 positives (0233, 0232) against 3 confirmed close negatives (0223 Northwind 45-day, 0225 Juniper 14-day, 0231 Cascade restocking fee), so the agent usually applies store rules. Kept as observed failures, not a mode."
+    }
+  ],
+  "merged_modes": [
+    {
+      "name": "presents_missing_data_as_fact",
+      "merged_into": "mishandles_bad_record",
+      "at": "2026-09-18T23:31:35+00:00"
+    },
+    {
+      "name": "gives_off_platform_advice",
+      "merged_into": "surfaces_irrelevant_detail",
+      "at": "2026-09-18T23:31:35+00:00"
     }
   ]
 }
