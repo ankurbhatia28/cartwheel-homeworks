@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-19T03:25:51+00:00",
+  "updated_at": "2026-09-19T04:14:35+00:00",
   "modes": [
     {
       "name": "exposes_internal_identifiers",
@@ -26,7 +26,11 @@
         "a_4yodq2g4",
         "a_g6psxpzm",
         "a_mqmy7prs",
-        "a_srcn8x84"
+        "a_srcn8x84",
+        "a_n2rjt2j6",
+        "a_9ayvzn5d",
+        "a_zyaeao4u",
+        "a_htfxdbb2"
       ],
       "boundary": "Nearest neighbor: surfaces_irrelevant_detail. This mode is about identifiers and internal mechanics (checkable by pattern); irrelevant but user-level detail (dates, data glitches) belongs to surfaces_irrelevant_detail.",
       "evaluator_type": "code",
@@ -42,9 +46,12 @@
         "support-0056",
         "support-0058",
         "support-0067",
+        "support-0071",
         "support-0077",
         "support-0079",
         "support-0098",
+        "support-0125",
+        "support-0138",
         "support-0168",
         "support-0178",
         "support-0187",
@@ -52,15 +59,16 @@
         "support-0216",
         "support-0219",
         "support-0225",
+        "support-0229",
         "support-0231",
         "support-0234",
         "support-0236",
         "support-0247"
       ],
       "close_negatives": [
-        "support-0023",
         "support-0042",
-        "support-0162"
+        "support-0162",
+        "support-0050"
       ],
       "history": [
         {
@@ -90,6 +98,14 @@
         {
           "ts": "2026-09-19T03:25:51+00:00",
           "change": "boundary sharpened from support-0178 (reviewer chose option a): describing the system's records is a Fail here; stating in user terms that data is missing is required by RESP-3 and passes"
+        },
+        {
+          "ts": "2026-09-19T04:14:35+00:00",
+          "change": "labeling pass: notes added on 0229, 0125, 0138, 0071 (raw policy ids first caught by the code check)"
+        },
+        {
+          "ts": "2026-09-19T04:14:35+00:00",
+          "change": "close negative support-0023 removed (outside the 100-conversation sample)"
         }
       ],
       "workshop_evidence": [
@@ -109,7 +125,8 @@
         "a_8guw141z",
         "a_l5f5tagq",
         "a_qzov3kyn",
-        "a_kt6kclx1"
+        "a_kt6kclx1",
+        "a_wbwizy9i"
       ],
       "boundary": "Nearest neighbor: dead_end_without_escalation. This mode is about claims beyond the evidence; dead_end is about failing to act. A reply can escalate correctly and still fail here by promising the human's decision.",
       "evaluator_type": "judge",
@@ -126,7 +143,8 @@
         "support-0216",
         "support-0217",
         "support-0218",
-        "support-0226"
+        "support-0226",
+        "support-0232"
       ],
       "close_negatives": [
         "support-0174 (rejected suggestion: escalated with no promise)",
@@ -153,6 +171,10 @@
         {
           "ts": "2026-09-18T23:32:10+00:00",
           "change": "close negatives added from reviewed no-failure conversations: support-0129"
+        },
+        {
+          "ts": "2026-09-19T04:14:35+00:00",
+          "change": "reviewer: support-0232 ('Don't claim completion when human review required') moved here from the demoted store-policy group"
         }
       ],
       "workshop_evidence": [
@@ -235,7 +257,8 @@
         "a_c59n5f2o",
         "a_7wa5emsk",
         "a_7zbdamks",
-        "a_z47emzxx"
+        "a_z47emzxx",
+        "a_5gb21s8v"
       ],
       "boundary": "Nearest neighbor: promises_unconfirmed_outcome. This mode is about failing to hand off or act; promising what the human will decide is promises_unconfirmed_outcome.",
       "evaluator_type": "judge",
@@ -248,6 +271,7 @@
         "support-0095",
         "support-0096",
         "support-0176",
+        "support-0219",
         "support-0236",
         "support-0247"
       ],
@@ -269,6 +293,10 @@
         {
           "ts": "2026-09-18T23:31:35+00:00",
           "change": "batch 3: +0095, +0096 (disputes handled without escalation), +0176"
+        },
+        {
+          "ts": "2026-09-19T04:14:35+00:00",
+          "change": "reviewer: support-0219 ('Just escalate to a human\u2026') assigned here"
         }
       ]
     },
@@ -339,7 +367,8 @@
         "a_4r09490h",
         "a_7nsyjjll",
         "a_s3cvikeb",
-        "a_t9p9lqtq"
+        "a_t9p9lqtq",
+        "a_z53e4nfs"
       ],
       "boundary": "Nearest neighbor: incomplete_status_answer. This mode is about partial result sets and their counts; incomplete_status_answer is about missing next-step facts for one order.",
       "evaluator_type": "code",
@@ -349,6 +378,7 @@
       "positive_conversations": [
         "support-0083",
         "support-0084",
+        "support-0085",
         "support-0145",
         "support-0171",
         "support-0191"
@@ -379,6 +409,10 @@
         {
           "ts": "2026-09-19T03:12:13+00:00",
           "change": "requirement source RESP-7 added"
+        },
+        {
+          "ts": "2026-09-19T04:14:35+00:00",
+          "change": "labeling pass: note added on 0085"
         }
       ],
       "close_negatives_workshop": [
@@ -497,8 +531,7 @@
       "rejected_by": "reviewer",
       "rejected_at": "2026-09-18T23:31:35+00:00",
       "annotation_ids": [
-        "a_f05a02g4",
-        "a_wbwizy9i"
+        "a_f05a02g4"
       ],
       "definition": "Fail if the order is from a store whose own policy changes the answer (a different return window or a restocking fee) and the reply applies only the platform policy, ignoring the store's. Pass if the store policy is applied, or the store has no override.",
       "reason": "Demoted by reviewer for insufficient support: 2 positives (0233, 0232) against 3 confirmed close negatives (0223 Northwind 45-day, 0225 Juniper 14-day, 0231 Cascade restocking fee), so the agent usually applies store rules. Kept as observed failures, not a mode."
@@ -522,5 +555,10 @@
     "new_consequential_modes": 0,
     "detail": "4 of 15 conversations had failures; all fit existing modes (0222, 0187 surfaces_irrelevant_detail; 0187, 0234, 0178 exposes_internal_identifiers). 11 no failure observed.",
     "assessed_at": "2026-09-19T03:25:51+00:00"
-  }
+  },
+  "annotations_outside_sample": [
+    "support-0002",
+    "support-0004",
+    "support-0023"
+  ]
 }

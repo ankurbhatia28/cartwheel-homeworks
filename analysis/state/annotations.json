@@ -1058,21 +1058,6 @@
       "ts": "2026-09-18T22:01:04.680Z"
     },
     {
-      "id": "a_byvk010t",
-      "conversation_id": "10e1684192c24464a7f0418f068c033b",
-      "scenario_id": "support-0071",
-      "trace_id": "66fccfdc01905167dcc68bd8a83c855f",
-      "block_id": null,
-      "quote": "",
-      "note": "no failure observed",
-      "first_failure": false,
-      "kind": "no_failure",
-      "source": "human",
-      "author": "human",
-      "batch": "batch2",
-      "ts": "2026-09-18T22:01:13.564Z"
-    },
-    {
       "id": "a_dvno8w05",
       "conversation_id": "5db729b39cee413f87865a95e45f0aff",
       "scenario_id": "support-0147",
@@ -1458,7 +1443,7 @@
       "trace_id": "a2d201f3a7ee1406f3cfc1881304adc9",
       "block_id": "t0-reply",
       "quote": "Your refund has been submitted",
-      "note": "Missing store policy",
+      "note": "Don't claim completion when human review required",
       "first_failure": true,
       "kind": "note",
       "source": "accepted_suggestion",
@@ -1470,9 +1455,13 @@
         {
           "note": "[misses_store_specific_policy] Depth search for misses_store_specific_policy: store with its own return window or restocking fee. Retrieval signal only \u2014 confirm or dismiss.",
           "ts": "2026-09-18T23:16:52.757Z"
+        },
+        {
+          "note": "Missing store policy",
+          "ts": "2026-09-18T23:24:40.634Z"
         }
       ],
-      "edited_at": "2026-09-18T23:24:40.634Z"
+      "edited_at": "2026-09-19T04:05:28.731Z"
     },
     {
       "id": "a_z47emzxx",
@@ -1710,21 +1699,6 @@
       "ts": "2026-09-19T03:19:58.947Z"
     },
     {
-      "id": "a_qr4gud9m",
-      "conversation_id": "230c6fa0612a49da8ff4411d64ad6195",
-      "scenario_id": "support-0138",
-      "trace_id": "54ed8ee3e58318e36164ce20627c35b4",
-      "block_id": null,
-      "quote": "",
-      "note": "no failure observed",
-      "first_failure": false,
-      "kind": "no_failure",
-      "source": "human",
-      "author": "human",
-      "batch": "batch4",
-      "ts": "2026-09-19T03:20:10.332Z"
-    },
-    {
       "id": "a_hdcrjpql",
       "conversation_id": "663581a45e1a4d9a8d7b9757fad250f5",
       "scenario_id": "support-0163",
@@ -1738,21 +1712,6 @@
       "author": "human",
       "batch": "batch4",
       "ts": "2026-09-19T03:20:18.694Z"
-    },
-    {
-      "id": "a_oop5vgol",
-      "conversation_id": "89104522ff77473c83aa7c820737f327",
-      "scenario_id": "support-0085",
-      "trace_id": "add7d27c24447e8b7b092590a607c331",
-      "block_id": null,
-      "quote": "",
-      "note": "no failure observed",
-      "first_failure": false,
-      "kind": "no_failure",
-      "source": "human",
-      "author": "human",
-      "batch": "batch4",
-      "ts": "2026-09-19T03:20:37.451Z"
     },
     {
       "id": "a_g6psxpzm",
@@ -1815,36 +1774,6 @@
       "ts": "2026-09-19T03:22:01.316Z"
     },
     {
-      "id": "a_s7jpxody",
-      "conversation_id": "311762a0cc724df7a8da517dae839484",
-      "scenario_id": "support-0125",
-      "trace_id": "b87c89f08a6815921479690c1cf9d39a",
-      "block_id": null,
-      "quote": "",
-      "note": "no failure observed",
-      "first_failure": false,
-      "kind": "no_failure",
-      "source": "human",
-      "author": "human",
-      "batch": "batch4",
-      "ts": "2026-09-19T03:22:14.398Z"
-    },
-    {
-      "id": "a_77wom3er",
-      "conversation_id": "8fcf2269f13c419ca0fd33574cda7210",
-      "scenario_id": "support-0229",
-      "trace_id": "fb20547ba9751a039d352cc9b37f76aa",
-      "block_id": null,
-      "quote": "",
-      "note": "no failure observed",
-      "first_failure": false,
-      "kind": "no_failure",
-      "source": "human",
-      "author": "human",
-      "batch": "batch4",
-      "ts": "2026-09-19T03:22:32.332Z"
-    },
-    {
       "id": "a_mqmy7prs",
       "conversation_id": "9eebcc301ebe4ef0abfc867799d33c5d",
       "scenario_id": "support-0234",
@@ -1858,6 +1787,81 @@
       "author": "human",
       "batch": "batch4",
       "ts": "2026-09-19T03:22:58.302Z"
+    },
+    {
+      "id": "a_n2rjt2j6",
+      "conversation_id": "8fcf2269f13c419ca0fd33574cda7210",
+      "scenario_id": "support-0229",
+      "trace_id": "fb20547ba9751a039d352cc9b37f76aa",
+      "block_id": "t0-reply",
+      "quote": "store-meridian-cycles-policy)",
+      "note": "Don't cite internal policy names",
+      "first_failure": true,
+      "kind": "note",
+      "source": "human",
+      "author": "human",
+      "batch": "batch4",
+      "ts": "2026-09-19T03:59:49.911Z"
+    },
+    {
+      "id": "a_9ayvzn5d",
+      "conversation_id": "311762a0cc724df7a8da517dae839484",
+      "scenario_id": "support-0125",
+      "trace_id": "b87c89f08a6815921479690c1cf9d39a",
+      "block_id": "t0-reply",
+      "quote": "cw-returns",
+      "note": "Don't cite internal policy names",
+      "first_failure": true,
+      "kind": "note",
+      "source": "human",
+      "author": "human",
+      "batch": "batch4",
+      "ts": "2026-09-19T04:01:36.527Z"
+    },
+    {
+      "id": "a_z53e4nfs",
+      "conversation_id": "89104522ff77473c83aa7c820737f327",
+      "scenario_id": "support-0085",
+      "trace_id": "add7d27c24447e8b7b092590a607c331",
+      "block_id": "t0-reply",
+      "quote": "what's available",
+      "note": "State explicitly if results are partial",
+      "first_failure": true,
+      "kind": "note",
+      "source": "human",
+      "author": "human",
+      "batch": "batch4",
+      "ts": "2026-09-19T04:03:03.385Z"
+    },
+    {
+      "id": "a_zyaeao4u",
+      "conversation_id": "230c6fa0612a49da8ff4411d64ad6195",
+      "scenario_id": "support-0138",
+      "trace_id": "54ed8ee3e58318e36164ce20627c35b4",
+      "block_id": "t0-reply",
+      "quote": "cw-restocking-fees",
+      "note": "Don't cite internal policy names",
+      "first_failure": true,
+      "kind": "note",
+      "source": "human",
+      "author": "human",
+      "batch": "batch4",
+      "ts": "2026-09-19T04:03:26.533Z"
+    },
+    {
+      "id": "a_htfxdbb2",
+      "conversation_id": "10e1684192c24464a7f0418f068c033b",
+      "scenario_id": "support-0071",
+      "trace_id": "66fccfdc01905167dcc68bd8a83c855f",
+      "block_id": "t0-reply",
+      "quote": "Policy: cw-disputes",
+      "note": "Don't cite internal policy names",
+      "first_failure": true,
+      "kind": "note",
+      "source": "human",
+      "author": "human",
+      "batch": "batch2",
+      "ts": "2026-09-19T04:06:37.153Z"
     }
   ]
 }

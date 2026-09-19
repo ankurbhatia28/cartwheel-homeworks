@@ -634,7 +634,7 @@ function renderLabels() {
   const savedRows = rows.filter(r => modes.every(m => S.labels[m.name]?.[r.id])).length;
   const dirty = Object.keys(S.draftLabels).length;
   let h = `<div style="display:flex;gap:10px;align-items:center;margin-bottom:6px;flex-wrap:wrap">
-    <button class="btn primary" onclick="saveLabels()" ${dirty ? "" : "disabled"}>Save ${dirty} label(s) → files + Langfuse</button>
+    <button class="btn primary" onclick="saveLabels()" ${dirty && !S.saving ? "" : "disabled"}>${S.saving ? "Saving… keep this tab open" : `Save ${dirty} label(s) → files + Langfuse`}</button>
     <span class="stat"><b>${savedRows} / ${rows.length}</b> conversations fully saved · Pass = failure absent, Fail = failure present.
     ${S.meta.offline ? " <b>Offline mode: Langfuse scores are not written.</b>" : ""}</span></div>
     <div class="stat" style="margin-bottom:10px">Dashed cells are <b>suggestions</b> (never saved on their own). For each row: open the conversation if needed, flip any cell that's wrong
@@ -665,12 +665,23 @@ function confirmRow(cid) {
   renderLabels();
 }
 async function saveLabels() {
-  const items = Object.values(S.draftLabels); if (!items.length) return;
-  const res = await api("/api/labels", items);
-  S.draftLabels = {}; S.labels = await api("/api/labels");
-  toast(`Saved ${res.written} trace label(s), ${res.langfuse_scores} Langfuse score(s)${res.errors?.length ? " · " + res.errors.length + " error(s)" : ""}`);
-  if (res.errors?.length) console.warn(res.errors);
-  renderLabels();
+  const items = Object.values(S.draftLabels); if (!items.length || S.saving) return;
+  S.saving = true;
+  const btn = document.querySelector("#labels .btn.primary");
+  if (btn) { btn.disabled = true; btn.textContent = `Saving ${items.length} label(s)… keep this tab open`; }
+  try {
+    const res = await api("/api/labels", items);
+    if (res.error) throw new Error(res.error);
+    // Clear only what this request carried: rows confirmed while it ran stay pending.
+    for (const it of items) { const k = `${it.conversation_id}|${it.mode}`; if (S.draftLabels[k] === it) delete S.draftLabels[k]; }
+    S.labels = await api("/api/labels");
+    toast(`Saved: ${res.written} written, ${res.skipped_unchanged || 0} unchanged, ${res.langfuse_scores} Langfuse score(s)${res.errors?.length ? " · " + res.errors.length + " error(s), see console" : ""}`);
+    if (res.errors?.length) console.warn(res.errors);
+  } catch (e) {
+    toast("Save failed; your confirmed labels are still here. Press Save again. (" + e.message + ")");
+  } finally {
+    S.saving = false; renderLabels();
+  }
 }
 
 // ---------------------------------------------------------------------------

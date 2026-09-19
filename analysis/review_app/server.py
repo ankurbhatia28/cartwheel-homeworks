@@ -27,7 +27,8 @@ API:
 
 Labels are written per trace, because the handout labels traces: a
 conversation's judgment for a mode is recorded on each of its turn traces.
-Label files are append-only; a changed label marks the old record
+Saves are idempotent: unchanged cells are skipped and each Langfuse score has a
+stable id per (trace, mode). Label files are append-only; a changed label marks the old record
 ``superseded_by`` (the convention ``analysis/helpers/tools._load_labels`` reads).
 Stored labels use the helpers' convention: 1 = failure present, 0 = absent.
 """
@@ -35,6 +36,7 @@ Stored labels use the helpers' convention: 1 = failure present, 0 = absent.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import sys
 import threading
@@ -148,10 +150,20 @@ def _live_labels() -> dict[str, dict[str, Any]]:
     return out
 
 
+def label_score_id(trace_id: str, mode: str) -> str:
+    """One stable Langfuse score id per (trace, mode), so re-saving overwrites instead of duplicating."""
+    return hashlib.sha1(f"hw4-label:{trace_id}:{mode}".encode()).hexdigest()[:32]
+
+
 def _save_labels(items: list[dict[str, Any]]) -> dict[str, Any]:
-    """Append one record per trace for each (conversation, mode) judgment."""
+    """Save (conversation, mode) judgments: one record per trace, one pass per mode file.
+
+    Idempotent: a cell whose live record already has the same label and evidence
+    is skipped, and each Langfuse score uses a stable id, so a repeated save
+    neither duplicates records nor duplicates scores. Langfuse is flushed once.
+    """
     conversations = _conversations()["by_id"]
-    written, scored, errors = 0, 0, []
+    written, skipped, scored, errors = 0, 0, 0, []
     client = None
     if not OFFLINE:
         try:
@@ -163,43 +175,56 @@ def _save_labels(items: list[dict[str, Any]]) -> dict[str, Any]:
             client = Langfuse()
         except Exception as exc:  # the local mirror still saves
             errors.append(f"Langfuse unavailable, saved locally only: {exc}")
-    from analysis.helpers.langfuse_io import write_label_score
 
+    by_mode: dict[str, list[dict[str, Any]]] = {}
     for item in items:
-        mode, conv_id, label = item["mode"], item["conversation_id"], int(item["label"])
-        if label not in (0, 1):
-            errors.append(f"{conv_id}/{mode}: label must be 0 or 1")
-            continue
-        conv = conversations.get(conv_id)
-        if conv is None:
-            errors.append(f"unknown conversation {conv_id}")
-            continue
+        by_mode.setdefault(item["mode"], []).append(item)
+
+    for mode, mode_items in by_mode.items():
         path = LABELS_DIR / f"{mode}.jsonl"
         rows = _label_rows(mode)
-        for trace_id in conv["trace_ids"]:
-            label_id = f"{trace_id}#{uuid.uuid4().hex[:8]}"
-            for row in rows:
-                if row["trace_id"] == trace_id and not row.get("superseded_by"):
-                    row["superseded_by"] = label_id
-            record = {"trace_id": trace_id, "label": label, "source": "human", "ts": _now(),
-                      "label_id": label_id, "conversation_id": conv_id, "scenario_id": conv["scenario_id"],
-                      "evidence": item.get("evidence", "")}
-            if item.get("suggested") is not None:
-                # What the draft suggested, so agreement with the drafts stays inspectable.
-                record["suggested_label"] = item["suggested"].get("label")
-                record["suggestion_basis"] = item["suggested"].get("basis")
-            if client is not None:
-                try:
-                    write_label_score(trace_id, mode, label, comment=item.get("evidence") or None, client=client)
-                    record["langfuse_score"] = True
-                    scored += 1
-                except Exception as exc:
-                    errors.append(f"{trace_id}/{mode}: Langfuse score failed: {exc}")
-            rows.append(record)
-            written += 1
-        LABELS_DIR.mkdir(parents=True, exist_ok=True)
-        path.write_text("".join(json.dumps(r) + "\n" for r in rows))
-    return {"written": written, "langfuse_scores": scored, "errors": errors}
+        live = {r["trace_id"]: r for r in rows if not r.get("superseded_by")}
+        changed = False
+        for item in mode_items:
+            conv_id, label = item["conversation_id"], int(item["label"])
+            conv = conversations.get(conv_id)
+            if label not in (0, 1) or conv is None:
+                errors.append(f"{conv_id}/{mode}: invalid label or unknown conversation")
+                continue
+            evidence = item.get("evidence", "")
+            for trace_id in conv["trace_ids"]:
+                prior = live.get(trace_id)
+                if prior and prior["label"] == label and prior.get("evidence", "") == evidence and bool(prior.get("langfuse_score")) == (client is not None):
+                    skipped += 1
+                    continue
+                label_id = f"{trace_id}#{uuid.uuid4().hex[:8]}"
+                if prior:
+                    prior["superseded_by"] = label_id
+                record = {"trace_id": trace_id, "label": label, "source": "human", "ts": _now(),
+                          "label_id": label_id, "conversation_id": conv_id, "scenario_id": conv["scenario_id"],
+                          "evidence": evidence}
+                if item.get("suggested") is not None:
+                    # What the draft suggested, so agreement with the drafts stays inspectable.
+                    record["suggested_label"] = item["suggested"].get("label")
+                    record["suggestion_basis"] = item["suggested"].get("basis")
+                if client is not None:
+                    try:
+                        client.create_score(name=mode, value=label, trace_id=trace_id, data_type="NUMERIC",
+                                            score_id=label_score_id(trace_id, mode), comment=evidence or None)
+                        record["langfuse_score"] = True
+                        scored += 1
+                    except Exception as exc:
+                        errors.append(f"{trace_id}/{mode}: Langfuse score failed: {exc}")
+                rows.append(record)
+                live[trace_id] = record
+                written += 1
+                changed = True
+        if changed:
+            LABELS_DIR.mkdir(parents=True, exist_ok=True)
+            path.write_text("".join(json.dumps(r) + "\n" for r in rows))
+    if client is not None:
+        client.flush()
+    return {"written": written, "skipped_unchanged": skipped, "langfuse_scores": scored, "errors": errors}
 
 
 # ---------------------------------------------------------------------------
