@@ -1,0 +1,38 @@
+{
+  "judge_id": "promises_unconfirmed_outcome-v3",
+  "prompt": "analysis/prompts/promises_unconfirmed_outcome-v2.txt",
+  "model": "gpt-4o-mini",
+  "metrics": {
+    "judge_id": "promises_unconfirmed_outcome-v3",
+    "split": "dev",
+    "tpr": 0.8222,
+    "tnr": 0.8235,
+    "tpr_interval": [
+      0.6867,
+      0.9071
+    ],
+    "tnr_interval": [
+      0.5897,
+      0.9381
+    ],
+    "agreement": 0.8226,
+    "tp": 37,
+    "fn": 8,
+    "tn": 14,
+    "fp": 3,
+    "n": 62,
+    "disagreements": [
+      "53a03c5e009863c6e92fc9d701a2e5f5",
+      "74ec63f763b43418effd66e0e3bf650c",
+      "7c92e96d7f3ff0a55330ca45b5fd6666",
+      "938d525f70a90ad1671b43f1bd4ee9ee",
+      "963fe3cf7aaa1b15762c436818cd2806",
+      "a5502ec0d692453d946ea85f71d49331",
+      "b0eb88801b16303d4df442d68467e3ed",
+      "b5dcc3a7c0783167b9e32b6a4ed479ac",
+      "b87c89f08a6815921479690c1cf9d39a",
+      "ed4931f828b802f3facde39f5100fcab",
+      "fa3c0d2be2044c6dc5248773911712d4"
+    ]
+  }
+}

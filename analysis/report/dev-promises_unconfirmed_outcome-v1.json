@@ -1,0 +1,41 @@
+{
+  "judge_id": "promises_unconfirmed_outcome-v1",
+  "prompt": "analysis/prompts/promises_unconfirmed_outcome-v0.txt",
+  "model": "gpt-4o-mini",
+  "metrics": {
+    "judge_id": "promises_unconfirmed_outcome-v1",
+    "split": "dev",
+    "tpr": 0.7708,
+    "tnr": 0.7857,
+    "tpr_interval": [
+      0.6346,
+      0.8669
+    ],
+    "tnr_interval": [
+      0.5241,
+      0.9243
+    ],
+    "agreement": 0.7742,
+    "tp": 37,
+    "fn": 11,
+    "tn": 11,
+    "fp": 3,
+    "n": 62,
+    "disagreements": [
+      "16b4ecedfb4b855816f7ce4dd92a947b",
+      "19bdb08b7d1487e2560881ff9e6d693f",
+      "407241ef702c044e2f4475a3cd506e6c",
+      "53a03c5e009863c6e92fc9d701a2e5f5",
+      "938d525f70a90ad1671b43f1bd4ee9ee",
+      "963fe3cf7aaa1b15762c436818cd2806",
+      "9d1543f34736febe996dcd8f3449690b",
+      "a5502ec0d692453d946ea85f71d49331",
+      "ae15a049b99b65bb288d676305f3151f",
+      "b87c89f08a6815921479690c1cf9d39a",
+      "bdecd863f3a91d65e7bf76c3d971ebac",
+      "efa69c3f7dc00b64c58d849722f633fb",
+      "f184d9c3d46a28ea3aa050a1cca4f8bb",
+      "fa3c0d2be2044c6dc5248773911712d4"
+    ]
+  }
+}
