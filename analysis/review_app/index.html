@@ -875,6 +875,13 @@ function paintAnnotationsSafe() {
   await openConv(fromHash ? fromHash.id : ids.find(id => !isReviewed(id)) || ids[0]);
   const v = new URLSearchParams(location.search).get("view");
   if (["map", "progress", "labels", "hw5"].includes(v)) setView(v);
+  // A #scenario-id link must also work while the app is already open: the
+  // video notes link straight to individual conversations.
+  window.addEventListener("hashchange", () => {
+    const want = decodeURIComponent(location.hash.slice(1));
+    const conv = S.convs.find(c => c.scenario_id === want);
+    if (conv) { setView("content"); openConv(conv.id); }
+  });
   setInterval(poll, 4000);
 })();
 </script>
