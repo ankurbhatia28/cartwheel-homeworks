@@ -1,0 +1,733 @@
+{
+  "mode": "promises_unconfirmed_outcome",
+  "generated_at": "2026-09-22T05:22:29+00:00",
+  "trace_source": "traces/support_traces.json",
+  "candidates": [
+    {
+      "conversation_id": "ea8a3ca3152e4a10a498190d90f7bae2",
+      "scenario_id": "support-0185",
+      "source": "enrich",
+      "signal": "semantic neighbor of a confirmed failure"
+    },
+    {
+      "conversation_id": "7e548ee725d84f0b891d1fe839ae2cdd",
+      "scenario_id": "support-0038",
+      "source": "enrich",
+      "signal": "semantic neighbor of a confirmed failure"
+    },
+    {
+      "conversation_id": "3bcb26f61d9742259207527592ed1c56",
+      "scenario_id": "support-0035",
+      "source": "enrich",
+      "signal": "semantic neighbor of a confirmed failure"
+    },
+    {
+      "conversation_id": "be99fa32dc6d48d69b55cc1161722f32",
+      "scenario_id": "support-0033",
+      "source": "enrich",
+      "signal": "semantic neighbor of a confirmed failure"
+    },
+    {
+      "conversation_id": "3683ec65ba2744aabfa15a73c55cd8d6",
+      "scenario_id": "support-0040",
+      "source": "enrich",
+      "signal": "semantic neighbor of a confirmed failure"
+    },
+    {
+      "conversation_id": "6971bc991f8040f0a0af7390b87c7781",
+      "scenario_id": "support-0068",
+      "source": "enrich",
+      "signal": "semantic neighbor of a confirmed failure"
+    },
+    {
+      "conversation_id": "c0d404aba65a4af7886c8e6a4a0229e6",
+      "scenario_id": "support-0036",
+      "source": "enrich",
+      "signal": "semantic neighbor of a confirmed failure"
+    },
+    {
+      "conversation_id": "abb9f2c534c14fc2b9e39fdf91dc3d9c",
+      "scenario_id": "support-0039",
+      "source": "enrich",
+      "signal": "semantic neighbor of a confirmed failure"
+    },
+    {
+      "conversation_id": "41cef709b2ec4d629d73f430c324571f",
+      "scenario_id": "support-0235",
+      "source": "enrich",
+      "signal": "semantic neighbor of a confirmed failure"
+    },
+    {
+      "conversation_id": "ea2e5838acf14663b723383ca7c4e157",
+      "scenario_id": "support-0060",
+      "source": "enrich",
+      "signal": "semantic neighbor of a confirmed failure"
+    },
+    {
+      "conversation_id": "95126f99be634817b97b1a0499f0f552",
+      "scenario_id": "support-0212",
+      "source": "enrich",
+      "signal": "semantic neighbor of a confirmed failure"
+    },
+    {
+      "conversation_id": "e71a7e99ea734d9f8203a6212c111be3",
+      "scenario_id": "support-0237",
+      "source": "enrich",
+      "signal": "semantic neighbor of a confirmed failure"
+    },
+    {
+      "conversation_id": "bae3d8e8fa794fc6a77754762c6c37d6",
+      "scenario_id": "support-0097",
+      "source": "enrich",
+      "signal": "semantic neighbor of a confirmed failure"
+    },
+    {
+      "conversation_id": "533c56da8227406daafb892c7020ca58",
+      "scenario_id": "support-0066",
+      "source": "enrich",
+      "signal": "semantic neighbor of a confirmed failure"
+    },
+    {
+      "conversation_id": "437d9fdf976a483f818ca746d1f02124",
+      "scenario_id": "support-0026",
+      "source": "enrich",
+      "signal": "semantic neighbor of a confirmed failure"
+    },
+    {
+      "conversation_id": "33f2d6c4ca4848c698878f3ba58b6de5",
+      "scenario_id": "support-0037",
+      "source": "enrich",
+      "signal": "semantic neighbor of a confirmed failure"
+    },
+    {
+      "conversation_id": "ecd556389a9f4aa3b1da9431b29dffd7",
+      "scenario_id": "support-0211",
+      "source": "enrich",
+      "signal": "semantic neighbor of a confirmed failure"
+    },
+    {
+      "conversation_id": "c28f8078304b415f8b0e5b9d378a5eb1",
+      "scenario_id": "support-0021",
+      "source": "enrich",
+      "signal": "semantic neighbor of a confirmed failure"
+    },
+    {
+      "conversation_id": "5931d6dcc01d4a19842b98ba9f467e08",
+      "scenario_id": "support-0213",
+      "source": "enrich",
+      "signal": "semantic neighbor of a confirmed failure"
+    },
+    {
+      "conversation_id": "23deeb9ed0634070af2a3ccdf32876e8",
+      "scenario_id": "support-0012",
+      "source": "enrich",
+      "signal": "semantic neighbor of a confirmed failure"
+    },
+    {
+      "conversation_id": "ecc8577f5eea4f418c4bbd997f8d457c",
+      "scenario_id": "support-0023",
+      "source": "enrich",
+      "signal": "semantic neighbor of a confirmed failure"
+    },
+    {
+      "conversation_id": "c8a29afe81994658991e5b22fa0f59d4",
+      "scenario_id": "support-0206",
+      "source": "enrich",
+      "signal": "semantic neighbor of a confirmed failure"
+    },
+    {
+      "conversation_id": "aa625c312f1240f6a49e23963d75cd0c",
+      "scenario_id": "support-0141",
+      "source": "enrich",
+      "signal": "semantic neighbor of a confirmed failure"
+    },
+    {
+      "conversation_id": "eddaac04a57c46e19a41fd7ea92387f1",
+      "scenario_id": "support-0053",
+      "source": "enrich",
+      "signal": "semantic neighbor of a confirmed failure"
+    },
+    {
+      "conversation_id": "cd6543ed5eb94329a3a1ef89345ef1f7",
+      "scenario_id": "support-0246",
+      "source": "enrich",
+      "signal": "semantic neighbor of a confirmed failure"
+    },
+    {
+      "conversation_id": "f4132eea77fe4f5f97a8471f9bdc1cf7",
+      "scenario_id": "support-0128",
+      "source": "enrich",
+      "signal": "semantic neighbor of a confirmed failure"
+    },
+    {
+      "conversation_id": "123e967b7dd04f049b50c11fc6fd0671",
+      "scenario_id": "support-0054",
+      "source": "enrich",
+      "signal": "semantic neighbor of a confirmed failure"
+    },
+    {
+      "conversation_id": "9872ddf3042d4d51bd44119c7fc22f7b",
+      "scenario_id": "support-0177",
+      "source": "enrich",
+      "signal": "semantic neighbor of a confirmed failure"
+    },
+    {
+      "conversation_id": "9c616223054045f3bcfea8d79d597b04",
+      "scenario_id": "support-0059",
+      "source": "enrich",
+      "signal": "semantic neighbor of a confirmed failure"
+    },
+    {
+      "conversation_id": "88948b9c55b041068b84f8ecbf2c3711",
+      "scenario_id": "support-0196",
+      "source": "enrich",
+      "signal": "semantic neighbor of a confirmed failure"
+    },
+    {
+      "conversation_id": "363114b6964a4fafb139ef0ab7a5fb08",
+      "scenario_id": "support-0209",
+      "source": "enrich",
+      "signal": "semantic neighbor of a confirmed failure"
+    },
+    {
+      "conversation_id": "dd90ca7f74134ff4b15a987447954d28",
+      "scenario_id": "support-0166",
+      "source": "enrich",
+      "signal": "semantic neighbor of a confirmed failure"
+    },
+    {
+      "conversation_id": "3c5c909514424c9cb49103b62128ee9f",
+      "scenario_id": "support-0019",
+      "source": "enrich",
+      "signal": "semantic neighbor of a confirmed failure"
+    },
+    {
+      "conversation_id": "cae2d5cf003c4c04a8767a8be3bb267a",
+      "scenario_id": "support-0028",
+      "source": "enrich",
+      "signal": "semantic neighbor of a confirmed failure"
+    },
+    {
+      "conversation_id": "fb0d1367f2814e199a8525d4c9ddde51",
+      "scenario_id": "support-0161",
+      "source": "enrich",
+      "signal": "semantic neighbor of a confirmed failure"
+    },
+    {
+      "conversation_id": "63e32e78516f44a3a67eaa3d5f91d96f",
+      "scenario_id": "support-0030",
+      "source": "enrich",
+      "signal": "semantic neighbor of a confirmed failure"
+    },
+    {
+      "conversation_id": "075a75ac5a3c4044b3889c47158ae5d7",
+      "scenario_id": "support-0064",
+      "source": "enrich",
+      "signal": "semantic neighbor of a confirmed failure"
+    },
+    {
+      "conversation_id": "a24e42079d364f6a884910a2eb4abacc",
+      "scenario_id": "support-0160",
+      "source": "enrich",
+      "signal": "semantic neighbor of a confirmed failure"
+    },
+    {
+      "conversation_id": "384b2d682dd34be7bacd9bac432dcb70",
+      "scenario_id": "support-0239",
+      "source": "enrich",
+      "signal": "semantic neighbor of a confirmed failure"
+    },
+    {
+      "conversation_id": "e7889160770740e280e064d5028d99dc",
+      "scenario_id": "support-0248",
+      "source": "enrich",
+      "signal": "semantic neighbor of a confirmed failure"
+    },
+    {
+      "conversation_id": "8d7347027fb148828fa61a686eeea3ce",
+      "scenario_id": "support-0031",
+      "source": "enrich",
+      "signal": "semantic neighbor of a confirmed failure"
+    },
+    {
+      "conversation_id": "c30ec9c14478482c94af9361fb21594a",
+      "scenario_id": "support-0199",
+      "source": "enrich",
+      "signal": "semantic neighbor of a confirmed failure"
+    },
+    {
+      "conversation_id": "a9b9165949ac451fac6f59dd2d442166",
+      "scenario_id": "support-0126",
+      "source": "enrich",
+      "signal": "semantic neighbor of a confirmed failure"
+    },
+    {
+      "conversation_id": "71a38f1f3e344bb486f42f56714642d0",
+      "scenario_id": "support-0063",
+      "source": "enrich",
+      "signal": "semantic neighbor of a confirmed failure"
+    },
+    {
+      "conversation_id": "ff6363e86207412c9efd90c6333bcd3c",
+      "scenario_id": "support-0045",
+      "source": "enrich",
+      "signal": "semantic neighbor of a confirmed failure"
+    },
+    {
+      "conversation_id": "d51b282862c8446c9d13905d62f81346",
+      "scenario_id": "support-0214",
+      "source": "enrich",
+      "signal": "semantic neighbor of a confirmed failure"
+    },
+    {
+      "conversation_id": "fc25244e891e472babab5a12e0918749",
+      "scenario_id": "support-0240",
+      "source": "enrich",
+      "signal": "semantic neighbor of a confirmed failure"
+    },
+    {
+      "conversation_id": "666f51a004c145f9b69a135e79a354a2",
+      "scenario_id": "support-0250",
+      "source": "enrich",
+      "signal": "semantic neighbor of a confirmed failure"
+    },
+    {
+      "conversation_id": "91b754d61a864a7b94ff8cb82ab4fc5c",
+      "scenario_id": "support-0207",
+      "source": "enrich",
+      "signal": "semantic neighbor of a confirmed failure"
+    },
+    {
+      "conversation_id": "ee36e25a07d7414794d9e18df84116cc",
+      "scenario_id": "support-0051",
+      "source": "enrich",
+      "signal": "semantic neighbor of a confirmed failure"
+    },
+    {
+      "conversation_id": "d284977897b54d91a0b8664ff376933d",
+      "scenario_id": "support-0127",
+      "source": "enrich",
+      "signal": "semantic neighbor of a confirmed failure"
+    },
+    {
+      "conversation_id": "ea56353c67aa4c5a937deeffbdfc4140",
+      "scenario_id": "support-0055",
+      "source": "enrich",
+      "signal": "semantic neighbor of a confirmed failure"
+    },
+    {
+      "conversation_id": "97329f05968349ab9967481fbce01084",
+      "scenario_id": "support-0124",
+      "source": "enrich",
+      "signal": "semantic neighbor of a confirmed failure"
+    },
+    {
+      "conversation_id": "21d8823f0f714911bf064499334df196",
+      "scenario_id": "support-0073",
+      "source": "enrich",
+      "signal": "semantic neighbor of a confirmed failure"
+    },
+    {
+      "conversation_id": "2ad881380fba431d8d94aa3d38b51eaf",
+      "scenario_id": "support-0215",
+      "source": "enrich",
+      "signal": "semantic neighbor of a confirmed failure"
+    },
+    {
+      "conversation_id": "c910953bbc344b9793b30b20151192ff",
+      "scenario_id": "support-0227",
+      "source": "enrich",
+      "signal": "semantic neighbor of a confirmed failure"
+    },
+    {
+      "conversation_id": "72de4b8f5bf74017932396556ac4ed6b",
+      "scenario_id": "support-0156",
+      "source": "enrich",
+      "signal": "semantic neighbor of a confirmed failure"
+    },
+    {
+      "conversation_id": "44faeddf9ebe4685bc512994bc6d0527",
+      "scenario_id": "support-0139",
+      "source": "enrich",
+      "signal": "semantic neighbor of a confirmed failure"
+    },
+    {
+      "conversation_id": "3c05010502634de3b78ee32ed3502d66",
+      "scenario_id": "support-0169",
+      "source": "enrich",
+      "signal": "semantic neighbor of a confirmed failure"
+    },
+    {
+      "conversation_id": "cda4b605dda843c98f16a9f8de667043",
+      "scenario_id": "support-0157",
+      "source": "enrich",
+      "signal": "semantic neighbor of a confirmed failure"
+    },
+    {
+      "conversation_id": "b21a0fe1225247f1bd84f5956dd55f29",
+      "scenario_id": "support-0109",
+      "source": "signal",
+      "signal": "pending action (queued/escalated) + completion wording"
+    },
+    {
+      "conversation_id": "8983213d54534069928c5e1bca7347c5",
+      "scenario_id": "support-0175",
+      "source": "signal",
+      "signal": "pending action (queued/escalated) + completion wording"
+    },
+    {
+      "conversation_id": "b81fdf4b2c0641c8a29535bb02ad1e79",
+      "scenario_id": "hw5-0001",
+      "source": "targeted",
+      "signal": "targeted run: eligible refund over the $100 threshold"
+    },
+    {
+      "conversation_id": "a24ac6558894415fb480c814ae921b98",
+      "scenario_id": "hw5-0002",
+      "source": "targeted",
+      "signal": "targeted run: eligible refund over the $100 threshold"
+    },
+    {
+      "conversation_id": "805bfa8b63914288a592a179b0fa1f69",
+      "scenario_id": "hw5-0003",
+      "source": "targeted",
+      "signal": "targeted run: eligible refund over the $100 threshold"
+    },
+    {
+      "conversation_id": "a11e8cd1321c4914b24216ad0098e400",
+      "scenario_id": "hw5-0004",
+      "source": "targeted",
+      "signal": "targeted run: eligible refund over the $100 threshold"
+    },
+    {
+      "conversation_id": "7c16070a3c0d40ebae11c477cb101c8b",
+      "scenario_id": "hw5-0005",
+      "source": "targeted",
+      "signal": "targeted run: eligible refund over the $100 threshold"
+    },
+    {
+      "conversation_id": "91424938f75242a7bd0aff938ee93528",
+      "scenario_id": "hw5-0007",
+      "source": "targeted",
+      "signal": "targeted run: eligible refund over the $100 threshold"
+    },
+    {
+      "conversation_id": "1f450ab0f0f74a64b5477ce337874d74",
+      "scenario_id": "hw5-0008",
+      "source": "targeted",
+      "signal": "targeted run: eligible refund over the $100 threshold"
+    },
+    {
+      "conversation_id": "99933c02b2a3430fa8bed167e57adbc5",
+      "scenario_id": "hw5-0009",
+      "source": "targeted",
+      "signal": "targeted run: eligible refund over the $100 threshold"
+    },
+    {
+      "conversation_id": "6fe01f9539a9413e83abb93e9c4bb532",
+      "scenario_id": "hw5-0010",
+      "source": "targeted",
+      "signal": "targeted run: eligible refund over the $100 threshold"
+    },
+    {
+      "conversation_id": "20bff08866a5411993f0342f6b7fea9f",
+      "scenario_id": "hw5-0011",
+      "source": "targeted",
+      "signal": "targeted run: eligible refund over the $100 threshold"
+    },
+    {
+      "conversation_id": "fddb6b9c93b84e20acfd3252b0edc7be",
+      "scenario_id": "hw5-0012",
+      "source": "targeted",
+      "signal": "targeted run: eligible refund over the $100 threshold"
+    },
+    {
+      "conversation_id": "70203fc0ac24481f80d06a5b0f4a715b",
+      "scenario_id": "hw5-0013",
+      "source": "targeted",
+      "signal": "targeted run: eligible refund over the $100 threshold"
+    },
+    {
+      "conversation_id": "d1fac5c221174933976e7f9ef32c3d9e",
+      "scenario_id": "hw5-0014",
+      "source": "targeted",
+      "signal": "targeted run: eligible refund over the $100 threshold"
+    },
+    {
+      "conversation_id": "af1f425c59c54a2b8dd78228d00208be",
+      "scenario_id": "hw5-0015",
+      "source": "targeted",
+      "signal": "targeted run: eligible refund over the $100 threshold"
+    },
+    {
+      "conversation_id": "1e44904151494486933fa0682c4081e0",
+      "scenario_id": "hw5-0016",
+      "source": "targeted",
+      "signal": "targeted run: eligible refund over the $100 threshold"
+    },
+    {
+      "conversation_id": "0387898b5aeb4786beb3612ea5333e28",
+      "scenario_id": "hw5-0017",
+      "source": "targeted",
+      "signal": "targeted run: eligible refund over the $100 threshold"
+    },
+    {
+      "conversation_id": "1dfdd41e76e04890be279a92c0d7ee37",
+      "scenario_id": "hw5-0018",
+      "source": "targeted",
+      "signal": "targeted run: eligible refund over the $100 threshold"
+    },
+    {
+      "conversation_id": "cd9f2da6ce6c4374a6be0fe10ea46e61",
+      "scenario_id": "hw5-0019",
+      "source": "targeted",
+      "signal": "targeted run: eligible refund over the $100 threshold"
+    },
+    {
+      "conversation_id": "49bd97410c53435f91a0c4a9842791cf",
+      "scenario_id": "hw5-0020",
+      "source": "targeted",
+      "signal": "targeted run: eligible refund over the $100 threshold"
+    },
+    {
+      "conversation_id": "b027a4957b3f4906b31f0a9e41b5cac5",
+      "scenario_id": "hw5-0021",
+      "source": "targeted",
+      "signal": "targeted run: eligible refund over the $100 threshold"
+    },
+    {
+      "conversation_id": "a4d2ec9ed638453f9caf65eab787618c",
+      "scenario_id": "hw5-0022",
+      "source": "targeted",
+      "signal": "targeted run: eligible refund over the $100 threshold"
+    },
+    {
+      "conversation_id": "cccdf8f867b4407d9e0e8383a232c036",
+      "scenario_id": "hw5-0023",
+      "source": "targeted",
+      "signal": "targeted run: eligible refund over the $100 threshold"
+    },
+    {
+      "conversation_id": "eec4494a22464cd9a45c43798a50927a",
+      "scenario_id": "hw5-0024",
+      "source": "targeted",
+      "signal": "targeted run: eligible refund over the $100 threshold"
+    },
+    {
+      "conversation_id": "d98836d89dee47c18f91c013c9aa5852",
+      "scenario_id": "hw5-0025",
+      "source": "targeted",
+      "signal": "targeted run: eligible refund over the $100 threshold"
+    },
+    {
+      "conversation_id": "59a63e4466364985ba53b2bcfe0671d6",
+      "scenario_id": "hw5-0026",
+      "source": "targeted",
+      "signal": "targeted run: eligible refund over the $100 threshold"
+    },
+    {
+      "conversation_id": "c838c5d22a21467da98326c86d4c6ea9",
+      "scenario_id": "hw5-0027",
+      "source": "targeted",
+      "signal": "targeted run: eligible refund over the $100 threshold"
+    },
+    {
+      "conversation_id": "e259b3b73f2848c0965dd36667cefe43",
+      "scenario_id": "hw5-0028",
+      "source": "targeted",
+      "signal": "targeted run: eligible refund over the $100 threshold"
+    },
+    {
+      "conversation_id": "1cbf2d7483c3495b897490c2951d7c55",
+      "scenario_id": "hw5-0029",
+      "source": "targeted",
+      "signal": "targeted run: eligible refund over the $100 threshold"
+    },
+    {
+      "conversation_id": "45ae0d6c3c3d420e8a380d5d07b104fd",
+      "scenario_id": "hw5-0030",
+      "source": "targeted",
+      "signal": "targeted run: eligible refund over the $100 threshold"
+    },
+    {
+      "conversation_id": "042360e80431499a9975c7c2623b685a",
+      "scenario_id": "hw5-0031",
+      "source": "targeted",
+      "signal": "targeted run: eligible refund over the $100 threshold"
+    },
+    {
+      "conversation_id": "0af117bac89e42988578b7d5b623f5d6",
+      "scenario_id": "hw5-0032",
+      "source": "targeted",
+      "signal": "targeted run: eligible refund over the $100 threshold"
+    },
+    {
+      "conversation_id": "da98c261fa894fcaa3d6f5617e806c95",
+      "scenario_id": "hw5-0033",
+      "source": "targeted",
+      "signal": "targeted run: eligible refund over the $100 threshold"
+    },
+    {
+      "conversation_id": "44d46b5798e14a70a026526ba3939675",
+      "scenario_id": "hw5-0034",
+      "source": "targeted",
+      "signal": "targeted run: eligible refund over the $100 threshold"
+    },
+    {
+      "conversation_id": "c14f5ac867244b38957752f5d8b8e9ac",
+      "scenario_id": "hw5-0035",
+      "source": "targeted",
+      "signal": "targeted run: damaged item, refund over the threshold"
+    },
+    {
+      "conversation_id": "b439064310de494d92160f10948c0b13",
+      "scenario_id": "hw5-0036",
+      "source": "targeted",
+      "signal": "targeted run: damaged item, refund over the threshold"
+    },
+    {
+      "conversation_id": "80e3efc63c16475fb846b7cad195aed9",
+      "scenario_id": "hw5-0037",
+      "source": "targeted",
+      "signal": "targeted run: damaged item, refund over the threshold"
+    },
+    {
+      "conversation_id": "a9f6c15546e2493198b308849240db36",
+      "scenario_id": "hw5-0038",
+      "source": "targeted",
+      "signal": "targeted run: damaged item, refund over the threshold"
+    },
+    {
+      "conversation_id": "d42e0efb3ac943fd9ec5cd85d1537fdc",
+      "scenario_id": "hw5-0039",
+      "source": "targeted",
+      "signal": "targeted run: damaged item, refund over the threshold"
+    },
+    {
+      "conversation_id": "53abd67fb4ba4b1b9916493d1cdcb87a",
+      "scenario_id": "hw5-0040",
+      "source": "targeted",
+      "signal": "targeted run: damaged item, refund over the threshold"
+    },
+    {
+      "conversation_id": "0ba9c78cfc924aa38a8f7cb067e83000",
+      "scenario_id": "hw5-0041",
+      "source": "targeted",
+      "signal": "targeted run: damaged item, refund over the threshold"
+    },
+    {
+      "conversation_id": "2e753d637b8d4a1a9b2c45f80c294c50",
+      "scenario_id": "hw5-0042",
+      "source": "targeted",
+      "signal": "targeted run: damaged item, refund over the threshold"
+    },
+    {
+      "conversation_id": "fae80a12923d43d4b4892527117bd3f1",
+      "scenario_id": "hw5-0043",
+      "source": "targeted",
+      "signal": "targeted run: damaged item, refund over the threshold"
+    },
+    {
+      "conversation_id": "9504d489ded646a7ba865014a0a75074",
+      "scenario_id": "hw5-0044",
+      "source": "targeted",
+      "signal": "targeted run: damaged item, refund over the threshold"
+    },
+    {
+      "conversation_id": "ef0b2e801fff40bca60c73fdd9e829e2",
+      "scenario_id": "hw5-0045",
+      "source": "targeted",
+      "signal": "targeted run: damaged item, refund over the threshold"
+    },
+    {
+      "conversation_id": "1720f61060474d0496bf2fa8287b3e17",
+      "scenario_id": "hw5-0046",
+      "source": "targeted",
+      "signal": "targeted run: damaged item, refund over the threshold"
+    },
+    {
+      "conversation_id": "6dd7007848f248faa8c8ff0f3446e562",
+      "scenario_id": "hw5-0047",
+      "source": "targeted",
+      "signal": "targeted run: past the return window, buyer pushing for an exception"
+    },
+    {
+      "conversation_id": "66b51948a5ae4d69bf349687f5b16016",
+      "scenario_id": "hw5-0048",
+      "source": "targeted",
+      "signal": "targeted run: past the return window, buyer pushing for an exception"
+    },
+    {
+      "conversation_id": "dba19f10554d4c93b18cccec7945491d",
+      "scenario_id": "hw5-0049",
+      "source": "targeted",
+      "signal": "targeted run: past the return window, buyer pushing for an exception"
+    },
+    {
+      "conversation_id": "5307c27249e04ddf996dc8b8e6c00368",
+      "scenario_id": "hw5-0050",
+      "source": "targeted",
+      "signal": "targeted run: past the return window, buyer pushing for an exception"
+    },
+    {
+      "conversation_id": "2884045bc67b44ca9a576763757a8768",
+      "scenario_id": "hw5-0051",
+      "source": "targeted",
+      "signal": "targeted run: past the return window, buyer pushing for an exception"
+    },
+    {
+      "conversation_id": "6320412817c44524b2e75c7b3469de67",
+      "scenario_id": "hw5-0052",
+      "source": "targeted",
+      "signal": "targeted run: past the return window, buyer pushing for an exception"
+    },
+    {
+      "conversation_id": "cf16b4e1b0124f6caeedc53942fee140",
+      "scenario_id": "hw5-0053",
+      "source": "targeted",
+      "signal": "targeted run: past the return window, buyer pushing for an exception"
+    },
+    {
+      "conversation_id": "765a6f8b2300438ba17128177a2fa190",
+      "scenario_id": "hw5-0054",
+      "source": "targeted",
+      "signal": "targeted run: past the return window, buyer pushing for an exception"
+    },
+    {
+      "conversation_id": "883859a692544cdb920af206084c696f",
+      "scenario_id": "hw5-0055",
+      "source": "targeted",
+      "signal": "targeted run: past the return window, buyer pushing for an exception"
+    },
+    {
+      "conversation_id": "e4280c7ad3f242d1a5a643521b50e467",
+      "scenario_id": "hw5-0056",
+      "source": "targeted",
+      "signal": "targeted run: past the return window, buyer pushing for an exception"
+    },
+    {
+      "conversation_id": "ce082f4afda341fdaf9fd6fe2ca42e75",
+      "scenario_id": "hw5-0057",
+      "source": "targeted",
+      "signal": "targeted run: past the return window, buyer pushing for an exception"
+    },
+    {
+      "conversation_id": "7b1ddf0f4643434ab258f278d7a33e50",
+      "scenario_id": "hw5-0058",
+      "source": "targeted",
+      "signal": "targeted run: past the return window, buyer pushing for an exception"
+    },
+    {
+      "conversation_id": "615859fd28eb42058bffef6cc4dd1954",
+      "scenario_id": "hw5-0059",
+      "source": "targeted",
+      "signal": "targeted run: past the return window, buyer pushing for an exception"
+    },
+    {
+      "conversation_id": "dbe55cbdad414a92b44e5d178583431a",
+      "scenario_id": "hw5-0060",
+      "source": "targeted",
+      "signal": "targeted run: past the return window, buyer pushing for an exception"
+    }
+  ]
+}

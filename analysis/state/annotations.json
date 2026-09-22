@@ -1862,6 +1862,51 @@
       "author": "human",
       "batch": "batch2",
       "ts": "2026-09-19T04:06:37.153Z"
+    },
+    {
+      "id": "a_v1q498n4",
+      "conversation_id": "ea8a3ca3152e4a10a498190d90f7bae2",
+      "scenario_id": "support-0185",
+      "trace_id": "ed4931f828b802f3facde39f5100fcab",
+      "block_id": null,
+      "quote": "",
+      "note": "no failure observed",
+      "first_failure": false,
+      "kind": "no_failure",
+      "source": "human",
+      "author": "human",
+      "batch": null,
+      "ts": "2026-09-22T05:55:04.000Z"
+    },
+    {
+      "id": "a_mxo56i9p",
+      "conversation_id": "e71a7e99ea734d9f8203a6212c111be3",
+      "scenario_id": "support-0237",
+      "trace_id": "db936a5a9981fecc3953ed8fe0e8e43e",
+      "block_id": "t0-reply",
+      "quote": "Done",
+      "note": "This isn't done -- don't claim completion when it's in progress",
+      "first_failure": true,
+      "kind": "note",
+      "source": "human",
+      "author": "human",
+      "batch": null,
+      "ts": "2026-09-22T05:59:54.370Z"
+    },
+    {
+      "id": "a_v0c9o3f4",
+      "conversation_id": "bae3d8e8fa794fc6a77754762c6c37d6",
+      "scenario_id": "support-0097",
+      "trace_id": "4623d4464b796bbd9e3ef518c3dab726",
+      "block_id": "t0s2-th0",
+      "quote": "The customer says they never received it despite it showing as delivered.",
+      "note": "This should be escalated to an agent",
+      "first_failure": true,
+      "kind": "note",
+      "source": "human",
+      "author": "human",
+      "batch": null,
+      "ts": "2026-09-22T19:23:46.909Z"
     }
   ]
 }
