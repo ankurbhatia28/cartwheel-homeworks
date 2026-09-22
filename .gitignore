@@ -8,7 +8,7 @@
 data/cartwheel.db
 
 # Local conversation state and scenario/replay run outputs.
-.sessions.db
+.sessions.db*
 scenarios/results/
 replay/results/
 .harbor/
@@ -22,3 +22,6 @@ scenarios/demo_pilot_gt.json
 
 # HW4 review app cache (rebuild: uv run python analysis/review_app/build_data.py)
 analysis/review_app/data/
+
+# Scratch space for one-off grounding and generation helpers.
+scratchpad/

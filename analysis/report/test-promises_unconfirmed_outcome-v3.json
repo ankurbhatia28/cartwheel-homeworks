@@ -1,0 +1,37 @@
+{
+  "judge_id": "promises_unconfirmed_outcome-v3",
+  "metrics": {
+    "judge_id": "promises_unconfirmed_outcome-v3",
+    "split": "test",
+    "tpr": 0.8085,
+    "tnr": 0.8,
+    "tpr_interval": [
+      0.6746,
+      0.8958
+    ],
+    "tnr_interval": [
+      0.5481,
+      0.9295
+    ],
+    "agreement": 0.8065,
+    "tp": 38,
+    "fn": 9,
+    "tn": 12,
+    "fp": 3,
+    "n": 62,
+    "disagreements": [
+      "191321d713559e8071c05b0be3646c4e",
+      "1dccbe4a64aa3e2cef5df454b9f38bc9",
+      "3f771ff4db6dc28033a7a9ed16f21c75",
+      "5631f8123b7c938d0dc499df89d66e07",
+      "5f520aac61ec43773df7540e94316910",
+      "77f1647891d16532c15a6348dc1a541b",
+      "a57fe48010dc8e00708643d594816c33",
+      "a71b032598da5f7cb1000632459b5544",
+      "adc5bd9354437f558e030e6d412f83d8",
+      "b18f0a807ade5481532475ce0b0a79f0",
+      "b44100b4ff1250b0bd2bd589de09042a",
+      "b9a134476594e97813308ea58e0aa9bc"
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "versions": [
+    {
+      "judge_id": "promises_unconfirmed_outcome-v0",
+      "prompt_hash": "dc6357c51c32"
+    },
+    {
+      "judge_id": "promises_unconfirmed_outcome-v1",
+      "prompt_hash": "dc6357c51c32"
+    },
+    {
+      "judge_id": "promises_unconfirmed_outcome-v2",
+      "prompt_hash": "67438db6fcf4"
+    },
+    {
+      "judge_id": "promises_unconfirmed_outcome-v3",
+      "prompt_hash": "43f1511eba1d"
+    }
+  ]
+}

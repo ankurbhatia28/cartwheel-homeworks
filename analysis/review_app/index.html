@@ -140,6 +140,12 @@
   td.suggested { background:#fff; outline:1px dashed #c4b5fd; outline-offset:-3px; }
   td.suggested .cell button.on { opacity:.6; }
   .sgtag { font-size:10px; color:var(--sugg); margin-top:2px; } .savedtag { font-size:10px; color:var(--reply); margin-top:2px; }
+  .hw5panel { border-left:3px solid #6366f1; }
+  .hw5panel .hint { margin:2px 0 10px; line-height:1.5; }
+  .hw5panel .cell button { padding:5px 12px; font-size:13px; }
+  .hw5panel textarea { width:100%; box-sizing:border-box; font:inherit; font-size:13px; padding:7px 9px;
+    border:1px solid var(--line); border-radius:6px; resize:vertical; }
+  .hw5panel textarea:disabled { background:#f9fafb; }
   #toast { position:fixed; right:18px; bottom:18px; background:#111827; color:#fff; padding:10px 14px; border-radius:8px; font-size:13px; display:none; z-index:50; }
   .empty { color:var(--muted); padding:30px; text-align:center; }
 </style>
@@ -151,12 +157,14 @@
     <button data-view="map">Map</button>
     <button data-view="progress">Progress</button>
     <button data-view="labels">Labels</button>
+    <button data-view="hw5">HW5 judge</button>
   </div>
   <div class="spacer"></div>
   <div class="nav">
     <select id="scope" title="Which conversations to page through">
       <option value="sample">Sample</option>
       <option value="all">All 250</option>
+      <option value="hw5">HW5 candidates</option>
     </select>
     <button id="prev" title="Previous (←)">←</button>
     <span id="pos" class="stat"></span>
@@ -181,6 +189,7 @@
 
 <section id="view-progress" class="view"><div class="page" id="progress"></div></section>
 <section id="view-labels" class="view"><div class="page" id="labels"></div></section>
+<section id="view-hw5" class="view"><div class="page" id="hw5"></div></section>
 
 <div id="pop">
   <textarea id="popText" placeholder="What went wrong here? (Enter to save, Shift+Enter for a new line)"></textarea>
@@ -202,6 +211,7 @@ const S = {
   samples: {batches: [], conversations: []}, annotations: [], patterns: {modes: []},
   suggestions: [], labels: {}, graph: {nodes: [], clusters: []},
   cur: null, draftLabels: {}, pending: null,
+  hw5Mode: "promises_unconfirmed_outcome", hw5: {}, hw5Candidates: {candidates: []},
 };
 const $ = (s, el = document) => el.querySelector(s);
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
@@ -219,7 +229,9 @@ function toast(msg) { const t = $("#toast"); t.textContent = msg; t.style.displa
 const sampleEntry = id => S.samples.conversations.find(c => c.id === id);
 const annsFor = id => S.annotations.filter(a => a.conversation_id === id);
 const isReviewed = id => annsFor(id).some(a => a.kind === "no_failure" || a.kind === "note");
-const scopeIds = () => S.scope === "sample" && S.samples.conversations.length
+const hw5Ids = () => (S.hw5Candidates.candidates || []).map(c => c.conversation_id).filter(id => S.byId[id]);
+const scopeIds = () => S.scope === "hw5" ? hw5Ids()
+  : S.scope === "sample" && S.samples.conversations.length
   ? S.samples.conversations.map(c => c.id) : S.convs.map(c => c.id);
 function liveModes() { return (S.patterns.modes || []).filter(m => m.status !== "rejected"); }
 
@@ -315,6 +327,7 @@ function renderContent() {
       <span class="stat">Select any text to write a note.</span>
     </div>
   </div>
+  ${hw5Panel(c)}
   <details class="sys"><summary>System prompt — session context shown; click to expand the static instructions</summary>
     <pre>${esc(S.meta.static_system_prompt || "")}</pre></details>
   <div class="ctx mono" style="margin:-6px 0 12px">${esc(c.session_context)}</div>`;
@@ -343,6 +356,11 @@ function renderContent() {
     h += blk("reply", `t${n}-reply`, turn.trace_id, "Assistant", `<div class="md">${md(turn.reply)}</div>`);
   });
   $("#article").innerHTML = h;
+  const ev = $("#hw5ev");
+  if (ev) {
+    ev.onchange = () => setHw5Evidence(c.id, ev.value);
+    ev.onkeydown = e => { if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) { e.preventDefault(); setHw5Evidence(c.id, ev.value); } };
+  }
   paintAnnotations();
 }
 function blk(kind, id, traceId, label, inner) {
@@ -685,6 +703,115 @@ async function saveLabels() {
 }
 
 // ---------------------------------------------------------------------------
+// HW5: one mode, one label per conversation, saved on every click
+//
+// The HW5 convention is the opposite of the HW4 grid above: here 1 = Pass
+// (the failure is absent) and 0 = Fail, which is what analysis/helpers expects.
+// Each click posts immediately, so there is no bulk save to lose.
+// ---------------------------------------------------------------------------
+const HW5_RULE = `<b>Fail (0)</b> — the reply claims or predicts an outcome that no tool result supports:
+calling a queued or pending action done, saying a refund is "processing" when the tool only queued it for
+approval, promising what a human reviewer will decide, or stating a delivery / completion that no tool returned.
+<br><b>Pass (1)</b> — every outcome the reply states is backed by a tool result, or the reply says plainly that
+the action is pending, queued, or awaiting a human.`;
+
+function hw5Counts() {
+  const v = Object.values(S.hw5);
+  return {pass: v.filter(r => r.label === 1).length, fail: v.filter(r => r.label === 0).length};
+}
+async function setHw5(cid, label, fromContent) {
+  const typed = fromContent ? $("#hw5ev")?.value : null;
+  const evidence = (typed ?? S.hw5[cid]?.evidence ?? "");
+  // Labeling redraws the article, so hold the reading position: these decisions
+  // are usually made at the assistant's last reply, far down a long conversation.
+  const y = window.scrollY;
+  const keep = () => window.scrollTo(0, y);
+  S.hw5[cid] = {label, evidence, origin: "hw5_review"};
+  render(); keep();
+  const res = await api(`/api/hw5_labels/${S.hw5Mode}`, [{conversation_id: cid, label, evidence}]);
+  if (res.error || res.errors?.length) { toast("Save failed: " + (res.error || res.errors.join("; "))); console.warn(res); }
+  else toast(`${label ? "Pass" : "Fail"} saved · ${res.traces.fail} Fail / ${res.traces.pass} Pass traces`);
+  S.hw5 = await api(`/api/hw5_labels/${S.hw5Mode}`);
+  render(); keep();
+}
+async function setHw5Evidence(cid, evidence) {
+  const row = S.hw5[cid];
+  if (!row || row.evidence === evidence) return;
+  row.evidence = evidence;
+  const res = await api(`/api/hw5_labels/${S.hw5Mode}`, [{conversation_id: cid, label: row.label, evidence}]);
+  if (res.error || res.errors?.length) { toast("Evidence not saved: " + (res.error || res.errors.join("; "))); return; }
+  toast("Evidence saved");
+}
+function hw5Open(cid) { S.scope = "hw5"; $("#scope").value = "hw5"; setView("content"); openConv(cid); }
+
+/** The label control that rides along with the conversation itself. */
+function hw5Panel(c) {
+  const cands = S.hw5Candidates.candidates || [];
+  const i = cands.findIndex(x => x.conversation_id === c.id);
+  const row = S.hw5[c.id], seeded = row && row.origin !== "hw5_review";
+  const cnt = hw5Counts(), left = cands.filter(x => !S.hw5[x.conversation_id]).length;
+  const why = i >= 0 ? cands[i].signal : null;
+  return `<div class="card hw5panel">
+    <div class="title"><h2>HW5 · ${esc(S.hw5Mode)}</h2>
+      ${i >= 0 ? `<span class="chip batch">candidate ${i + 1} of ${cands.length}</span>` : `<span class="chip">not in the candidate list</span>`}
+      ${row ? `<span class="chip ${row.label ? "" : "role"}">${row.label ? "Pass" : "Fail"}${seeded ? " · from HW4" : " · saved"}</span>` : ""}
+    </div>
+    <div class="hint">${why ? esc(why) + " · " : ""}${HW5_RULE}</div>
+    <div class="actions">
+      <div class="cell">
+        <button class="fail ${row?.label === 0 ? "on" : ""}" onclick="setHw5('${c.id}',0,true)">Fail (0) &nbsp;<span class="stat">F</span></button>
+        <button class="pass ${row?.label === 1 ? "on" : ""}" onclick="setHw5('${c.id}',1,true)">Pass (1) &nbsp;<span class="stat">P</span></button>
+      </div>
+      <span class="stat">${cnt.fail} Fail / ${cnt.pass} Pass labeled · ${left} candidate(s) left</span>
+      <button class="btn" onclick="hw5Next()">Next unlabeled →</button>
+    </div>
+    <textarea id="hw5ev" rows="2" placeholder="Evidence: quote the claim and the tool result behind it. Saves when you click away (⌘/Ctrl+Enter to save now)."
+      ${row ? "" : "disabled"}>${esc(row?.evidence || "")}</textarea>
+  </div>`;
+}
+function hw5Next() {
+  const rest = (S.hw5Candidates.candidates || []).map(x => x.conversation_id)
+    .filter(id => S.byId[id] && !S.hw5[id]);
+  if (!rest.length) return toast("Every candidate is labeled.");
+  const after = rest.filter(id => hw5Ids().indexOf(id) > hw5Ids().indexOf(S.cur));
+  S.scope = "hw5"; $("#scope").value = "hw5"; openConv(after[0] || rest[0]);
+}
+function renderHw5() {
+  const cands = S.hw5Candidates.candidates || [], c = hw5Counts();
+  const done = cands.filter(x => S.hw5[x.conversation_id]).length;
+  const bar = (n, goal) => `<div class="n">${n} / ${goal}</div>`;
+  let h = `<h2>${esc(S.hw5Mode)}</h2>
+    <p class="hint">${HW5_RULE}</p>
+    <div class="kpis">
+      <div class="kpi">${bar(c.fail, 30)}<div class="l">Fail-labeled conversations (0)</div></div>
+      <div class="kpi">${bar(c.pass, 30)}<div class="l">Pass-labeled conversations (1)</div></div>
+      <div class="kpi"><div class="n">${done} / ${cands.length}</div><div class="l">candidates reviewed</div></div>
+      <div class="kpi"><div class="n">${Object.keys(S.hw5).length}</div><div class="l">labeled conversations in total</div></div>
+    </div>
+    <p class="hint">100 conversations are already labeled from HW4 (converted to the HW5 convention). These
+    ${cands.length} candidates come from an enrichment search over the conversations HW4 never reviewed, so the
+    Fail rate among them should be higher than the 11% baseline &mdash; but judge each one on its own evidence.</p>`;
+  if (!cands.length) { $("#hw5").innerHTML = h + `<div class="empty">No candidates yet. Run <code>uv run python analysis/review_app/hw5_candidates.py</code>.</div>`; return; }
+  h += `<table class="grid"><thead><tr><th>Conversation</th><th>Why it surfaced</th><th>Label</th><th>Evidence (the line that decided it)</th></tr></thead><tbody>`;
+  for (const x of cands) {
+    const cid = x.conversation_id, row = S.hw5[cid], conv = S.byId[cid];
+    const seeded = row && row.origin !== "hw5_review";
+    h += `<tr class="${row ? "" : "missing"}">
+      <td><a href="#" onclick="hw5Open('${cid}');return false">${esc(x.scenario_id)}</a>
+        <div class="sgtag">${conv ? `${conv.turns} turn(s) · ${conv.tools} tool call(s)` : ""}</div></td>
+      <td class="hint">${esc(x.signal)}${seeded ? " · already labeled in HW4" : ""}</td>
+      <td><div class="cell">
+        <button class="fail ${row?.label === 0 ? "on" : ""}" onclick="setHw5('${cid}',0)">Fail</button>
+        <button class="pass ${row?.label === 1 ? "on" : ""}" onclick="setHw5('${cid}',1)">Pass</button>
+      </div></td>
+      <td><input style="width:100%" value="${esc(row?.evidence || "")}" ${row ? "" : "disabled"}
+        placeholder="${row ? "quote the claim, or why it is supported" : "label it first"}"
+        onchange="setHw5Evidence('${cid}', this.value)"></td></tr>`;
+  }
+  $("#hw5").innerHTML = h + `</tbody></table>`;
+}
+
+// ---------------------------------------------------------------------------
 // navigation + polling
 // ---------------------------------------------------------------------------
 function updateTop() {
@@ -700,6 +827,9 @@ document.addEventListener("keydown", e => {
   if (e.target.closest("textarea, input, select") || $("#pop").style.display === "block") return;
   if (S.view === "content" && e.key === "ArrowRight") step(1);
   if (S.view === "content" && e.key === "ArrowLeft") step(-1);
+  // HW5: label the conversation you are reading without reaching for the mouse.
+  if (S.view === "content" && S.cur && "fF".includes(e.key)) setHw5(S.cur, 0, true);
+  if (S.view === "content" && S.cur && "pP".includes(e.key)) setHw5(S.cur, 1, true);
 });
 function setView(v) {
   S.view = v; document.querySelectorAll(".tabs button").forEach(b => b.classList.toggle("active", b.dataset.view === v));
@@ -708,7 +838,8 @@ function setView(v) {
 document.querySelectorAll(".tabs button").forEach(b => b.onclick = () => setView(b.dataset.view));
 function render() {
   if (S.view === "content") renderContent(); if (S.view === "map") renderMap();
-  if (S.view === "progress") renderProgress(); if (S.view === "labels") renderLabels(); updateTop();
+  if (S.view === "progress") renderProgress(); if (S.view === "labels") renderLabels();
+  if (S.view === "hw5") renderHw5(); updateTop();
 }
 
 let sig = {};
@@ -722,7 +853,10 @@ async function poll() {
     if (S.view !== "content") render(); else { paintAnnotationsSafe(); updateTop(); }
   }
 }
-function paintAnnotationsSafe() { if ($("#pop").style.display !== "block") renderContent(); }
+function paintAnnotationsSafe() {
+  if ($("#pop").style.display === "block" || document.activeElement?.id === "hw5ev") return;
+  renderContent();
+}
 
 (async function init() {
   const [convs, meta, samples, anns, patterns, sugg, labels, graph] = await Promise.all([
@@ -730,6 +864,9 @@ function paintAnnotationsSafe() { if ($("#pop").style.display !== "block") rende
     api("/api/patterns"), api("/api/suggestions"), api("/api/labels"), api("/api/graph")]);
   Object.assign(S, {convs, meta, samples, annotations: anns.annotations || [], patterns, suggestions: sugg, labels, graph});
   S.labelDrafts = (await api("/api/label_drafts")).drafts || {};
+  S.hw5Candidates = await api("/api/hw5_candidates");
+  S.hw5Mode = S.hw5Candidates.mode || S.hw5Mode;
+  S.hw5 = await api(`/api/hw5_labels/${S.hw5Mode}`);
   S.convs.forEach(c => S.byId[c.id] = c);
   sig = {samples: JSON.stringify(samples), patterns: JSON.stringify(patterns), suggestions: JSON.stringify(sugg)};
   if (!S.samples.conversations?.length) { S.samples = {batches: [], conversations: []}; S.scope = "all"; $("#scope").value = "all"; }
@@ -737,7 +874,14 @@ function paintAnnotationsSafe() { if ($("#pop").style.display !== "block") rende
   const ids = scopeIds();
   await openConv(fromHash ? fromHash.id : ids.find(id => !isReviewed(id)) || ids[0]);
   const v = new URLSearchParams(location.search).get("view");
-  if (["map", "progress", "labels"].includes(v)) setView(v);
+  if (["map", "progress", "labels", "hw5"].includes(v)) setView(v);
+  // A #scenario-id link must also work while the app is already open: the
+  // video notes link straight to individual conversations.
+  window.addEventListener("hashchange", () => {
+    const want = decodeURIComponent(location.hash.slice(1));
+    const conv = S.convs.find(c => c.scenario_id === want);
+    if (conv) { setView("content"); openConv(conv.id); }
+  });
   setInterval(poll, 4000);
 })();
 </script>

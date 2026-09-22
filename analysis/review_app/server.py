@@ -22,6 +22,8 @@ API:
     GET  POST /api/patterns         the taxonomy                 (state/patterns.json)
     GET  POST /api/suggestions      AI suggestions and decisions (state/suggestions.json)
     GET  /api/label_drafts          suggested labels (draft_labels.py); never saved as labels
+    GET  /api/hw5_candidates        HW5 candidate conversations for one mode
+    GET  POST /api/hw5_labels/<mode> HW5 labels (1 = Pass, 0 = Fail), one record per trace
     GET  /api/labels                live Pass/Fail per conversation and mode
     POST /api/labels                save labels: local files + Langfuse scores
 
@@ -52,6 +54,7 @@ sys.path.insert(0, str(REPO))
 APP_DIR = Path(__file__).resolve().parent
 STATE_DIR = REPO / "analysis" / "state"
 LABELS_DIR = STATE_DIR / "labels"
+HW5_LABELS_DIR = STATE_DIR / "hw5_labels"  # HW5 convention: 1 = Pass, 0 = Fail
 DATA_PATH = APP_DIR / "data" / "conversations.json"
 
 FILES = {
@@ -61,6 +64,7 @@ FILES = {
     "/api/suggestions": (STATE_DIR / "suggestions.json", []),
     "/api/graph": (STATE_DIR / "graph.json", {"nodes": [], "clusters": []}),
     "/api/label_drafts": (STATE_DIR / "label_drafts.json", {"drafts": {}}),
+    "/api/hw5_candidates": (STATE_DIR / "hw5_candidates.json", {"mode": None, "candidates": []}),
 }
 WRITABLE = {"/api/samples", "/api/annotations", "/api/patterns", "/api/suggestions"}
 # Labels from the course demo fixture; not part of this review.
@@ -97,10 +101,19 @@ _cache: dict[str, Any] = {}
 
 
 def _conversations() -> dict[str, Any]:
-    if not _cache:
-        if not DATA_PATH.exists():
-            raise FileNotFoundError(f"{DATA_PATH} missing: run analysis/review_app/build_data.py first")
+    """The conversation cache, reloaded whenever build_data.py rewrites it.
+
+    Keyed on the file's mtime: a rebuild (HW5 merged its 60 targeted runs into
+    HW3's 250) must reach a server that is already running, or the new
+    conversations are invisible until someone restarts it.
+    """
+    if not DATA_PATH.exists():
+        raise FileNotFoundError(f"{DATA_PATH} missing: run analysis/review_app/build_data.py first")
+    mtime = DATA_PATH.stat().st_mtime_ns
+    if _cache.get("mtime") != mtime:
         payload = json.loads(DATA_PATH.read_text())
+        _cache.clear()
+        _cache["mtime"] = mtime
         _cache["payload"] = payload
         _cache["by_id"] = {c["id"]: c for c in payload["conversations"]}
     return _cache
@@ -153,6 +166,58 @@ def _live_labels() -> dict[str, dict[str, Any]]:
 def label_score_id(trace_id: str, mode: str) -> str:
     """One stable Langfuse score id per (trace, mode), so re-saving overwrites instead of duplicating."""
     return hashlib.sha1(f"hw4-label:{trace_id}:{mode}".encode()).hexdigest()[:32]
+
+
+def _hw5_live(mode: str) -> dict[str, dict[str, Any]]:
+    path = HW5_LABELS_DIR / f"{mode}.jsonl"
+    if not path.exists():
+        return {}
+    rows = [json.loads(line) for line in path.read_text().splitlines() if line.strip()]
+    return {r["trace_id"]: r for r in rows if not r.get("superseded_by")}
+
+
+def _hw5_labels(mode: str) -> dict[str, Any]:
+    """{conversation_id: {label, evidence, origin}} for the HW5 mode (1 = Pass)."""
+    conversations = _conversations()["by_id"]
+    trace_to_conv = {tid: cid for cid, c in conversations.items() for tid in c["trace_ids"]}
+    out: dict[str, Any] = {}
+    for trace_id, row in _hw5_live(mode).items():
+        cid = trace_to_conv.get(trace_id)
+        if cid:
+            out[cid] = {"label": row["label"], "evidence": row.get("evidence", ""), "origin": row.get("origin", "human")}
+    return out
+
+
+def _save_hw5_labels(mode: str, items: list[dict[str, Any]]) -> dict[str, Any]:
+    """Append HW5 labels (1 = Pass, 0 = Fail), one record per trace."""
+    conversations = _conversations()["by_id"]
+    path = HW5_LABELS_DIR / f"{mode}.jsonl"
+    rows = [json.loads(line) for line in path.read_text().splitlines() if line.strip()] if path.exists() else []
+    live = {r["trace_id"]: r for r in rows if not r.get("superseded_by")}
+    written, errors = 0, []
+    for item in items:
+        conv = conversations.get(item["conversation_id"])
+        label = int(item["label"])
+        if conv is None or label not in (0, 1):
+            errors.append(f"{item.get('conversation_id')}: unknown conversation or bad label")
+            continue
+        for trace_id in conv["trace_ids"]:
+            label_id = f"{trace_id}#{uuid.uuid4().hex[:8]}"
+            prior = live.get(trace_id)
+            if prior:
+                if prior["label"] == label and prior.get("evidence", "") == item.get("evidence", ""):
+                    continue
+                prior["superseded_by"] = label_id
+            record = {"trace_id": trace_id, "label": label, "source": "human", "ts": _now(),
+                      "label_id": label_id, "conversation_id": conv["id"], "scenario_id": conv["scenario_id"],
+                      "evidence": item.get("evidence", ""), "origin": "hw5_review"}
+            rows.append(record)
+            live[trace_id] = record
+            written += 1
+    HW5_LABELS_DIR.mkdir(parents=True, exist_ok=True)
+    path.write_text("".join(json.dumps(r) + "\n" for r in rows))
+    counts = {"pass": sum(r["label"] == 1 for r in live.values()), "fail": sum(r["label"] == 0 for r in live.values())}
+    return {"written": written, "errors": errors, "traces": counts}
 
 
 def _save_labels(items: list[dict[str, Any]]) -> dict[str, Any]:
@@ -260,6 +325,8 @@ class Handler(BaseHTTPRequestHandler):
                                         "count": len(p["conversations"])})
             if path == "/api/labels":
                 return self._send(200, _live_labels())
+            if path.startswith("/api/hw5_labels/"):
+                return self._send(200, _hw5_labels(path.rsplit("/", 1)[1]))
             if path in FILES:
                 file, default = FILES[path]
                 return self._send(200, _read(file, default))
@@ -274,6 +341,8 @@ class Handler(BaseHTTPRequestHandler):
             try:
                 if path == "/api/labels":
                     return self._send(200, _save_labels(body if isinstance(body, list) else [body]))
+                if path.startswith("/api/hw5_labels/"):
+                    return self._send(200, _save_hw5_labels(path.rsplit("/", 1)[1], body if isinstance(body, list) else [body]))
                 if path in WRITABLE:
                     _write(FILES[path][0], body)
                     return self._send(200, {"saved": True})

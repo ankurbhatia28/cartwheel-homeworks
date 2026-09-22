@@ -27,6 +27,7 @@ import argparse
 import ast
 import json
 import sys
+import time
 from collections import Counter
 from datetime import datetime
 from pathlib import Path
@@ -38,7 +39,11 @@ sys.path.insert(0, str(REPO))
 APP_DIR = Path(__file__).resolve().parent
 DATA_PATH = APP_DIR / "data" / "conversations.json"
 GRAPH_PATH = REPO / "analysis" / "state" / "graph.json"
-SCENARIOS_PATH = REPO / "scenarios" / "support_scenarios.jsonl"
+# Every scenario set whose traces the app may show: HW3's 250 and HW5's
+# targeted refund run. A conversation with no matching record still renders,
+# but without its tuple or expected outcome.
+SCENARIOS_PATHS = [REPO / "scenarios" / "support_scenarios.jsonl",
+                   REPO / "scenarios" / "hw5_scenarios.jsonl"]
 
 # Decision 1 (hw4overview.md): the HW3 final run, and nothing else in Langfuse.
 WINDOW_START = "2026-09-16T00:40:00+00:00"
@@ -68,14 +73,14 @@ def _to_dict(record: Any) -> dict[str, Any]:
     return json.loads(record.json(by_alias=True))
 
 
-def load_from_langfuse() -> list[dict[str, Any]]:
+def load_from_langfuse(window: tuple[str, str] = (WINDOW_START, WINDOW_END), prefix: str = "support-") -> list[dict[str, Any]]:
     from observability.instrument import load_env
 
     load_env()
     from langfuse import Langfuse
 
     lf = Langfuse()
-    start, end = datetime.fromisoformat(WINDOW_START), datetime.fromisoformat(WINDOW_END)
+    start, end = datetime.fromisoformat(window[0]), datetime.fromisoformat(window[1])
     summaries, page = [], 1
     while True:
         resp = lf.api.trace.list(page=page, limit=100, from_timestamp=start, to_timestamp=end)
@@ -86,15 +91,25 @@ def load_from_langfuse() -> list[dict[str, Any]]:
         page += 1
     traces = []
     for summary in summaries:
-        full = _to_dict(lf.api.trace.get(summary.id))
-        if str(_attrs(full.get("metadata")).get("cartwheel.scenario_id", "")).startswith("support-"):
+        # Langfuse can read-timeout while it is still ingesting a run, so retry
+        # rather than lose the whole pull on one slow trace.
+        for attempt in range(4):
+            try:
+                full = _to_dict(lf.api.trace.get(summary.id))
+                break
+            except Exception as exc:
+                if attempt == 3:
+                    raise
+                print(f"  retry {attempt + 1}/3 for {summary.id}: {type(exc).__name__}", file=sys.stderr)
+                time.sleep(3 * (attempt + 1))
+        if str(_attrs(full.get("metadata")).get("cartwheel.scenario_id", "")).startswith(prefix):
             traces.append(full)
     return traces
 
 
-def load_from_export(path: Path) -> list[dict[str, Any]]:
+def load_from_export(path: Path, window: tuple[str, str] = (WINDOW_START, WINDOW_END)) -> list[dict[str, Any]]:
     payload = json.loads(path.read_text())
-    return [t for t in payload["traces"] if WINDOW_START[:19] <= t["timestamp"][:19] < WINDOW_END[:19]]
+    return [t for t in payload["traces"] if window[0][:19] <= t["timestamp"][:19] < window[1][:19]]
 
 
 # ---------------------------------------------------------------------------
@@ -245,7 +260,9 @@ def split_system_prompt(prompt: str | None) -> tuple[str, str]:
 
 
 def build_conversations(traces: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], str]:
-    scenarios = {json.loads(line)["id"]: json.loads(line) for line in SCENARIOS_PATH.read_text().splitlines() if line.strip()}
+    scenarios = {json.loads(line)["id"]: json.loads(line)
+                 for path in SCENARIOS_PATHS if path.exists()
+                 for line in path.read_text().splitlines() if line.strip()}
     sessions: dict[str, list[dict[str, Any]]] = {}
     for trace in traces:
         sid = _attrs(trace.get("metadata")).get("cartwheel.session_id")
@@ -310,7 +327,7 @@ def build_graph(conversations: list[dict[str, Any]], k: int = 8, seed: int = 7) 
     from sklearn.preprocessing import StandardScaler
 
     def vocab(key):
-        return sorted({v for c in conversations for v in key(c)})
+        return sorted({v for c in conversations for v in key(c) if v is not None})
 
     roles = vocab(lambda c: [c["role"]])
     intents = vocab(lambda c: [c["scenario"]["tuple"].get("intent")])
@@ -354,25 +371,44 @@ def build_graph(conversations: list[dict[str, Any]], k: int = 8, seed: int = 7) 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--source", type=Path, default=None, help="offline export instead of live Langfuse")
+    parser.add_argument("--window", nargs=2, metavar=("START", "END"), default=[WINDOW_START, WINDOW_END],
+                        help="ISO timestamps to pull; defaults to the HW3 final run")
+    parser.add_argument("--prefix", default="support-", help="scenario id prefix to keep")
+    parser.add_argument("--no-graph", action="store_true",
+                        help="leave analysis/state/graph.json alone (HW4's cluster map is a committed artifact)")
+    parser.add_argument("--merge", action="store_true",
+                        help="keep the conversations already in the cache and add these to them "
+                             "(HW5 adds a second run without rebuilding HW3's 250)")
     args = parser.parse_args()
 
-    traces = load_from_export(args.source) if args.source else load_from_langfuse()
+    window = (args.window[0], args.window[1])
+    traces = load_from_export(args.source, window) if args.source else load_from_langfuse(window, args.prefix)
     conversations, static_prompt = build_conversations(traces)
-    graph = build_graph(conversations)
+    graph_conversations = conversations
+    if args.merge and DATA_PATH.exists():
+        prior = json.loads(DATA_PATH.read_text())
+        fresh = {c["id"] for c in conversations}
+        conversations = [c for c in prior["conversations"] if c["id"] not in fresh] + conversations
+        static_prompt = static_prompt or prior.get("static_system_prompt", "")
+    graph = None if args.no_graph else build_graph(graph_conversations)
 
     DATA_PATH.parent.mkdir(parents=True, exist_ok=True)
     DATA_PATH.write_text(json.dumps({
         "built_at": datetime.now().astimezone().isoformat(timespec="seconds"),
         "source": str(args.source) if args.source else "langfuse",
-        "window": [WINDOW_START, WINDOW_END],
+        "window": list(window),
         "static_system_prompt": static_prompt,
         "conversations": conversations,
     }, indent=1))
-    GRAPH_PATH.write_text(json.dumps(graph, indent=1))
+    if graph is not None:
+        GRAPH_PATH.write_text(json.dumps(graph, indent=1))
     turns = sum(len(c["turns"]) for c in conversations)
     print(f"{len(conversations)} conversations, {turns} traces -> {DATA_PATH.relative_to(REPO)}")
-    print(f"{len(graph['clusters'])} clusters -> {GRAPH_PATH.relative_to(REPO)}: "
-          + ", ".join(f"c{c['id']}={c['size']}" for c in graph["clusters"]))
+    if graph is None:
+        print(f"cluster map left unchanged ({GRAPH_PATH.relative_to(REPO)})")
+    else:
+        print(f"{len(graph['clusters'])} clusters -> {GRAPH_PATH.relative_to(REPO)}: "
+              + ", ".join(f"c{c['id']}={c['size']}" for c in graph["clusters"]))
 
 
 if __name__ == "__main__":
