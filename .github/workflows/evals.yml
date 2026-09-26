@@ -35,9 +35,44 @@ jobs:
       - uses: astral-sh/setup-uv@v5
       - run: uv sync
 
-      # Homework 6: install Harbor 0.23.0.
-      # Generate the classified tasks in eval_cases/cases.jsonl.
-      # Run five attempts per task in fresh Docker containers.
-      # Pass the agent and judge provider keys to Harbor.
-      # Summarize the job and upload the job files with `if: always()` so a
-      # failed regression keeps its evidence.
+      - name: Install Harbor
+        run: uv tool install 'harbor==0.23.0'
+
+      - name: Generate the classified Harbor tasks
+        run: uv run python scripts/export_harbor_tasks.py
+
+      # One trial at a time: each task environment asks for 2 CPUs and 4 GB,
+      # and a standard runner has 2 CPUs and 7 GB, so Harbor's default of four
+      # concurrent trials oversubscribes it. The verifier multiplier is
+      # headroom for the judge call, which took 107s locally under contention
+      # against 5.6s when it ran alone.
+      - name: Run the evaluation cases
+        run: |
+          harbor run \
+            -p .harbor/tasks \
+            -a harbor_adapter.agent:CartwheelAgent \
+            -m "$CARTWHEEL_MODEL" \
+            -e docker \
+            --n-attempts 5 \
+            --n-concurrent 1 \
+            --verifier-timeout-multiplier 3 \
+            --job-name hw6-evals \
+            --jobs-dir .harbor/jobs \
+            --yes
+
+      # always(): a regression that fails the gate must still publish its
+      # numbers, and the summary is the evidence for why the job went red.
+      - name: Summarize the job and apply the CI gate
+        if: always()
+        run: |
+          uv run python scripts/summarize_harbor_job.py \
+            .harbor/jobs/hw6-evals \
+            --expected-attempts 5
+
+      - name: Upload the Harbor job directory
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hw6-evals-${{ github.run_id }}
+          path: .harbor/jobs/hw6-evals
+          if-no-files-found: error

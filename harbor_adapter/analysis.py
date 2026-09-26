@@ -22,6 +22,7 @@ def analyze_capability_job(
     if not result_path.exists():
         raise FileNotFoundError(f"Harbor result not found: {result_path}")
     result = json.loads(result_path.read_text())
+    inline = isinstance(result.get("trial_results"), list) and result["trial_results"]
     trials = [
         trial
         for trial in read_trial_results(job_dir, result)
@@ -82,7 +83,11 @@ def analyze_capability_job(
     return {
         "case_id": case_id,
         "model": next(iter(models)),
-        "trial_order": "Harbor trial order (result.json trial_results, else sorted trial directories)",
+        "trial_order": (
+            "result.json trial_results order"
+            if inline
+            else "sorted trial directory order (Harbor 0.23 keeps results per trial)"
+        ),
         "trials": trial_records,
         "rewards": rewards,
         "n": len(rewards),
