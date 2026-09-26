@@ -332,11 +332,41 @@ def _reward_toml(judge_names: list[str]) -> str:
     )
 
 
+REWARDKIT_PIN = "harbor-rewardkit==0.2.1"
+DOCETL_PIN = "docetl==0.3.0"
+
+
 def _dockerfile() -> str:
-    return '''FROM ghcr.io/astral-sh/uv:python3.12-bookworm-slim
+    """The task image, with the verifier's toolchain baked in.
+
+    ``tests/test.sh`` ran the verifier through ``uvx``, which resolves and
+    downloads ``harbor-rewardkit`` and ``docetl`` (124 packages, well over a
+    minute) on *every trial*, then builds a throwaway environment for them.
+    Concurrent trials starve each other and blow the 300 second verifier
+    timeout, which killed 4 of 5 trials on the first two baseline runs here.
+
+    ``uv tool install`` puts the toolchain in the image once. The launcher
+    lands in /usr/local/bin, which is on PATH for any user the verifier runs
+    as, so ``tests/test.sh`` calls ``rewardkit`` directly and starts in about a
+    second. It keeps the ``uvx`` invocation as a fallback for an image built
+    before this change. CI benefits more than the laptop does: the runner
+    builds once and then verifies 60 trials against it.
+
+    UV_COMPILE_BYTECODE writes .pyc files during the build. docetl pulls in
+    pandas, scikit-learn, matplotlib and litellm, and compiling them on first
+    import costs about 20 seconds of every verification otherwise.
+    """
+    return f'''FROM ghcr.io/astral-sh/uv:python3.12-bookworm-slim
 
 ENV UV_LINK_MODE=copy
 ENV OPENAI_AGENTS_DISABLE_TRACING=1
+ENV UV_CACHE_DIR=/opt/uv-cache
+ENV UV_TOOL_DIR=/opt/uv-tools
+ENV UV_TOOL_BIN_DIR=/usr/local/bin
+ENV UV_COMPILE_BYTECODE=1
+
+# Install the verifier toolchain once, into the image (see the docstring).
+RUN uv tool install --with '{DOCETL_PIN}' '{REWARDKIT_PIN}'
 
 WORKDIR /app
 COPY cartwheel/pyproject.toml cartwheel/uv.lock cartwheel/README.md /app/
@@ -374,8 +404,10 @@ def _write_task(root: Path, case: dict[str, Any]) -> None:
     test_sh = tests / "test.sh"
     test_sh.write_text(
         "#!/bin/sh\nset -eu\n"
-        "uvx --from 'harbor-rewardkit==0.2.1' --with 'docetl==0.3.0' "
-        "rewardkit /tests\n"
+        "if command -v rewardkit > /dev/null 2>&1; then\n"
+        "  exec rewardkit /tests\n"
+        "fi\n"
+        f"exec uvx --from '{REWARDKIT_PIN}' --with '{DOCETL_PIN}' rewardkit /tests\n"
     )
     test_sh.chmod(0o755)
 

@@ -8,7 +8,7 @@ from typing import Any
 
 from tests.eval.passk import pass_at_k
 
-from harbor_adapter.summary import _reward
+from harbor_adapter.summary import read_trial_results, _reward
 
 
 def analyze_capability_job(
@@ -24,7 +24,7 @@ def analyze_capability_job(
     result = json.loads(result_path.read_text())
     trials = [
         trial
-        for trial in result.get("trial_results", [])
+        for trial in read_trial_results(job_dir, result)
         if str(trial.get("task_name", "")).endswith(case_id)
     ]
     if len(trials) != expected_attempts:
@@ -82,7 +82,7 @@ def analyze_capability_job(
     return {
         "case_id": case_id,
         "model": next(iter(models)),
-        "trial_order": "result.json trial_results order",
+        "trial_order": "Harbor trial order (result.json trial_results, else sorted trial directories)",
         "trials": trial_records,
         "rewards": rewards,
         "n": len(rewards),
