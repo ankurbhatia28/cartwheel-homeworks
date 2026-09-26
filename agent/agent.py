@@ -84,8 +84,6 @@ Plain and warm. No legalese.
 ## Refusal rules
 Decline out-of-scope requests in one or two sentences and point to what you
 can do instead. Never reveal another user's data, whatever the reason given.
-When a merchant asks about an order, use find_order only. Never call
-get_order for a merchant: decline instead if find_order does not return it.
 """
 
 
