@@ -27,6 +27,22 @@ from math import comb
 from typing import Any
 
 
+def _validate(n: int, c: int, k: int) -> None:
+    """Shared guard for the two estimators.
+
+    Both read a size-k subset out of n observed runs, so k has to fit inside
+    the evidence. Rejecting k > n here is what stops a caller from reporting
+    pass@10 off five runs, which would be an extrapolation rather than an
+    estimate.
+    """
+    if n < 1:
+        raise ValueError(f"n must be at least 1, got {n}")
+    if not 0 <= c <= n:
+        raise ValueError(f"c must be in [0, {n}], got {c}")
+    if not 1 <= k <= n:
+        raise ValueError(f"k must be in [1, {n}], got {k}")
+
+
 def pass_at_k(n: int, c: int, k: int) -> float:
     """Unbiased estimator of pass@k from n runs with c successes.
 
@@ -58,8 +74,14 @@ def pass_at_k(n: int, c: int, k: int) -> float:
         pass_at_k(8, 6, 4) == 1.0  (only 2 failures, so every 4-subset hits
                                     a success)
     """
-    ### YOUR CODE HERE (hw6)
-    raise NotImplementedError("hw6: implement pass_at_k")
+    _validate(n, c, k)
+    failures = n - c
+    # Fewer failures than the subset size: every size-k subset must contain a
+    # success, and comb() would return 0 anyway. Spelled out because "1.0
+    # exactly" is the contract, not a rounding artifact.
+    if failures < k:
+        return 1.0
+    return 1.0 - comb(failures, k) / comb(n, k)
 
 
 def pass_hat_k(n: int, c: int, k: int) -> float:
@@ -90,8 +112,12 @@ def pass_hat_k(n: int, c: int, k: int) -> float:
         pass_hat_k(8, 6, 4) == C(6,4)/C(8,4) == 15/70 == 0.2142857...
         pass_hat_k(8, 6, 8) == 0.0  (not all 8 succeeded)
     """
-    ### YOUR CODE HERE (hw6)
-    raise NotImplementedError("hw6: implement pass_hat_k")
+    _validate(n, c, k)
+    # Fewer successes than the subset size: no size-k subset is all-success.
+    # comb(c, k) is already 0 here; the early return states the intent.
+    if c < k:
+        return 0.0
+    return comb(c, k) / comb(n, k)
 
 
 def case_passes(
@@ -140,5 +166,37 @@ def case_passes(
         case_passes("capability", 2, 5, 0.6)     -> pass  (never blocks)
         case_passes("capability", 1, 5, 0.6)     -> pass  (never blocks)
     """
-    ### YOUR CODE HERE (hw6)
-    raise NotImplementedError("hw6: implement case_passes")
+    if kind not in ("regression", "capability"):
+        raise ValueError(f"kind must be 'regression' or 'capability', got {kind!r}")
+    if n < 1:
+        raise ValueError(f"n must be at least 1, got {n}")
+    if not 0 <= passes <= n:
+        raise ValueError(f"passes must be in [0, {n}], got {passes}")
+
+    baseline = (
+        "" if baseline_pass_rate is None else f", baseline {baseline_pass_rate:.2f}"
+    )
+    if kind == "regression":
+        # Any failed run blocks. Not pass^k against a threshold: a regression
+        # case is pinned at n of n, so one failure is already the evidence
+        # that the guarded behavior moved.
+        if passes < n:
+            return {
+                "decision": "block",
+                "reason": (
+                    f"regression case failed {n - passes} of {n} runs"
+                    f"{baseline}"
+                ),
+            }
+        return {
+            "decision": "pass",
+            "reason": f"regression case passed {passes} of {n} runs{baseline}",
+        }
+    # A capability case reports and never blocks: it was never reliable, so
+    # gating on it would leave CI red forever and teach people to ignore it.
+    return {
+        "decision": "pass",
+        "reason": (
+            f"capability case passed {passes} of {n}{baseline}, not blocking"
+        ),
+    }
