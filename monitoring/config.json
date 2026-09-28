@@ -1,0 +1,23 @@
+{
+  "judge_id": "promises_unconfirmed_outcome-v3",
+  "judge_mode": "promises_unconfirmed_outcome",
+  "model": "claude-opus-4-6",
+  "random_rate": 0.5,
+  "risk_groups": [
+    "write_action",
+    "multi_turn"
+  ],
+  "threshold": 0.25,
+  "periods": [
+    {
+      "label": "before",
+      "from": "2026-09-16T00:42:00Z",
+      "to": "2026-09-16T01:42:00Z"
+    },
+    {
+      "label": "after",
+      "from": "2026-09-27T22:08:00Z",
+      "to": "2026-09-27T22:20:00Z"
+    }
+  ]
+}

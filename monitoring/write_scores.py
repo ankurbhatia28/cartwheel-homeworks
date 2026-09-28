@@ -70,8 +70,38 @@ def build_score_records(
         A list of score record dicts with keys: score_id, name, value,
         data_type, trace_id, comment (comment is None for verdicts).
     """
-    ### YOUR CODE HERE (hw7)
-    raise NotImplementedError("hw7: implement build_score_records")
+    records: list[dict[str, Any]] = []
+    # Stable ids are the whole point: Langfuse treats a repeated score_id as
+    # an update, so re-running a period corrects its scores in place instead
+    # of leaving two contradictory numbers on the same trace.
+    for kind, verdicts in (("verdict", random_verdicts), ("risk_verdict", risk_verdicts)):
+        for trace_id, verdict in verdicts.items():
+            records.append(
+                {
+                    "score_id": _stable_id(mode, kind, trace_id),
+                    "name": f"{mode}_{kind}",
+                    "value": float(verdict),
+                    "data_type": "NUMERIC",
+                    "trace_id": trace_id,
+                    "comment": None,
+                }
+            )
+    # The prevalence belongs to the batch, not to any one trace, so it carries
+    # no trace_id and is keyed by the batch label.
+    records.append(
+        {
+            "score_id": _stable_id(mode, "prevalence", batch_label),
+            "name": f"{mode}_corrected_prevalence",
+            "value": float(estimate["corrected"]),
+            "data_type": "NUMERIC",
+            "trace_id": None,
+            "comment": (
+                f"95% CI {estimate['ci_low']}-{estimate['ci_high']}, "
+                f"raw {estimate['raw']}, n={estimate['n_sample']}"
+            ),
+        }
+    )
+    return records
 
 
 # ---------------------------------------------------------------------------
@@ -80,11 +110,17 @@ def build_score_records(
 # ---------------------------------------------------------------------------
 
 
-def post_scores(records: list[dict[str, Any]]) -> int:
+def post_scores(records: list[dict[str, Any]], session_id: str | None = None) -> int:
     """Write score records to Langfuse. Returns the number written.
 
     Uses the SDK's ``create_score`` with the ``score_id`` idempotency
     parameter, so writing a record again updates the existing score.
+
+    A score must be anchored to something: Langfuse 3.15 rejects one with no
+    trace, session or dataset run, which is what the period-level prevalence
+    record is (``trace_id`` is None by contract). ``session_id`` anchors those
+    to the monitoring period instead, so the dashboard can chart prevalence
+    over time without pinning a period metric onto one arbitrary trace.
     """
     from analysis.helpers import langfuse_io
 
@@ -105,6 +141,8 @@ def post_scores(records: list[dict[str, Any]]) -> int:
         }
         if record.get("trace_id") is not None:
             kwargs["trace_id"] = record["trace_id"]
+        elif session_id:
+            kwargs["session_id"] = session_id
         if record.get("comment"):
             kwargs["comment"] = record["comment"]
         client.create_score(**kwargs)
