@@ -29,9 +29,11 @@ jobs:
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       PYTHONPATH: ${{ github.workspace }}
     steps:
+      # No lfs: the only LFS-tracked files are the homework reference
+      # patches, which the monitor never reads. A self-hosted macOS runner
+      # has no git-lfs unless someone installs it, and asking for it here
+      # fails the checkout before any monitoring happens.
       - uses: actions/checkout@v4
-        with:
-          lfs: true
 
       - uses: astral-sh/setup-uv@v5
 
