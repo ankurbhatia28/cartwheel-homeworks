@@ -28,13 +28,19 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 
-import httpx
-
 from analysis.helpers.normalization import normalize_trace
 from monitoring.correct import corrected_mode_prevalence
 from monitoring.run_judges import judge_sample, judge_test_data
 from monitoring.sample import DEFAULT_RISK_GROUPS, select_traces
 from monitoring.write_scores import build_score_records, post_scores
+
+# httpx defaults to a 5 second read timeout, and a ClickHouse query for one
+# trace on a cold cache runs past it, which is what failed the scheduled runs.
+# It has to be set per request: the SDK shares one HTTP client per public key
+# across every Langfuse() in the process, so whichever construction happens
+# first decides the timeout and later arguments are silently ignored. A
+# per-request option cannot be overridden that way.
+SLOW_READ = {"timeout_in_seconds": 60}
 
 REPO = Path(__file__).resolve().parents[1]
 CONFIG_PATH = REPO / "monitoring" / "config.json"
@@ -80,20 +86,15 @@ def fetch_window(start: datetime, end: datetime) -> list[dict[str, Any]]:
     from observability.instrument import load_env
 
     load_env()
-    # The SDK's own ``timeout`` argument does not reach the HTTP client that
-    # api.trace.get uses: it stays at httpx's 5 second default, which is how
-    # the first scheduled run burned all five retries. Handing Langfuse a
-    # pre-built client is what actually raises it. A window holding a whole
-    # scenario replay makes one trace.get per trace, and a ClickHouse query on
-    # a cold cache runs well past five seconds.
-    client = Langfuse(httpx_client=httpx.Client(timeout=60.0))
+    client = Langfuse()
     traces: list[dict[str, Any]] = []
     page = 1
     while True:
         for attempt in range(5):
             try:
                 response = client.api.trace.list(
-                    page=page, limit=50, from_timestamp=start, to_timestamp=end
+                    page=page, limit=50, from_timestamp=start, to_timestamp=end,
+                    request_options=SLOW_READ,
                 )
                 break
             except Exception:
@@ -104,7 +105,7 @@ def fetch_window(start: datetime, end: datetime) -> list[dict[str, Any]]:
         for summary in batch:
             for attempt in range(5):
                 try:
-                    full = client.api.trace.get(summary.id)
+                    full = client.api.trace.get(summary.id, request_options=SLOW_READ)
                     break
                 except Exception:
                     if attempt == 4:
