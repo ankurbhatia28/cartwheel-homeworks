@@ -43,8 +43,38 @@ def select_traces(
     Raises:
         ValueError: if random_rate is outside (0, 1] or a trace has no "id".
     """
-    ### YOUR CODE HERE (hw7)
-    raise NotImplementedError("hw7: implement select_traces")
+    if not 0 < random_rate <= 1:
+        raise ValueError(f"random_rate must be in (0, 1], got {random_rate}")
+    for trace in traces:
+        if not trace.get("id"):
+            raise ValueError("every trace needs a nonempty 'id'")
+
+    import random
+
+    # The estimate rests on this draw alone, so it is uniform over the whole
+    # batch and never touches the risk predicates. round() keeps the rate
+    # honest for odd batch sizes; max(1, ...) means a tiny period still gets
+    # one estimation sample rather than none.
+    size = min(len(traces), max(1, round(random_rate * len(traces))))
+    sample = random.Random(seed).sample(traces, size)
+
+    # Risk groups are inspection, not estimation: every match is included, in
+    # batch order, and a trace may belong to several groups.
+    groups = {
+        name: [trace for trace in traces if predicate(trace)]
+        for name, predicate in risk_groups.items()
+    }
+
+    # One judge call per distinct trace. Random first so that the cheaper
+    # estimation set is never starved if a caller truncates the list.
+    to_judge: list[dict[str, Any]] = []
+    seen: set[str] = set()
+    for trace in [*sample, *(t for group in groups.values() for t in group)]:
+        if trace["id"] not in seen:
+            seen.add(trace["id"])
+            to_judge.append(trace)
+
+    return {"random": sample, "risk_groups": groups, "to_judge": to_judge}
 
 
 # Each function identifies one risk group in the Cartwheel traces.

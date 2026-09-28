@@ -1,0 +1,59 @@
+name: monitor
+
+# Daily, plus a manual trigger. The schedule only fires while the self-hosted
+# runner is up: Langfuse lives on the student's machine, so a GitHub-hosted
+# runner could not reach it. GitHub skips missed schedules rather than queuing
+# them, which is the honest limitation of monitoring a laptop.
+on:
+  schedule:
+    - cron: "17 9 * * *"
+  workflow_dispatch:
+    inputs:
+      last_hours:
+        description: "How many hours back to read"
+        required: false
+        default: "24"
+
+jobs:
+  monitor:
+    name: judge a sample of the last day's traces
+    # The label is the guarantee: this job only lands on a machine that can
+    # actually reach Langfuse at localhost:3000.
+    runs-on: [self-hosted, langfuse-local]
+    env:
+      LANGFUSE_HOST: ${{ vars.LANGFUSE_HOST }}
+      LANGFUSE_PUBLIC_KEY: ${{ secrets.LANGFUSE_PUBLIC_KEY }}
+      LANGFUSE_SECRET_KEY: ${{ secrets.LANGFUSE_SECRET_KEY }}
+      # The frozen judge's provider only. The Cartwheel model key is not
+      # needed here: the monitor reads traces that already exist.
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      PYTHONPATH: ${{ github.workspace }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - uses: astral-sh/setup-uv@v5
+
+      - run: uv sync
+
+      # --yes because there is nobody to approve at 09:17. The spend is bounded
+      # by the sample: at most one judge call per selected conversation, and an
+      # empty window calls the judge zero times.
+      - name: Run the monitor over the last 24 hours
+        run: |
+          uv run python -m monitoring.run \
+            --last-hours "${{ github.event.inputs.last_hours || 24 }}" \
+            --yes
+
+      # always(): a run that failed partway still leaves the history line and
+      # any judge output behind, which is the evidence for why it failed.
+      - name: Upload the monitoring output
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: monitoring-${{ github.run_id }}
+          path: |
+            monitoring/history.jsonl
+            monitoring/prevalence.svg
+          if-no-files-found: warn

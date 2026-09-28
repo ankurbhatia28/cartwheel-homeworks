@@ -25,3 +25,6 @@ analysis/review_app/data/
 
 # Scratch space for one-off grounding and generation helpers.
 scratchpad/
+
+# Self-hosted Actions runner installed in-tree; holds .credentials and .env.
+actions-runner/
