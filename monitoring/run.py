@@ -28,6 +28,8 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 
+import httpx
+
 from analysis.helpers.normalization import normalize_trace
 from monitoring.correct import corrected_mode_prevalence
 from monitoring.run_judges import judge_sample, judge_test_data
@@ -78,11 +80,13 @@ def fetch_window(start: datetime, end: datetime) -> list[dict[str, Any]]:
     from observability.instrument import load_env
 
     load_env()
-    # The SDK's default read timeout is short. A window holding a whole
-    # scenario replay needs one trace.get per trace, and a ClickHouse query on
-    # a cold cache regularly runs past the default, which failed the first
-    # scheduled run after five retries.
-    client = Langfuse(timeout=60)
+    # The SDK's own ``timeout`` argument does not reach the HTTP client that
+    # api.trace.get uses: it stays at httpx's 5 second default, which is how
+    # the first scheduled run burned all five retries. Handing Langfuse a
+    # pre-built client is what actually raises it. A window holding a whole
+    # scenario replay makes one trace.get per trace, and a ClickHouse query on
+    # a cold cache runs well past five seconds.
+    client = Langfuse(httpx_client=httpx.Client(timeout=60.0))
     traces: list[dict[str, Any]] = []
     page = 1
     while True:
