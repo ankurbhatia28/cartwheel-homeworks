@@ -17,7 +17,9 @@ on:
 jobs:
   monitor:
     name: judge a sample of the last day's traces
-    runs-on: self-hosted
+    # The label is the guarantee: this job only lands on a machine that can
+    # actually reach Langfuse at localhost:3000.
+    runs-on: [self-hosted, langfuse-local]
     env:
       LANGFUSE_HOST: ${{ vars.LANGFUSE_HOST }}
       LANGFUSE_PUBLIC_KEY: ${{ secrets.LANGFUSE_PUBLIC_KEY }}
