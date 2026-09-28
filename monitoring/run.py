@@ -78,7 +78,11 @@ def fetch_window(start: datetime, end: datetime) -> list[dict[str, Any]]:
     from observability.instrument import load_env
 
     load_env()
-    client = Langfuse()
+    # The SDK's default read timeout is short. A window holding a whole
+    # scenario replay needs one trace.get per trace, and a ClickHouse query on
+    # a cold cache regularly runs past the default, which failed the first
+    # scheduled run after five retries.
+    client = Langfuse(timeout=60)
     traces: list[dict[str, Any]] = []
     page = 1
     while True:
