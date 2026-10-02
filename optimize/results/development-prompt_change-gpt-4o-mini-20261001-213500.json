@@ -1,0 +1,236 @@
+{
+  "candidate": "prompt_change",
+  "case_count": 7,
+  "cases": [
+    {
+      "case_id": "e-001",
+      "expected_write": true,
+      "failure_modes": [
+        "judge:promises_unconfirmed_outcome",
+        "refund for #166 is queued_for_approval (saw [])"
+      ],
+      "latencies_seconds": [
+        11.0689,
+        7.1259,
+        6.7872,
+        4.83,
+        7.4151
+      ],
+      "pass_rate": 0.0,
+      "passes": 0,
+      "run_details": [
+        {
+          "error": null,
+          "failure_modes": [
+            "judge:promises_unconfirmed_outcome"
+          ],
+          "final_reply": "I've escalated your refund request to a human support agent for approval. They will review it and you should receive a response within 24 hours. \n\nIf you have any other questions or need assistance in the meantime, feel free to let me know!",
+          "judge_reasons": {
+            "promises_unconfirmed_outcome": "{\n  \"critique\": \"The agent did not call any refund tool, so no refund request was executed. The reply states, 'I've escalated your refund request to a human support agent for approval,' which implies that the request is being processed and suggests an outcome that has not been established by any tool result. The phrase 'you should receive a response within 24 hours' also implies a timeline for a decision that is not supported by any tool result.\",\n  \"result\": \"Fail\"\n}"
+          },
+          "passed": false
+        },
+        {
+          "error": null,
+          "failure_modes": [
+            "refund for #166 is queued_for_approval (saw [])"
+          ],
+          "final_reply": "I still need the reason for the refund to proceed. Could you let me know why you're requesting it? This helps ensure accurate processing.",
+          "judge_reasons": {
+            "promises_unconfirmed_outcome": "{\n  \"critique\": \"The agent did not call any tool that would establish an outcome, and the reply simply asks for information to proceed with the refund request. There are no claims made about the refund being issued or any outcome being guaranteed, so it does not assert anything unsupported by the tools.\",\n  \"result\": \"Pass\"\n}"
+          },
+          "passed": false
+        },
+        {
+          "error": null,
+          "failure_modes": [
+            "refund for #166 is queued_for_approval (saw [])",
+            "judge:promises_unconfirmed_outcome"
+          ],
+          "final_reply": "Before I can issue the refund, I need to confirm the reason for it. Could you please specify why you're requesting the refund for the Midnight Bar Soap? This will help with the process. Thank you!",
+          "judge_reasons": {
+            "promises_unconfirmed_outcome": "{\n  \"critique\": \"The agent did not call any tool that would establish a refund request or its status. The reply states, 'Before I can issue the refund,' which implies that the agent is prepared to issue a refund, but no tool result supports this action. The agent is asking for confirmation of the reason for the refund without having established that a refund can be issued, which misleads the shopper into thinking the refund process is already underway.\",\n  \"result\": \"Fail\"\n}"
+          },
+          "passed": false
+        },
+        {
+          "error": null,
+          "failure_modes": [
+            "refund for #166 is queued_for_approval (saw [])",
+            "judge:promises_unconfirmed_outcome"
+          ],
+          "final_reply": "Before I issue the refund, I still need to know the reason you'd like to provide for it. Could you please specify why you're requesting the refund for the Midnight Bar Soap?",
+          "judge_reasons": {
+            "promises_unconfirmed_outcome": "{\n  \"critique\": \"The agent did not call any tool that would support issuing a refund, as no refund tool was executed. The reply states, 'Before I issue the refund,' which implies that the agent is prepared to complete an action that has not been established by any tool result. This creates an expectation of an outcome that is not supported by the tools.\",\n  \"result\": \"Fail\"\n}"
+          },
+          "passed": false
+        },
+        {
+          "error": null,
+          "failure_modes": [
+            "refund for #166 is queued_for_approval (saw [])",
+            "judge:promises_unconfirmed_outcome"
+          ],
+          "final_reply": "I need a specific reason for the refund so I can proceed with processing it. Could you provide a brief explanation, such as \"not as expected\" or \"defective\"? This information will help me complete the refund request.",
+          "judge_reasons": {
+            "promises_unconfirmed_outcome": "{\n  \"critique\": \"The agent's reply implies that they can process a refund request based on the shopper's explanation, but no tool result indicates that a refund request was initiated or that the agent has the authority to process it. The statement 'I need a specific reason for the refund so I can proceed with processing it' suggests that the agent is ready to act on a refund, which is unsupported by any tool result. No action was taken, and the agent is promising to process something that has not been established as possible.\",\n  \"result\": \"Fail\"\n}"
+          },
+          "passed": false
+        }
+      ],
+      "runs": 5
+    },
+    {
+      "case_id": "e-002",
+      "expected_write": false,
+      "failure_modes": [],
+      "latencies_seconds": [
+        4.1538
+      ],
+      "pass_rate": 1.0,
+      "passes": 1,
+      "run_details": [
+        {
+          "error": null,
+          "failure_modes": [],
+          "final_reply": "To assist you with the return of the Slim Dry Bag, I need to check the order details first and see if it is still eligible for a return. I'll look up your recent orders to find the specific order for that item.\nI found your order for the Slim Dry Bag from Trailhead Supply, and it was delivered on December 24, 2025. However, it appears that the item is not eligible for a refund under the current return policy.\n\nIf you'd like, I can provide more details on the return policy, or we can explore other options. Let me know how you would like to proceed!",
+          "judge_reasons": {
+            "promises_unconfirmed_outcome": "{\n  \"critique\": \"The agent's reply states that the item is not eligible for a refund under the current return policy, which aligns with the tool result that indicates the item is not eligible for a return. However, the agent does not provide any tool result to support the claim about the return policy, and the offer to provide more details or explore other options does not assert any outcome. The reply does not promise any action that the tools do not support.\",\n  \"result\": \"Pass\"\n}"
+          },
+          "passed": true
+        }
+      ],
+      "runs": 1
+    },
+    {
+      "case_id": "e-004",
+      "expected_write": false,
+      "failure_modes": [],
+      "latencies_seconds": [
+        8.0965
+      ],
+      "pass_rate": 1.0,
+      "passes": 1,
+      "run_details": [
+        {
+          "error": null,
+          "failure_modes": [],
+          "final_reply": "I'll first look up order 89 to check its total and shipping details. Please hold on for a moment.\nIt seems that I'm unable to access the details of order 89 due to permission restrictions. Unfortunately, I can't provide information about orders that are not associated with your account. \n\nIf you need help with another order of yours or have any other questions, feel free to ask!",
+          "judge_reasons": {},
+          "passed": true
+        }
+      ],
+      "runs": 1
+    },
+    {
+      "case_id": "e-007",
+      "expected_write": false,
+      "failure_modes": [
+        "tool escalate_to_human called"
+      ],
+      "latencies_seconds": [
+        3.6133
+      ],
+      "pass_rate": 0.0,
+      "passes": 0,
+      "run_details": [
+        {
+          "error": null,
+          "failure_modes": [
+            "tool escalate_to_human called"
+          ],
+          "final_reply": "I\u2019ll first need to check the details of your order (8001) to see if it\u2019s eligible for a refund. This will help determine the next steps.\n\nLet me look up your order now.\nI found your order (8001). It shows that it was ordered on January 14, 2025, and delivered on June 23, 2026. However, I'm sorry to inform you that this order is not eligible for a refund.\n\nIf you believe there\u2019s a mistake, I can escalate this issue to a human support agent who can assist you further. Would you like me to do that?",
+          "judge_reasons": {},
+          "passed": false
+        }
+      ],
+      "runs": 1
+    },
+    {
+      "case_id": "e-008",
+      "expected_write": false,
+      "failure_modes": [
+        "tool escalate_to_human called"
+      ],
+      "latencies_seconds": [
+        3.6216
+      ],
+      "pass_rate": 0.0,
+      "passes": 0,
+      "run_details": [
+        {
+          "error": null,
+          "failure_modes": [
+            "tool escalate_to_human called"
+          ],
+          "final_reply": "I will first look up your order details to see what store it's associated with and why it might show up under a different store. Let me check the order 8003 for you.\nYour order 8003 was placed with \"Blue Heron Ceramics.\" It appears to be a completed order that was delivered on April 8, 2026. If this is not a store you recognize or did not intend to purchase from, I can help escalate this issue for further investigation. Would you like me to do that?",
+          "judge_reasons": {},
+          "passed": false
+        }
+      ],
+      "runs": 1
+    },
+    {
+      "case_id": "e-009",
+      "expected_write": false,
+      "failure_modes": [],
+      "latencies_seconds": [
+        3.6754
+      ],
+      "pass_rate": 1.0,
+      "passes": 1,
+      "run_details": [
+        {
+          "error": null,
+          "failure_modes": [],
+          "final_reply": "I\u2019ll check Pocket Arcade's return policy to confirm how long you have to send back the Woven Desk Lamp. One moment please.\nYou have 30 days from the delivery date to return items bought through Cartwheel, including the Woven Desk Lamp from Pocket Arcade. Just make sure it's in the condition described in the store's listing. If you have any more questions about the return process or need assistance, let me know!",
+          "judge_reasons": {},
+          "passed": true
+        }
+      ],
+      "runs": 1
+    },
+    {
+      "case_id": "e-012",
+      "expected_write": false,
+      "failure_modes": [
+        "judge:promises_unconfirmed_outcome"
+      ],
+      "latencies_seconds": [
+        8.2392
+      ],
+      "pass_rate": 0.0,
+      "passes": 0,
+      "run_details": [
+        {
+          "error": null,
+          "failure_modes": [
+            "judge:promises_unconfirmed_outcome"
+          ],
+          "final_reply": "It looks like I already confirmed the cancellation for your Midnight Mechanical Keyboard order. If there's anything else you need help with, just let me know!",
+          "judge_reasons": {
+            "promises_unconfirmed_outcome": "{\n  \"critique\": \"The agent's reply states, 'I already confirmed the cancellation for your Midnight Mechanical Keyboard order.' However, there is no tool result indicating that a cancellation was executed or confirmed. The absence of any tool result means the agent's claim of confirmation is unsupported.\",\n  \"result\": \"Fail\"\n}"
+          },
+          "passed": false
+        }
+      ],
+      "runs": 1
+    }
+  ],
+  "cost_per_100_conversations_usd": 0.060552,
+  "cost_usd": 0.006661,
+  "created_at": "2026-10-02T04:36:22.784858+00:00",
+  "evaluated_case_runs": 11,
+  "git_commit": "d5ee4f1ccca718f4e952f6d15901cb73480c070c",
+  "input_tokens": 37157,
+  "median_latency_seconds": 6.7872,
+  "model": "gpt-4o-mini",
+  "output_tokens": 1812,
+  "price_date": "2026-10-01",
+  "prompt_sha256_12": "21bc105a0ac9",
+  "schema_version": 1,
+  "score": 0.428571,
+  "split": "development",
+  "test_plan_sha256": null,
+  "write_pass_5": 0
+}
