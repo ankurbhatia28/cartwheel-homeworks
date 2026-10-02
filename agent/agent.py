@@ -16,6 +16,8 @@ The mapping from concept to SDK primitive, stated once: the loop is
 
 from __future__ import annotations
 
+import re
+
 import hashlib
 import json
 from typing import Any
@@ -181,10 +183,6 @@ def search_help_center_logic(ctx: AuthContext, query: str, k: int = 3) -> dict[s
             {
                 "policy_id": doc.policy_id,
                 "title": doc.title,
-                # What a reply should actually say. The policy_id above is an
-                # internal handle: useful in tool calls and escalation context,
-                # wrong in a sentence addressed to a shopper (SPEC RESP-1).
-                "cite_as": f"{doc.title}",
                 "snippet": doc.body[:SNIPPET_CHARS],
                 "score": round(float(score), 3),
             }
@@ -500,6 +498,71 @@ def _tools_with_defenses(role: str) -> list[Any]:
     return [defended_refund if tool is issue_refund else tool for tool in TOOLS_BY_ROLE[role]]
 
 
+# ---------------------------------------------------------------------------
+# Harness: context construction
+# ---------------------------------------------------------------------------
+
+_POLICY_ID_RE = re.compile(r"\b(?:cw|store)-[a-z0-9-]+\b")
+
+
+def _plain_policy_names(payload: Any) -> Any:
+    """Replace raw policy ids with their human-readable titles, recursively.
+
+    A harness-layer experiment for Homework 8. The tools still return
+    policy_id to their callers; this rewrites only the copy handed to the
+    model, on the theory that an agent cannot print an identifier it never
+    sees. SPEC RESP-1 wants ids kept for traceability and out of replies, and
+    the model's context is the one place where both can be true at once.
+    """
+    if isinstance(payload, dict):
+        title = payload.get("title") or payload.get("cite_as")
+        out = {}
+        for key, value in payload.items():
+            if key == "policy_id" and title:
+                out["policy_name"] = title
+            elif key == "policy_id":
+                out["policy_name"] = "the applicable policy"
+            else:
+                out[key] = _plain_policy_names(value)
+        return out
+    if isinstance(payload, list):
+        return [_plain_policy_names(item) for item in payload]
+    if isinstance(payload, str):
+        return _POLICY_ID_RE.sub("the applicable policy", payload)
+    return payload
+
+
+def _tools_with_plain_policy_names(tools: list[Any]) -> list[Any]:
+    """Wrap each tool so the model sees policy names instead of ids."""
+    from agents import FunctionTool
+
+    wrapped: list[Any] = []
+    for tool in tools:
+        if not isinstance(tool, FunctionTool):
+            wrapped.append(tool)
+            continue
+
+        def make(inner: Any) -> Any:
+            async def invoke(ctx: Any, args: str) -> str:
+                raw = await inner.on_invoke_tool(ctx, args)
+                try:
+                    return json.dumps(_plain_policy_names(json.loads(raw)))
+                except (TypeError, ValueError):
+                    return _POLICY_ID_RE.sub("the applicable policy", str(raw))
+
+            return invoke
+
+        wrapped.append(
+            FunctionTool(
+                name=tool.name,
+                description=_POLICY_ID_RE.sub("the applicable policy", tool.description or ""),
+                params_json_schema=tool.params_json_schema,
+                on_invoke_tool=make(tool),
+            )
+        )
+    return wrapped
+
+
 def build_agent(
     ctx: AuthContext,
     model: str | None = None,
@@ -538,7 +601,7 @@ def build_agent(
         return Agent[AuthContext](
             name="cartwheel-support",
             instructions=render_system_prompt(ctx, prompt_template),
-            tools=TOOLS_BY_ROLE[ctx.role],
+            tools=_tools_with_plain_policy_names(TOOLS_BY_ROLE[ctx.role]),
             model=resolved,
             model_settings=model_settings_for(resolved),
         )
