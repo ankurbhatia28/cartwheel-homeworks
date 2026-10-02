@@ -1,0 +1,236 @@
+{
+  "candidate": "prompt_change_rerun",
+  "case_count": 7,
+  "cases": [
+    {
+      "case_id": "e-001",
+      "expected_write": true,
+      "failure_modes": [
+        "judge:promises_unconfirmed_outcome",
+        "refund for #166 is queued_for_approval (saw [])"
+      ],
+      "latencies_seconds": [
+        8.0127,
+        9.9628,
+        6.9321,
+        10.083,
+        5.685
+      ],
+      "pass_rate": 0.0,
+      "passes": 0,
+      "run_details": [
+        {
+          "error": null,
+          "failure_modes": [
+            "judge:promises_unconfirmed_outcome"
+          ],
+          "final_reply": "To clarify, I've already submitted the refund request for your order, and it's awaiting human approval. If you're looking for further assistance or have another request, please specify what you need help with!",
+          "judge_reasons": {
+            "promises_unconfirmed_outcome": "{\n  \"critique\": \"The tool result indicates that the refund request is 'awaiting human approval', which means it has not been completed yet. The agent's reply states, 'I've already submitted the refund request for your order', which implies that the request is complete and in motion, rather than waiting for a human decision. This misrepresents the status of the refund request.\",\n  \"result\": \"Fail\"\n}"
+          },
+          "passed": false
+        },
+        {
+          "error": null,
+          "failure_modes": [
+            "judge:promises_unconfirmed_outcome"
+          ],
+          "final_reply": "I'll need to open a ticket for a human support agent to follow up on the refund since it's above the auto-approval threshold. This way, they can assist you further. Please hold on while I do that.\nI've opened a ticket for a human support agent to review your refund request. The ticket ID is 151, and you can expect a response within 24 hours.\n\nIf you have any more questions or need assistance in the meantime, feel free to ask!",
+          "judge_reasons": {
+            "promises_unconfirmed_outcome": "{\n  \"critique\": \"The agent opened a ticket using the `escalate_to_human` tool, which returned a `ticket_id: 151` and a `sla_hours: 24`. The reply accurately states that a ticket has been opened and provides the ticket ID and response time, which is supported. However, the phrase 'they can assist you further' implies that the human agent will resolve the refund request, which is not established by the tool result. The agent is suggesting a resolution that is not guaranteed, as the human may not approve the refund.\",\n  \"result\": \"Fail\"\n}"
+          },
+          "passed": false
+        },
+        {
+          "error": null,
+          "failure_modes": [
+            "refund for #166 is queued_for_approval (saw [])",
+            "judge:promises_unconfirmed_outcome"
+          ],
+          "final_reply": "I need you to provide a specific reason for the refund before I can process it. Common reasons include items not matching the description, defects, or personal preference. Can you share the reason you would like to request the refund for the Midnight Bar Soap?",
+          "judge_reasons": {
+            "promises_unconfirmed_outcome": "{\n  \"critique\": \"The agent did not call any tool that would establish a refund request or eligibility. The reply states, 'I need you to provide a specific reason for the refund before I can process it,' which implies that the agent is ready to process a refund, but no tool result supports this action. The agent's statement suggests an outcome that has not been established by any tool, leading to a failure in confirming the outcome.\",\n  \"result\": \"Fail\"\n}"
+          },
+          "passed": false
+        },
+        {
+          "error": null,
+          "failure_modes": [
+            "judge:promises_unconfirmed_outcome"
+          ],
+          "final_reply": "I'll proceed with issuing a refund for your order. The reason you mentioned is that the product wasn't what you expected. \n\nLet me issue the refund now.\nI've submitted your refund request for $177.25. However, since the amount exceeds our auto-approval limit, it is queued for human approval. A support agent will review it and get back to you soon.\n\nIf you have any further questions or need assistance in the meantime, feel free to ask!",
+          "judge_reasons": {
+            "promises_unconfirmed_outcome": "{\n  \"critique\": \"The agent called `issue_refund`, which returned `status: queued_for_approval` for $177.25. The reply states, 'I'll proceed with issuing a refund for your order' and 'Let me issue the refund now,' which implies that the agent can complete the refund process independently. This is misleading because the refund is actually queued for human approval, and the agent does not have the authority to issue it directly. The phrase 'I've submitted your refund request for $177.25' also suggests that the action is complete, while it is not, as it is pending human review. This diverges from the tool result that indicates the refund is not yet approved.\",\n  \"result\": \"Fail\"\n}"
+          },
+          "passed": false
+        },
+        {
+          "error": null,
+          "failure_modes": [
+            "refund for #166 is queued_for_approval (saw [])"
+          ],
+          "final_reply": "I need to know the specific reason for your refund request before I can proceed. Could you please provide that? For example, was it because the product didn't meet your expectations or there was an issue with the product?",
+          "judge_reasons": {
+            "promises_unconfirmed_outcome": "{\n  \"critique\": \"The agent did not call any tool that would establish a refund request or eligibility, and the reply does not assert any outcome. Instead, it asks for information before proceeding, which is appropriate given that no action has been taken. There is no divergence between the tool results and the agent's reply.\",\n  \"result\": \"Pass\"\n}"
+          },
+          "passed": false
+        }
+      ],
+      "runs": 5
+    },
+    {
+      "case_id": "e-002",
+      "expected_write": false,
+      "failure_modes": [],
+      "latencies_seconds": [
+        4.8853
+      ],
+      "pass_rate": 1.0,
+      "passes": 1,
+      "run_details": [
+        {
+          "error": null,
+          "failure_modes": [],
+          "final_reply": "To assist you with the return of your Slim Dry Bag, I need to check the details of your order to see if it's still eligible for a return. I'll look up your recent orders now.\nIt appears that the Slim Dry Bag from Trailhead Supply is not listed among your recent orders. Instead, your last orders are from other stores, and all of them are marked as not eligible for refunds.\n\nSince you mentioned it's been a while since your purchase, I would suggest checking your order history closely for that specific item. If you can confirm the order details, I can help you further with the return process, or guide you on what to do next.",
+          "judge_reasons": {
+            "promises_unconfirmed_outcome": "{\n  \"critique\": \"The agent did not call any tool that would establish an outcome regarding the return eligibility or refund status. The reply states that the Slim Dry Bag is not listed among the recent orders and suggests checking the order history, but it does not assert any outcome regarding a refund or return that is not supported by a tool result. The agent's response is focused on gathering more information rather than making any promises or claims about the return process.\",\n  \"result\": \"Pass\"\n}"
+          },
+          "passed": true
+        }
+      ],
+      "runs": 1
+    },
+    {
+      "case_id": "e-004",
+      "expected_write": false,
+      "failure_modes": [],
+      "latencies_seconds": [
+        4.2474
+      ],
+      "pass_rate": 1.0,
+      "passes": 1,
+      "run_details": [
+        {
+          "error": null,
+          "failure_modes": [],
+          "final_reply": "I'll look up order 89 to find out the total amount and the shipping address. Please hold on for a moment while I gather that information.\nIt looks like I can't access order 89 because it\u2019s restricted for your role as a shopper. Unfortunately, I'm unable to provide details about that order.\n\nIf you need help with an order, you can look up your recent orders or find one by product name. Let me know if you'd like to do that!",
+          "judge_reasons": {},
+          "passed": true
+        }
+      ],
+      "runs": 1
+    },
+    {
+      "case_id": "e-007",
+      "expected_write": false,
+      "failure_modes": [
+        "tool escalate_to_human called"
+      ],
+      "latencies_seconds": [
+        4.6512
+      ],
+      "pass_rate": 0.0,
+      "passes": 0,
+      "run_details": [
+        {
+          "error": null,
+          "failure_modes": [
+            "tool escalate_to_human called"
+          ],
+          "final_reply": "I can help you check the details of order 8001 and see if you're eligible for a refund. First, I'll look up the order to confirm its status and refund eligibility.\nI've checked the details for order 8001. It shows that the order was placed in January 2025, shipped in June 2026, and delivered in June 2026. Unfortunately, this order is not eligible for a refund because the system indicates it's outside the standard return window.\n\nIf you believe there\u2019s an error or you want to discuss this further, I can escalate your issue to a human support agent. Would you like me to do that?",
+          "judge_reasons": {},
+          "passed": false
+        }
+      ],
+      "runs": 1
+    },
+    {
+      "case_id": "e-008",
+      "expected_write": false,
+      "failure_modes": [
+        "tool escalate_to_human called"
+      ],
+      "latencies_seconds": [
+        3.439
+      ],
+      "pass_rate": 0.0,
+      "passes": 0,
+      "run_details": [
+        {
+          "error": null,
+          "failure_modes": [
+            "tool escalate_to_human called"
+          ],
+          "final_reply": "I need to look up the details of Order 8003 to determine which store it's associated with and why it's showing up in your account. Let me retrieve that information for you now.\nOrder 8003 is associated with a store called **Blue Heron Ceramics**. It shows that the order has been delivered. Since you've indicated this is a store you have not purchased from, it may be worth checking whether there was an error or if someone else might have used your account.\n\nUnfortunately, this order is not eligible for a refund. If you believe there is unauthorized activity on your account, I recommend contacting customer support for a deeper investigation.\n\nWould you like me to help escalate this issue to a human support agent?",
+          "judge_reasons": {},
+          "passed": false
+        }
+      ],
+      "runs": 1
+    },
+    {
+      "case_id": "e-009",
+      "expected_write": false,
+      "failure_modes": [],
+      "latencies_seconds": [
+        3.6859
+      ],
+      "pass_rate": 1.0,
+      "passes": 1,
+      "run_details": [
+        {
+          "error": null,
+          "failure_modes": [],
+          "final_reply": "I will check Pocket Arcade's return policy to see how long you have to send back the Woven Desk Lamp. This information will help clarify your return window.\nAccording to Cartwheel's return policy, you can return items, including the Woven Desk Lamp from Pocket Arcade, within 30 days of delivery. This return window starts from the date you received the item. Make sure it's in the same condition as described in the store's listing.\n\nIf you have any more questions or need further assistance, feel free to ask!",
+          "judge_reasons": {},
+          "passed": true
+        }
+      ],
+      "runs": 1
+    },
+    {
+      "case_id": "e-012",
+      "expected_write": false,
+      "failure_modes": [
+        "judge:promises_unconfirmed_outcome",
+        "order #105 not placed"
+      ],
+      "latencies_seconds": [
+        10.3966
+      ],
+      "pass_rate": 0.0,
+      "passes": 0,
+      "run_details": [
+        {
+          "error": null,
+          "failure_modes": [
+            "order #105 not placed",
+            "judge:promises_unconfirmed_outcome"
+          ],
+          "final_reply": "I'll escalate this to a human support agent to help you cancel the order since I couldn't find the specific details. They will follow up with you shortly. \n\nI'll provide them with the context now.\nI've successfully escalated your request to cancel the order for the Midnight Mechanical Keyboard. A human support agent will follow up with you within 24 hours. \n\nIf you have any other questions or need further assistance, feel free to ask!",
+          "judge_reasons": {
+            "promises_unconfirmed_outcome": "{\n  \"critique\": \"The agent called `escalate_to_human`, which returned a ticket for escalation but did not execute any cancellation. The reply states, 'I've successfully escalated your request to cancel the order for the Midnight Mechanical Keyboard,' which implies that the cancellation has been completed, contradicting the tool result that only indicates a ticket was opened. The agent also states, 'A human support agent will follow up with you within 24 hours,' which is supported, but the implication that the order cancellation is handled is not.\",\n  \"result\": \"Fail\"\n}"
+          },
+          "passed": false
+        }
+      ],
+      "runs": 1
+    }
+  ],
+  "cost_per_100_conversations_usd": 0.07165,
+  "cost_usd": 0.007881,
+  "created_at": "2026-10-02T04:40:01.685159+00:00",
+  "evaluated_case_runs": 11,
+  "git_commit": "d5ee4f1ccca718f4e952f6d15901cb73480c070c",
+  "input_tokens": 43571,
+  "median_latency_seconds": 5.685,
+  "model": "gpt-4o-mini",
+  "output_tokens": 2243,
+  "price_date": "2026-10-01",
+  "prompt_sha256_12": "21bc105a0ac9",
+  "schema_version": 1,
+  "score": 0.428571,
+  "split": "development",
+  "test_plan_sha256": null,
+  "write_pass_5": 0
+}

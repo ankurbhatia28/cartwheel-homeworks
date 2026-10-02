@@ -1,0 +1,8 @@
+{
+  "best_prompt": "/Users/ankurbhatia/Desktop/personal/learning/ai_evals/cartwheel/optimize/results/gepa-best-prompt.txt",
+  "best_score": 0.36363636363636365,
+  "created_at": "2026-10-02T05:25:37.098870+00:00",
+  "reflection_model": "anthropic/claude-opus-4-6",
+  "task_model": "gpt-4o-mini",
+  "total_evals": 140
+}

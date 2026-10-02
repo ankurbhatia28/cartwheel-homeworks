@@ -28,3 +28,6 @@ scratchpad/
 
 # Self-hosted Actions runner installed in-tree; holds .credentials and .env.
 actions-runner/
+
+# HW8: GEPA smoke-test scratch output (the real search records are gepa-result.json and gepa-workspace/)
+optimize/results/gepa-smoke/
