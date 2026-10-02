@@ -1,0 +1,16 @@
+{
+  "failure_mode": "exposes_internal_identifiers",
+  "source": "Homework 4 error analysis, uniform sample of 100 reviewed conversations; the mode's binary labels live in analysis/state/labels/exposes_internal_identifiers.jsonl",
+  "prevalence": 0.32,
+  "requirement": "RESP-1",
+  "example_trace_ids": [
+    "ca4c2b74e49543098c4e5da57c758b54",
+    "138b7013d035b75bee7a56699c208c52",
+    "1dccbe4a64aa3e2cef5df454b9f38bc9"
+  ],
+  "why_agent_can_change_it": "The three traces are support-0024, support-0027 and support-0052, each annotated in Homework 4 with the quoted text 'cw-returns': the agent printed a raw policy document id to a shopper. SPEC.md RESP-1 was revised in Homework 4 to forbid exactly this, requiring plain-language citation such as 'under our 30-day return policy'. The behaviour persists because the running system prompt still contains the opposite instruction, 'Cite the policy id (for example cw-returns) for every policy claim', in SYSTEM_PROMPT_TEMPLATE in agent/agent.py. The agent is doing what it was told; the specification changed and the prompt did not. That makes this a prompt-layer fix the agent can make, and it is measurable today: evaluation cases e-009 and e-010 check reply_not_contains 'cw-' and both scored 0 of 5 at their Homework 6 baseline.",
+  "notes": {
+    "prevalence_basis": "32 of 100 conversations in the Homework 4 uniform sample carry this failure, the highest of the eight modes. Homework 5 froze a judge for promises_unconfirmed_outcome (11 of 100) instead, so this mode has no judge; it is scored by code checks, which is why e-009 and e-010 use reply_not_contains.",
+    "scoring_cases": ["e-009", "e-010"]
+  }
+}
