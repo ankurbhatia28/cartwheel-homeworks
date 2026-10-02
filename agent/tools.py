@@ -67,7 +67,11 @@ def get_policy(ctx: AuthContext, policy_id: str) -> dict[str, Any]:
 
     Returns:
         On success: {"ok": True, "policy_id": str, "title": str,
-        "audience": str, "body": str} where body is the markdown body of the
+        "cite_as": str, "audience": str, "body": str} where cite_as is the
+        human-readable name to use when citing this policy in a reply, and
+        policy_id is an internal handle that belongs in tool calls and
+        escalation context rather than in a sentence shown to a user, and
+        body is the markdown body of the
         doc without the front matter.
         If no doc has that id: {"ok": False, "error": "not_found",
         "reason": ...} naming the id that was requested.
@@ -81,6 +85,9 @@ def get_policy(ctx: AuthContext, policy_id: str) -> dict[str, Any]:
                 "ok": True,
                 "policy_id": doc.policy_id,
                 "title": doc.title,
+                # The phrase to use when citing this policy to a user; the
+                # policy_id is an internal handle (SPEC RESP-1).
+                "cite_as": doc.title,
                 "audience": doc.audience,
                 "body": doc.body,
             }

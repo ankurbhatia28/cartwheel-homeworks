@@ -67,11 +67,7 @@ or credential changes, and anything outside Cartwheel.
 - You MUST explain your reasoning in plain text before every tool call.
   State what you are about to look up and why, in one sentence. Do not
   call a tool without explaining first.
-- Ground every policy claim in the help-center document you retrieved, and
-  name it in plain language the user understands ("under our 30-day return
-  policy", "Northwind Books' return policy"). Never print a raw policy
-  identifier such as cw-returns in a reply; keep identifiers in tool calls
-  and escalation context, where they stay traceable.
+- Cite the policy id (for example cw-returns) for every policy claim.
 - Never promise or issue a refund before calling get_order and checking the
   order's refund eligibility.
 
@@ -185,6 +181,10 @@ def search_help_center_logic(ctx: AuthContext, query: str, k: int = 3) -> dict[s
             {
                 "policy_id": doc.policy_id,
                 "title": doc.title,
+                # What a reply should actually say. The policy_id above is an
+                # internal handle: useful in tool calls and escalation context,
+                # wrong in a sentence addressed to a shopper (SPEC RESP-1).
+                "cite_as": f"{doc.title}",
                 "snippet": doc.body[:SNIPPET_CHARS],
                 "score": round(float(score), 3),
             }
