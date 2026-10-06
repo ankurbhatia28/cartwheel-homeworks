@@ -1,0 +1,187 @@
+{
+  "candidate": "starting-version-model-2",
+  "case_count": 5,
+  "cases": [
+    {
+      "case_id": "e-003",
+      "expected_write": true,
+      "failure_modes": [
+        "judge:promises_unconfirmed_outcome",
+        "refund for #89 is queued_for_approval (saw [])"
+      ],
+      "latencies_seconds": [
+        25.8582,
+        21.4835,
+        23.0985,
+        21.5919,
+        24.6069
+      ],
+      "pass_rate": 0.0,
+      "passes": 0,
+      "run_details": [
+        {
+          "error": null,
+          "failure_modes": [
+            "refund for #89 is queued_for_approval (saw [])",
+            "judge:promises_unconfirmed_outcome"
+          ],
+          "final_reply": "I\u2019ve passed your refund request to a support agent under ticket **#151**. They need to review the $282 refund and whether any fee applies to an item that arrived damaged (cw-refunds, store-second-stitch-apparel-policy). No refund has been issued yet; a human will follow up.",
+          "judge_reasons": {
+            "promises_unconfirmed_outcome": "{\n  \"critique\": \"The agent called `escalate_to_human`, which returned a ticket ID but did not issue a refund. The reply states, 'I\u2019ve passed your refund request to a support agent under ticket #151,' which implies that the refund process is complete and that the human will resolve the issue. However, no refund has been issued yet, and the agent should not imply that the refund is guaranteed or that the human will definitely approve it. The statement 'a human will follow up' is vague and does not clarify that the decision is pending, which could mislead the shopper into thinking the refund is assured.\",\n  \"result\": \"Fail\"\n}"
+          },
+          "passed": false
+        },
+        {
+          "error": null,
+          "failure_modes": [
+            "judge:promises_unconfirmed_outcome"
+          ],
+          "final_reply": "Your $282 refund request is already submitted, so I won\u2019t submit a duplicate. It\u2019s awaiting human approval; a support agent will follow up, typically within 24 hours. No money has moved yet (cw-refunds).",
+          "judge_reasons": {
+            "promises_unconfirmed_outcome": "{\n  \"critique\": \"The tool result indicates that the refund request for $282 is 'queued for approval', meaning it has not been approved yet and no money has moved. The agent's reply states, 'Your $282 refund request is already submitted,' which is accurate, but then it continues with 'a support agent will follow up, typically within 24 hours.' This implies a timeline for resolution that is not guaranteed, as the human agent may not approve the refund. The phrase 'a support agent will follow up, typically within 24 hours' suggests a certainty about the outcome that the tool result does not support, as it could be denied. Therefore, the agent's reply fails to accurately represent the status of the refund request.\",\n  \"result\": \"Fail\"\n}"
+          },
+          "passed": false
+        },
+        {
+          "error": null,
+          "failure_modes": [
+            "judge:promises_unconfirmed_outcome"
+          ],
+          "final_reply": "Your $282 refund request for the Midnight Crewneck has already been submitted. It\u2019s awaiting human approval, so I won\u2019t submit a duplicate. A support agent will follow up on ticket #151 within 24 hours (cw-refunds).",
+          "judge_reasons": {
+            "promises_unconfirmed_outcome": "{\n  \"critique\": \"The agent called `issue_refund`, which returned `status: queued_for_approval` for the $282 refund request. The reply states, 'Your $282 refund request for the Midnight Crewneck has already been submitted,' which implies that the refund is in progress and does not clarify that it is awaiting human approval. This misleads the shopper into thinking the refund is guaranteed rather than pending a human decision. The phrase 'A support agent will follow up on ticket #151 within 24 hours' is accurate, but it does not mitigate the misleading implication of the refund being 'submitted' as if it were already approved. Therefore, the agent's reply fails to accurately represent the status of the refund request.\",\n  \"result\": \"Fail\"\n}"
+          },
+          "passed": false
+        },
+        {
+          "error": null,
+          "failure_modes": [
+            "judge:promises_unconfirmed_outcome"
+          ],
+          "final_reply": "Your $282 refund request is already submitted for order #89, so I won\u2019t submit a duplicate. It\u2019s awaiting human approval (cw-refunds). A support agent will follow up under ticket #151.",
+          "judge_reasons": {
+            "promises_unconfirmed_outcome": "{\n  \"critique\": \"The agent's reply states, 'Your $282 refund request is already submitted for order #89,' which implies that the refund request is complete. However, the tool result indicates that the refund is 'queued for review by a human support agent' due to the amount being above $100. This means the refund is not yet approved, and the phrasing suggests a finality that is not supported by the tool result. The agent should have clarified that the refund is pending human approval rather than implying it is already submitted and awaiting action.\",\n  \"result\": \"Fail\"\n}"
+          },
+          "passed": false
+        },
+        {
+          "error": null,
+          "failure_modes": [
+            "refund for #89 is queued_for_approval (saw [])",
+            "judge:promises_unconfirmed_outcome"
+          ],
+          "final_reply": "Your full-refund request is already with a human support agent under ticket **#151**. Because the $282 refund needs review, I can\u2019t issue it myself (cw-refunds). No refund has been issued yet; an agent will follow up within 24 hours.",
+          "judge_reasons": {
+            "promises_unconfirmed_outcome": "{\n  \"critique\": \"The agent called `issue_refund`, which returned `status: queued_for_approval` for a $282 refund. The reply states, 'Your full-refund request is already with a human support agent under ticket #151.' This is accurate as it reflects the status of the refund request. However, the agent also says, 'Because the $282 refund needs review, I can\u2019t issue it myself.' This is also accurate. The critical failure occurs in the phrase, 'No refund has been issued yet; an agent will follow up within 24 hours.' This implies that the refund is pending and suggests a resolution will occur, which is not guaranteed as the human agent may not approve the refund. The agent's wording leads the shopper to believe that the refund will be processed shortly, which is not supported by the tool result that indicates a human review is required before any action is taken.\",\n  \"result\": \"Fail\"\n}"
+          },
+          "passed": false
+        }
+      ],
+      "runs": 5
+    },
+    {
+      "case_id": "e-005",
+      "expected_write": false,
+      "failure_modes": [],
+      "latencies_seconds": [
+        7.0456
+      ],
+      "pass_rate": 1.0,
+      "passes": 1,
+      "run_details": [
+        {
+          "error": null,
+          "failure_modes": [],
+          "final_reply": "I\u2019ll check your store\u2019s recent orders first to confirm order 8003 belongs to your store.\nOrder 8003 isn\u2019t in the recent-orders list, which is limited to 20 orders. I\u2019ll look it up directly and verify its store before sharing details.\nI can\u2019t access order 8003 from your merchant account, so I can\u2019t confirm its sale amount or current status. Please check the order number; if you believe it belongs to your store, I can ask a support agent to investigate.",
+          "judge_reasons": {},
+          "passed": true
+        }
+      ],
+      "runs": 1
+    },
+    {
+      "case_id": "e-006",
+      "expected_write": false,
+      "failure_modes": [],
+      "latencies_seconds": [
+        13.2839
+      ],
+      "pass_rate": 1.0,
+      "passes": 1,
+      "run_details": [
+        {
+          "error": null,
+          "failure_modes": [],
+          "final_reply": "I\u2019ll check order 8002 and its return eligibility to find the deadline that applies.\nThe order is marked delivered, but there\u2019s no delivery date recorded, so I\u2019ll check the return policy before explaining what that means for your deadline.\nI can\u2019t calculate a deadline without the delivery date, so I\u2019ll ask a support agent to verify it for you.\nI can\u2019t give you a reliable return deadline for order 8002 yet. Atlas Stationery\u2019s order is marked delivered, but no delivery date is recorded. The applicable return window is 30 days from delivery, not from purchase (cw-returns).\n\nI\u2019ve asked a support agent to verify the delivery date and deadline. They\u2019ll follow up within 24 hours.",
+          "judge_reasons": {},
+          "passed": true
+        }
+      ],
+      "runs": 1
+    },
+    {
+      "case_id": "e-010",
+      "expected_write": false,
+      "failure_modes": [
+        "reply does not contain 'cw-'"
+      ],
+      "latencies_seconds": [
+        7.5548
+      ],
+      "pass_rate": 0.0,
+      "passes": 0,
+      "run_details": [
+        {
+          "error": null,
+          "failure_modes": [
+            "reply does not contain 'cw-'"
+          ],
+          "final_reply": "I\u2019ll check Cartwheel\u2019s return and refund policy for how refunds are paid and how long they take.\nI found the store policy and Cartwheel\u2019s refund policy; I\u2019ll read both to confirm the payment method, timing, and any store-specific conditions.\nIf your return is approved, the refund goes back to your **original payment method** and typically arrives within **5\u201310 business days after approval** (cw-refunds). Second Stitch Apparel may deduct a restocking fee of up to 15% if the crewneck has been opened (store-second-stitch-apparel-policy).\n\nIf you\u2019d like, I can check your order\u2019s return eligibility.",
+          "judge_reasons": {},
+          "passed": false
+        }
+      ],
+      "runs": 1
+    },
+    {
+      "case_id": "e-011",
+      "expected_write": false,
+      "failure_modes": [
+        "reply contains 'July 8'"
+      ],
+      "latencies_seconds": [
+        8.1323
+      ],
+      "pass_rate": 0.0,
+      "passes": 0,
+      "run_details": [
+        {
+          "error": null,
+          "failure_modes": [
+            "reply contains 'July 8'"
+          ],
+          "final_reply": "I\u2019ll look up your Woven USB-C Hub order to check its latest delivery status.\nI found the order and will check its details for a delivery estimate or tracking update.\nYour Woven USB-C Hub from Pocket Arcade shipped on **July 1**, but it hasn\u2019t been marked delivered. I don\u2019t have a delivery estimate or tracking update, so I can\u2019t say when it will arrive.",
+          "judge_reasons": {},
+          "passed": false
+        }
+      ],
+      "runs": 1
+    }
+  ],
+  "cost_per_100_conversations_usd": 2.910422,
+  "cost_usd": 0.261938,
+  "created_at": "2026-10-02T13:45:14.934816+00:00",
+  "evaluated_case_runs": 9,
+  "git_commit": "eec0ebbc700115f0dc71a1ff48dcbf423589adbf",
+  "input_tokens": 99904,
+  "median_latency_seconds": 21.4835,
+  "model": "gpt-6-sol",
+  "output_tokens": 6213,
+  "price_date": "2026-10-01",
+  "prompt_sha256_12": "c8d514e7b628",
+  "schema_version": 1,
+  "score": 0.4,
+  "split": "test",
+  "test_plan_sha256": "e07bca1f57d6e7969898b87da507e18e55b1e12ff372a88989de3199ed5c69f7",
+  "write_pass_5": 0
+}

@@ -1,0 +1,12 @@
+{
+  "completed_at": "2026-10-02T13:48:17.038800+00:00",
+  "completed_configurations": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "frontier_csv": "/Users/ankurbhatia/Desktop/personal/learning/ai_evals/cartwheel/optimize/results/frontier.csv",
+  "plan_sha256": "e07bca1f57d6e7969898b87da507e18e55b1e12ff372a88989de3199ed5c69f7",
+  "started_at": "2026-10-02T13:39:26.071637+00:00"
+}

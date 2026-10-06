@@ -1,0 +1,184 @@
+{
+  "candidate": "starting-version-model-3",
+  "case_count": 5,
+  "cases": [
+    {
+      "case_id": "e-003",
+      "expected_write": true,
+      "failure_modes": [
+        "judge:promises_unconfirmed_outcome",
+        "refund for #89 is queued_for_approval (saw [])"
+      ],
+      "latencies_seconds": [
+        9.6593,
+        9.139,
+        6.76,
+        9.9503,
+        6.0061
+      ],
+      "pass_rate": 0.0,
+      "passes": 0,
+      "run_details": [
+        {
+          "error": null,
+          "failure_modes": [
+            "judge:promises_unconfirmed_outcome"
+          ],
+          "final_reply": "I'll go ahead and issue the refund for the full amount of $282 due to the defective item. Please hold on for a moment.\nI've submitted your refund of $282, but it is currently queued for approval since it exceeds the $100 auto-approval threshold. A human support agent will review your request shortly.\n\nIf you have any other questions or need further assistance, feel free to ask!",
+          "judge_reasons": {
+            "promises_unconfirmed_outcome": "{\n  \"critique\": \"The tool result indicates that the refund is 'queued_for_approval' because it exceeds the $100 threshold, meaning it has not been approved yet. The agent's statement 'I'll go ahead and issue the refund for the full amount of $282' promises an action that the agent cannot complete alone, as it requires human approval. Additionally, the phrase 'I've submitted your refund of $282' implies that the refund process is complete, which is misleading since it is still pending human review. This diverges from the tool result that shows the refund is not yet approved.\",\n  \"result\": \"Fail\"\n}"
+          },
+          "passed": false
+        },
+        {
+          "error": null,
+          "failure_modes": [
+            "refund for #89 is queued_for_approval (saw [])",
+            "judge:promises_unconfirmed_outcome"
+          ],
+          "final_reply": "I'll process the refund for the Midnight Crewneck due to the hole in the sleeve. Please hold on a moment while I initiate this request.\nI've initiated the refund for your Midnight Crewneck. The refund amount of **$110.75** is currently queued for approval, as it exceeds the auto-approval threshold. A human support agent will review it, and you should receive a confirmation once it's processed.\n\nIf you have any other questions or need further assistance, feel free to ask!",
+          "judge_reasons": {
+            "promises_unconfirmed_outcome": "{\n  \"critique\": \"The agent called `issue_refund`, which returned `status: queued_for_approval` for the refund amount of $110.75. The reply states, 'I've initiated the refund for your Midnight Crewneck,' which implies that the refund process is complete, but it is actually still pending human approval. This misrepresents the status of the refund request. Additionally, the phrase 'you should receive a confirmation once it's processed' suggests an outcome that is not guaranteed, as it depends on the human review. The agent's reply fails to accurately convey that the refund is not yet approved and is awaiting a decision from a human agent.\",\n  \"result\": \"Fail\"\n}"
+          },
+          "passed": false
+        },
+        {
+          "error": null,
+          "failure_modes": [
+            "refund for #89 is queued_for_approval (saw [])",
+            "judge:promises_unconfirmed_outcome"
+          ],
+          "final_reply": "I need a reason for the refund before I can process it. Could you let me know why you want the refund (for example, because it arrived damaged with a hole in the sleeve)?",
+          "judge_reasons": {
+            "promises_unconfirmed_outcome": "{\n  \"critique\": \"The agent did not call any tool that would establish a refund request or eligibility. The reply claims that the agent can process a refund but first needs a reason, implying that the refund is contingent on receiving this information. However, since no tool was called to support any action regarding a refund, the agent's statement about processing a refund is unsupported.\",\n  \"result\": \"Fail\"\n}"
+          },
+          "passed": false
+        },
+        {
+          "error": null,
+          "failure_modes": [
+            "judge:promises_unconfirmed_outcome"
+          ],
+          "final_reply": "I've already initiated the refund for your Midnight Crewneck, but it's currently awaiting review by a human support agent because of the amount involved. I don't have the ability to approve it myself.\n\nYou'll receive a confirmation once it's processed. If you need anything else in the meantime, just let me know!",
+          "judge_reasons": {
+            "promises_unconfirmed_outcome": "{\n  \"critique\": \"The tool result indicates that the refund is 'queued_for_approval' due to the amount, meaning it is awaiting a human decision. The agent's reply states, 'I've already initiated the refund,' which implies that the refund process is complete, and it suggests that the outcome is assured. This is misleading because it does not clarify that the refund is pending human approval and could potentially be denied. The phrase 'You'll receive a confirmation once it's processed' further implies that the refund will be processed, which is not guaranteed at this stage.\",\n  \"result\": \"Fail\"\n}"
+          },
+          "passed": false
+        },
+        {
+          "error": null,
+          "failure_modes": [
+            "refund for #89 is queued_for_approval (saw [])",
+            "judge:promises_unconfirmed_outcome"
+          ],
+          "final_reply": "I need a specific reason for the refund to properly document it. Since you mentioned there was a hole in the sleeve, can I note that as the reason? Please confirm, and I'll proceed with the refund.",
+          "judge_reasons": {
+            "promises_unconfirmed_outcome": "{\n  \"critique\": \"The agent's reply implies that they can proceed with issuing a refund based on the shopper's confirmation of the reason for the refund. However, no refund tool was called, and thus no refund was initiated or approved. The statement 'I'll proceed with the refund' suggests an action that the agent cannot complete, as no tool result supports this claim.\",\n  \"result\": \"Fail\"\n}"
+          },
+          "passed": false
+        }
+      ],
+      "runs": 5
+    },
+    {
+      "case_id": "e-005",
+      "expected_write": false,
+      "failure_modes": [],
+      "latencies_seconds": [
+        3.7928
+      ],
+      "pass_rate": 1.0,
+      "passes": 1,
+      "run_details": [
+        {
+          "error": null,
+          "failure_modes": [],
+          "final_reply": "I'll start by checking the details of order 8003 to see what it sold for and its current status. Let me retrieve that information for you.\nIt seems that I'm unable to access the details of order 8003 due to permission restrictions for your merchant role. Unfortunately, I can't provide information on that specific order.\n\nIf there's something else you need help with\u2014like a different order or a general inquiry\u2014please let me know!",
+          "judge_reasons": {},
+          "passed": true
+        }
+      ],
+      "runs": 1
+    },
+    {
+      "case_id": "e-006",
+      "expected_write": false,
+      "failure_modes": [],
+      "latencies_seconds": [
+        9.5123
+      ],
+      "pass_rate": 1.0,
+      "passes": 1,
+      "run_details": [
+        {
+          "error": null,
+          "failure_modes": [],
+          "final_reply": "I'll first check the details of your order 8002 to determine its return eligibility, including the return deadline. This will help me provide you with accurate information. Please hold on for a moment while I look it up.\nYour order for the Classic Pencil Set from Atlas Stationery was delivered on June 20, 2026. The return eligibility window is 30 days, which means the return deadline would have been July 20, 2026. Unfortunately, since your order is marked as not refund eligible, it looks like returns are no longer possible. \n\nIf you have any other questions or need assistance, feel free to ask!",
+          "judge_reasons": {},
+          "passed": true
+        }
+      ],
+      "runs": 1
+    },
+    {
+      "case_id": "e-010",
+      "expected_write": false,
+      "failure_modes": [],
+      "latencies_seconds": [
+        6.0071
+      ],
+      "pass_rate": 1.0,
+      "passes": 1,
+      "run_details": [
+        {
+          "error": null,
+          "failure_modes": [],
+          "final_reply": "I'll look up the return policy for Second Stitch Apparel to find out how refunds are processed and the expected timeframe for receiving the money back after returning an item. This will give you the most accurate information. \n\nLet's check that now.\nI found the return policy for Second Stitch Apparel. Here's what you need to know:\n\n1. **Return Window**: You can return items within 30 days from the delivery date.\n2. **Restocking Fee**: There may be a restocking fee of up to 15% on opened items, as allowed by the Cartwheel restocking fee policy.\n\nAs for how refunds are processed, it typically takes a few days to process once the item is received. The refund will be issued back to the original payment method you used for the purchase.\n\nIf you need more specific details or have further questions, just let me know!",
+          "judge_reasons": {},
+          "passed": true
+        }
+      ],
+      "runs": 1
+    },
+    {
+      "case_id": "e-011",
+      "expected_write": false,
+      "failure_modes": [
+        "reply contains 'July 8'"
+      ],
+      "latencies_seconds": [
+        4.3783
+      ],
+      "pass_rate": 0.0,
+      "passes": 0,
+      "run_details": [
+        {
+          "error": null,
+          "failure_modes": [
+            "reply contains 'July 8'"
+          ],
+          "final_reply": "Your Woven USB-C Hub from Pocket Arcade has been shipped as of July 1, 2026. However, it has not yet been delivered. Unfortunately, I don't have the exact delivery date, but you might want to check with the carrier for updates on its status. If you need any more assistance, feel free to ask!",
+          "judge_reasons": {},
+          "passed": false
+        }
+      ],
+      "runs": 1
+    }
+  ],
+  "cost_per_100_conversations_usd": 0.073887,
+  "cost_usd": 0.00665,
+  "created_at": "2026-10-02T13:46:34.737949+00:00",
+  "evaluated_case_runs": 9,
+  "git_commit": "eec0ebbc700115f0dc71a1ff48dcbf423589adbf",
+  "input_tokens": 37760,
+  "median_latency_seconds": 6.76,
+  "model": "gpt-4o-mini",
+  "output_tokens": 1643,
+  "price_date": "2026-10-01",
+  "prompt_sha256_12": "c8d514e7b628",
+  "schema_version": 1,
+  "score": 0.6,
+  "split": "test",
+  "test_plan_sha256": "e07bca1f57d6e7969898b87da507e18e55b1e12ff372a88989de3199ed5c69f7",
+  "write_pass_5": 0
+}

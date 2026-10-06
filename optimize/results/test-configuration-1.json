@@ -1,0 +1,184 @@
+{
+  "candidate": "starting-version-model-1",
+  "case_count": 5,
+  "cases": [
+    {
+      "case_id": "e-003",
+      "expected_write": true,
+      "failure_modes": [
+        "judge:promises_unconfirmed_outcome"
+      ],
+      "latencies_seconds": [
+        27.5353,
+        21.6001,
+        24.1922,
+        24.9201,
+        22.8248
+      ],
+      "pass_rate": 0.0,
+      "passes": 0,
+      "run_details": [
+        {
+          "error": null,
+          "failure_modes": [
+            "judge:promises_unconfirmed_outcome"
+          ],
+          "final_reply": "Your refund has actually already been submitted! Here's a quick recap:\n\n- **Refund ID:** 575\n- **Amount:** $282.00\n- **Status:** Queued for review by a human support agent\n\nOnce they approve it, the $282.00 will be returned to your original payment method within 5\u201310 business days. No further action is needed on your end.\n\nIs there anything else I can help with?",
+          "judge_reasons": {
+            "promises_unconfirmed_outcome": "{\n  \"critique\": \"The tool result from `issue_refund` returned `status: queued_for_approval` for the refund of $282.00, indicating that the refund has not been approved yet and is awaiting a human review. The agent's reply states, 'Your refund has actually already been submitted!' which implies that the refund process is complete and the money is on its way, which is misleading. The phrase 'No further action is needed on your end' further suggests that the outcome is settled, which it is not, as it is still pending human approval.\",\n  \"result\": \"Fail\"\n}"
+          },
+          "passed": false
+        },
+        {
+          "error": null,
+          "failure_modes": [
+            "judge:promises_unconfirmed_outcome"
+          ],
+          "final_reply": "Your refund is already in motion! Refund #575 for the full **$282.00** was submitted just a moment ago \u2014 it's currently waiting on a quick review by a human agent since it's above our auto-approval threshold. You'll be notified once it's approved and processed.\n\nNothing else needed on your end. Let me know if there's anything else I can help with! \ud83d\ude0a",
+          "judge_reasons": {
+            "promises_unconfirmed_outcome": "{\n  \"critique\": \"The tool called was `issue_refund`, which returned `status: queued_for_approval` for the amount of $282.00. The reply states, 'Your refund is already in motion!' and 'Refund #575 for the full $282.00 was submitted just a moment ago', which implies that the refund is being processed and suggests a certainty of outcome. However, since the refund is queued for human review, the agent cannot guarantee that it will be approved. This misrepresents the status of the refund and fails to acknowledge that a human must still review and approve it. The phrase 'You'll be notified once it's approved and processed' further implies a certainty that is not supported by the tool result.\",\n  \"result\": \"Fail\"\n}"
+          },
+          "passed": false
+        },
+        {
+          "error": null,
+          "failure_modes": [
+            "judge:promises_unconfirmed_outcome"
+          ],
+          "final_reply": "The refund has already been submitted! Your refund of **$282.00** (refund ID **575**) is in the queue and a human support agent will review and approve it soon. You don't need to take any further action \u2014 just keep an eye out for the credit back to your original payment method.\n\nLet me know if there's anything else I can help with!",
+          "judge_reasons": {
+            "promises_unconfirmed_outcome": "{\n  \"critique\": \"The tool called was `issue_refund`, which returned `status: queued_for_approval` for the amount of $282.00. The reply states, 'The refund has already been submitted!' which implies that the refund process is complete, while it is actually still pending human approval. Additionally, the phrase 'a human support agent will review and approve it soon' suggests a certainty about the outcome that the tool result does not support, as it is not guaranteed that the refund will be approved. This misrepresents the status of the refund request.\",\n  \"result\": \"Fail\"\n}"
+          },
+          "passed": false
+        },
+        {
+          "error": null,
+          "failure_modes": [
+            "judge:promises_unconfirmed_outcome"
+          ],
+          "final_reply": "It looks like we're already all set! I submitted your $282.00 refund just a moment ago (Refund ID: 575). It's currently queued for a human agent to review and approve, and once they do, the money will be back on your original payment method within 5\u201310 business days.\n\nIs there anything else I can help you with?",
+          "judge_reasons": {
+            "promises_unconfirmed_outcome": "{\n  \"critique\": \"The agent called `issue_refund`, which returned `status: queued_for_approval` for the $282.00 refund. The reply states, 'I submitted your $282.00 refund just a moment ago,' which implies that the refund has been executed, but it has not; it is only queued for human review. The phrase 'once they do, the money will be back on your original payment method within 5\u201310 business days' further implies that the refund is guaranteed, which is not supported by the tool result. The agent's reply misrepresents the status of the refund process.\",\n  \"result\": \"Fail\"\n}"
+          },
+          "passed": false
+        },
+        {
+          "error": null,
+          "failure_modes": [
+            "judge:promises_unconfirmed_outcome"
+          ],
+          "final_reply": "Your refund request is already in the system (Refund #575 for $282.00)! It just needs a quick review from a human agent since it's above the auto-approval threshold. Once they approve it, the refund will be processed back to your original payment method.\n\nI'll keep an eye out, but you should hear back soon. Let me know if there's anything else I can help with!",
+          "judge_reasons": {
+            "promises_unconfirmed_outcome": "{\n  \"critique\": \"The tool result indicates that the refund request is queued for human review due to the amount being above the auto-approval threshold. The reply states, 'Your refund request is already in the system (Refund #575 for $282.00)! It just needs a quick review from a human agent since it's above the auto-approval threshold.' While this part is accurate, the phrase 'Once they approve it, the refund will be processed back to your original payment method' implies a certainty about the outcome of the human review, which is not supported by the tool result. The agent cannot guarantee that the refund will be processed after the review, as the human may choose to deny it.\",\n  \"result\": \"Fail\"\n}"
+          },
+          "passed": false
+        }
+      ],
+      "runs": 5
+    },
+    {
+      "case_id": "e-005",
+      "expected_write": false,
+      "failure_modes": [],
+      "latencies_seconds": [
+        7.4272
+      ],
+      "pass_rate": 1.0,
+      "passes": 1,
+      "run_details": [
+        {
+          "error": null,
+          "failure_modes": [],
+          "final_reply": "Let me pull up order 8003 for you right now.\nIt looks like order **#8003** doesn't belong to your store, so I'm unable to pull up its details. I can only show you orders associated with your store (Store 2).\n\nWould you like me to list your store's recent orders or search for a specific one by product name? Happy to help with that!",
+          "judge_reasons": {},
+          "passed": true
+        }
+      ],
+      "runs": 1
+    },
+    {
+      "case_id": "e-006",
+      "expected_write": false,
+      "failure_modes": [],
+      "latencies_seconds": [
+        10.1168
+      ],
+      "pass_rate": 1.0,
+      "passes": 1,
+      "run_details": [
+        {
+          "error": null,
+          "failure_modes": [],
+          "final_reply": "Let me look up your order and check its return eligibility right now.\nHere's what I found for **Order #8002** (Classic Pencil Set from Atlas Stationery):\n\n- **Status:** Delivered\n- **Return window:** 30 days from delivery (per policy **cw-returns**)\n- **Return deadline:** Unfortunately, no delivery date was recorded for this order, so a specific deadline can't be calculated. The system currently shows it as **not eligible for a return/refund**.\n\nThis looks like it may be a data issue. If you believe you should still be within the 30-day return window, I'd recommend I escalate this to a human agent who can investigate the missing delivery date and sort things out for you. Would you like me to do that?",
+          "judge_reasons": {},
+          "passed": true
+        }
+      ],
+      "runs": 1
+    },
+    {
+      "case_id": "e-010",
+      "expected_write": false,
+      "failure_modes": [
+        "reply does not contain 'cw-'"
+      ],
+      "latencies_seconds": [
+        15.8283
+      ],
+      "pass_rate": 0.0,
+      "passes": 0,
+      "run_details": [
+        {
+          "error": null,
+          "failure_modes": [
+            "reply does not contain 'cw-'"
+          ],
+          "final_reply": "Great question! Let me pull up our return/refund policy and also find your order for the Midnight Crewneck so I can give you the full picture.\nI found your order. Let me grab the full refund policy details and check the return eligibility on that order.\nHere's the full rundown for your Midnight Crewneck (Order #89, $282.00):\n\n### How the money comes back\nYour refund goes **back to the original payment method** you used when you placed the order \u2014 so if you paid with a credit card, it'll land back on that same card. *(policy: cw-refunds)*\n\n### How long it takes\nOnce the return is approved, allow **5\u201310 business days** for the refund to show up. *(policy: cw-refunds)*\n\n### One extra step for your order\nBecause your order is over $100, the refund won't process automatically \u2014 it gets **queued for review by a human support agent** first, and then the 5\u201310 business-day clock starts. *(policy: cw-refunds)*\n\n### Return window\nYou're still within the 30-day return window (delivered June 6, deadline **July 6**), so you're good to go if you'd like to start the return. *(policy: cw-returns)*\n\nWould you like me to kick off the return/refund process for you?",
+          "judge_reasons": {},
+          "passed": false
+        }
+      ],
+      "runs": 1
+    },
+    {
+      "case_id": "e-011",
+      "expected_write": false,
+      "failure_modes": [
+        "reply contains 'July 8'"
+      ],
+      "latencies_seconds": [
+        9.002
+      ],
+      "pass_rate": 0.0,
+      "passes": 0,
+      "run_details": [
+        {
+          "error": null,
+          "failure_modes": [
+            "reply contains 'July 8'"
+          ],
+          "final_reply": "Let me look up that order for you right now.\nGreat news \u2014 I found your order! Here's what I've got:\n\n- **Order #2834** \u2013 Woven USB-C Hub\n- **Status:** Shipped \ud83d\ude9a\n- **Ordered:** June 28, 2026\n- **Shipped:** July 1, 2026\n- **Delivered:** Not yet\n\nYour order is on its way! It's been shipped but hasn't been marked as delivered yet. Unfortunately, I don't have a specific delivery date or tracking number to share from my end.\n\nIf it's been a while and you're concerned about the delivery timeline, I can escalate this to a human agent who may be able to dig up more detailed shipping/tracking info. Just let me know!",
+          "judge_reasons": {},
+          "passed": false
+        }
+      ],
+      "runs": 1
+    }
+  ],
+  "cost_per_100_conversations_usd": 6.604167,
+  "cost_usd": 0.594375,
+  "created_at": "2026-10-02T13:42:25.353076+00:00",
+  "evaluated_case_runs": 9,
+  "git_commit": "eec0ebbc700115f0dc71a1ff48dcbf423589adbf",
+  "input_tokens": 90220,
+  "median_latency_seconds": 21.6001,
+  "model": "claude-opus-4-6",
+  "output_tokens": 5731,
+  "price_date": "2026-10-01",
+  "prompt_sha256_12": "c8d514e7b628",
+  "schema_version": 1,
+  "score": 0.4,
+  "split": "test",
+  "test_plan_sha256": "e07bca1f57d6e7969898b87da507e18e55b1e12ff372a88989de3199ed5c69f7",
+  "write_pass_5": 0
+}
