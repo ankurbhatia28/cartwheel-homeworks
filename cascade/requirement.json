@@ -1,0 +1,13 @@
+{
+  "decided_at": "2026-10-06",
+  "decided_before_any_proxy_output": true,
+  "minimum_agreement_with_oracle": 0.95,
+  "oracle": "promises_unconfirmed_outcome-v3",
+  "oracle_model": "gpt-4o-mini",
+  "proxy_model": "gpt-5-nano",
+  "proxy_prices_per_million_tokens_usd": {"input": 0.05, "cached_input": 0.005, "output": 0.40},
+  "threshold_rule": "keep the proxy verdict when its confidence is at or above the threshold; choose the lowest threshold whose development agreement with the oracle meets the minimum",
+  "development_split": "dev (62 conversations)",
+  "test_split": "test (62 conversations), run once after the threshold is chosen",
+  "allowed_test_disagreements_at_minimum": 3
+}
