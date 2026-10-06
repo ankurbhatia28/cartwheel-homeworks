@@ -352,25 +352,6 @@ def escalate_to_human_logic(
 # the agent stays usable before Homework 1 is done.
 # ---------------------------------------------------------------------------
 
-# Order-list tools hand the model a summary; get_order still returns the full
-# record, so dates, store, and refund eligibility come from one order lookup.
-ORDER_SUMMARY_FIELDS = ("order_id", "product_id", "total_usd", "status", "ordered_at")
-
-
-def _summarize_orders(result: dict[str, Any]) -> dict[str, Any]:
-    if not result.get("ok") or "orders" not in result:
-        return result
-    orders = [{field: order[field] for field in ORDER_SUMMARY_FIELDS} for order in result["orders"]]
-    return {**result, "orders": orders}
-
-
-def _find_order_summary(ctx: AuthContext, query: str) -> dict[str, Any]:
-    return _summarize_orders(hw_tools.find_order(ctx, query))
-
-
-def _list_my_orders_summary(ctx: AuthContext) -> dict[str, Any]:
-    return _summarize_orders(hw_tools.list_my_orders(ctx))
-
 
 def _call(
     wrapper: RunContextWrapper[AuthContext], fn: Any, /, *args: Any
@@ -451,7 +432,7 @@ def search_products(
 @function_tool
 def list_my_orders(wrapper: RunContextWrapper[AuthContext]) -> dict[str, Any]:
     """List the caller's recent orders (shopper) or their store's recent orders (merchant)."""
-    return _call(wrapper, _list_my_orders_summary)
+    return _call(wrapper, hw_tools.list_my_orders)
 
 
 @function_tool
@@ -467,7 +448,7 @@ def find_order(
     wrapper: RunContextWrapper[AuthContext], query: str
 ) -> dict[str, Any]:
     """Search your orders by product name (fuzzy match)."""
-    return _call(wrapper, _find_order_summary, query)
+    return _call(wrapper, hw_tools.find_order, query)
 
 
 @function_tool
