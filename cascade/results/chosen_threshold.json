@@ -1,0 +1,5 @@
+{
+  "threshold": 0.8,
+  "chosen_at": "2026-10-07T03:28:09+00:00",
+  "reason": "Lowest threshold meeting the 0.95 agreement bar on development (1.000, 0 disagreements); it routes nearly every conversation to the oracle, so the cascade is expected to cost more than the oracle alone."
+}
